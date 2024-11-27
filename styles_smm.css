@@ -528,6 +528,85 @@ main img {
 }
 
 /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+                                                                            /* FIFTH SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* Стили для секции */
+/* Стили для секции */
+.fifth {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 598px;
+    background-color: #202120;
+}
+
+.fifth .list {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    width: 93%;
+    height: 238px;
+    top: 180px;
+    left: 3.33%;
+}
+
+.fifth .list li {
+    position: relative;
+    width: 100%; /* Полная ширина */
+    height: 24px;
+    display: flex; /* Используем flex для выравнивания */
+    align-items: center;
+    justify-content: center; /* Выравниваем текст по центру */
+}
+
+.fifth .list li .slesh {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.fifth .list li .text {
+    padding: 0;
+    left: 25.3%;
+    font-size: clamp(9px, 1vw, 18px);
+    color: #fff;
+    text-align: left;
+    width: 76.66%;
+}
+
+/* Линии между элементами */
+.fifth li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+.fifth {
+    height: 418px;
+}
+
+.fifth .list {
+    top: 90px;
+}
+
+}
+
+
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
                                                                             /* SIXTH SECTION */
 /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
