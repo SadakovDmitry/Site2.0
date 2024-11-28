@@ -1,5 +1,55 @@
 
 // Массив с видео источниками
+
+
+// Функция для получения параметров из URL
+function getURLParameter(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+// Объект с данными для каждой секции
+const sectionData = {
+    pr: {
+        main_image: "images/123 1.png",
+        // description: "Описание для PR проектов",
+        // image: "images/pr.png",
+    },
+    prod: {
+        main_image: "images/123 1.png",
+        // description: "Описание для Production проектов",
+        // image: "images/production.png",
+    },
+    web: {
+        main_image: "images/smm.png",
+        // description: "Описание для Web Development проектов",
+        // image: "images/web.png",
+    },
+    smm: {
+        main_image: "images/123 1.png",
+        // description: "Описание для SMM проектов",
+        // image: "images/smm.png",
+    },
+};
+
+// Получаем текущую секцию из URL
+const section = getURLParameter("section");
+
+// Находим элементы на странице для замены
+const titleElement = document.querySelector(".text p");
+const imageElement = document.querySelector(".image img");
+
+// Обновляем содержимое в зависимости от секции
+if (section && sectionData[section]) {
+    titleElement.textContent = sectionData[section].description;
+    imageElement.src = sectionData[section].image;
+} else {
+    // Данные по умолчанию
+    titleElement.textContent = "Выберите проект.";
+    imageElement.src = "images/default.png";
+}
+
+
 const videos = [
   'video/video1.mp4',
   'video/video2.mp4',
