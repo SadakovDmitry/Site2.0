@@ -1,7 +1,4 @@
 
-// Массив с видео источниками
-
-
 // Функция для получения параметров из URL
 function getURLParameter(name) {
     const params = new URLSearchParams(window.location.search);
@@ -80,33 +77,6 @@ const videos = [
   'video/video4.mp4',
   'video/video5.mp4'
 ];
-
-// let currentIndex = 0; // Индекс текущего видео
-//
-// // Автоматический запуск видео
-// const videoElements = document.querySelectorAll('.video');
-// // videoElements[currentIndex].muted = false; // Размутить первое видео
-//
-//
-// videoElements.forEach((video, index) => {
-//     console.log("now index: ", index);
-//   if (index !== currentIndex) {
-//     video.pause(); // Останавливаем все видео
-//   } else {
-//     video.muted = true; // Запускаем первое видео без звука
-//     video.play();
-//   }
-// });
-//
-// // Автоматическое переключение между видео
-// setInterval(() => {
-//   videoElements[currentIndex].pause(); // Остановить текущее видео
-//   videoElements[currentIndex].currentTime = 0;
-//   currentIndex = (currentIndex + 1) % videoElements.length; // Переключиться на следующее
-//   videoElements[currentIndex].muted = true; // Убедитесь, что новое видео тоже без звука
-//   videoElements[currentIndex].play(); // Запуск нового видео
-// }, 5000);
-
 
 let currentIndex = 0; // Индекс текущего видео
 
@@ -192,26 +162,6 @@ closeModalBtn.addEventListener('click', function () {
           modalVideo.currentTime = 0;
       });
 
-// const videoElements = document.querySelectorAll('.video');
-// let currentIndex = 0; // Индекс текущего видео
-//
-// // Функция для воспроизведения текущего видео
-// function playCurrentVideo() {
-//   const currentVideo = videoElements[currentIndex];
-//   currentVideo.play();
-//
-//   // Установить обработчик на окончание видео
-//   currentVideo.onended = () => {
-//     // Перейти к следующему видео
-//     video.currentTime = 0;
-//     currentIndex = (currentIndex + 1) % videoElements.length;
-//     playCurrentVideo(); // Запуск следующего видео
-//   };
-// }
-//
-// // Инициализация: запуск первого видео
-// playCurrentVideo();
-
 // Добавляем обработчики событий для запуска видео при наведении мыши
 videoElements.forEach((video, index) => {
   video.addEventListener('mouseover', () => {
@@ -228,11 +178,8 @@ videoElements.forEach((video, index) => {
   });
 
   video.addEventListener('mouseout', () => {
-    // Останавливаем видео, если указатель уходит
     // video.pause();
     // video.currentTime = 0;
-
-    // Возвращаемся к автоматическому воспроизведению текущего видео
     playCurrentVideo();
   });
 });
