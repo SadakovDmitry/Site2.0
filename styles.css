@@ -1040,40 +1040,47 @@ li {
         left: 0;
    }
 
-        .second .web {
-                top: 50%;
-                left: 0;
-       }
+    .second .web {
+            top: 50%;
+            left: 0;
+   }
+    .second .prod {
+            top: 25%;
+            left: 0;
+   }
+    .second .button h3 {
+            font-size: 16px;
+            line-height: 22.5px;
+            text-align: center;
+            border: 15px solid #202120;
+   }
+    .web h3 {
+        width: 238px;
+   }
+    .second .button .number {
+            font-size: 12px;
+            line-height: 13.5px;
+   }
+    .second .button .dot {
+            top: 341.4px;
+            width: 3.13px;
+            height: 3.13px;
+   }
+    .second .button .describe {
+            top: 335.4px;
+            left: 48.8%;
+            font-size: 12px;
+            line-height: 13.5px;
+   }
 
-        .second .prod {
-                top: 25%;
-                left: 0;
-       }
-
-        .second .button h3 {
-                font-size: 16px;
-                line-height: 22.5px;
-                text-align: center;
-                border: 15px solid #202120;
-       }
-        .web h3 {
-            width: 238px;
-       }
-        .second .button .number {
-                font-size: 12px;
-                line-height: 13.5px;
-       }
-        .second .button .dot {
-                top: 341.4px;
-                width: 3.13px;
-                height: 3.13px;
-       }
-        .second .button .describe {
-                top: 335.4px;
-                left: 48.8%;
-                font-size: 12px;
-                line-height: 13.5px;
-       }
+    .close {
+        top: 10px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        padding: 8px 14px;
+    }
 
         .third spline-viewer {
                 height: 738px;
