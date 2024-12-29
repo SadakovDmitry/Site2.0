@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/fonts.css" />
+<link rel="stylesheet" href="../css/footer.css" />
+<title>+7 GROUP</title>
+
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/about_us.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+  </head>
+  <body>
+    <section class="logo-section">
+  <div class="icon1">
+    <img src="../images/logo.png" alt="Logo" />
+  </div>
+</section>
+    <main>
+      <img src="../images/about.png" alt="О нас" class="about_us" />
+      <h1>О нас</h1>
+      <div class="text">
+        <h3>
+          +7 GROUP — ЭТО СОЗДАНИЕ МЕДИАКОНТЕНТА ПОЛНОГО ЦИКЛА И ЛЮБОЙ СЛОЖНОСТИ:
+          ОТ РАЗРАБОТКИ ИДЕИ ДО ПОСТПРОДАКШЕНА
+        </h3>
+        <div class="describe">
+          <div class="top">
+            МЫ — НЕБОЛЬШАЯ КРЕАТИВНАЯ КОМАНДА. ВМЕСТЕ МЫ ПРОШЛИ «ОГОНЬ»
+            ФЕДЕРАЛЬНЫХ ТЕЛЕКАНАЛОВ, «ВОДУ» ХУДОЖЕСТВЕННЫХ ПОСТАНОВОЧНЫХ И
+            РЕКЛАМНЫХ СЪЁМОК И «МЕДНЫЕ ТРУБЫ» ОНЛАЙН-ПРОЕКТОВ. ЕСЛИ СЛОЖИТЬ ОПЫТ
+            НАШЕЙ КОМАНДЫ, ПОЛУЧИТСЯ ОКОЛО 100 ЛЕТ. МЫ АБСОЛЮТНО ЧЕСТНО МОЖЕМ
+            СКАЗАТЬ, ЧТО ЗНАЕМ О ВИДЕОПРОИЗВОДСТВЕ ВСЕ, НЕ ПЫТАЕМСЯ ГНАТЬСЯ ЗА
+            ТРЕНДАМИ, КРЕАТИВИМ И СОЗДАЁМ СВОИ. ПОМИМО ПЕРЕЧИСЛЕННЫХ ПОДВИГОВ ЗА
+            ПЛЕЧАМИ НАШИХ ГЕРОЕВ ГРАНТ МИНКУЛЬТА, ЛАУРЕАТСТВА НА ПИТЧИНГАХ И
+            ФЕСТИВАЛЯХ, РАЗРАБОТКА И ИСПОЛНЕНИЕ БРЕНДМЕНЕДЖМЕНТА В
+            АУДИОВИЗУАЛЬНЫХ ФОРМАТАХ И, КОНЕЧНО, РЕЙТИНГОВЫЕ ВИДЕО В СЕТИ.
+          </div>
+          <div class="bottom">
+            В НАШЕЙ КОМАНДЕ ЕСТЬ И ХУДОЖНИКИ, КОТОРЫЕ СОЗДАЮТ ГРАФИЧЕСКОЕ
+            ОБРАМЛЕНИЕ ДЛЯ ВИДЕО, А ТАКЖЕ РИСУЮТ ЛОГОТИПЫ И ДЕЛАЮТ КРЕАТИВНЫЕ
+            LOOK-BOOKS.
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="border">
+      <div class="horizontal"></div>
+      <div class="part1"></div>
+      <div class="part2"></div>
+      <div class="dot"></div>
+    </div>
+    <section class="describe_section">
+      <h3 class="text">
+        НЕ ПУГАЙТЕСЬ НАШИХ ЦЕН! ОНИ НИЗКИЕ ТОЛЬКО ПО ТОЙ ПРИЧИНЕ, ЧТО НАША
+        ДРУЖНАЯ КОМАНДА НЕ ОБРЕМЕНЕНА ОГРОМНЫМ АДМИНИСТРАТИВНЫМ ШТАТОМ, ПОЭТОМУ
+        РАБОТАЯ С НАМИ, ВАМ НЕ ПРИДЁТСЯ ОПЛАЧИВАТЬ ТРУД ДЕСЯТКА СЕКРЕТАРЕЙ, ПЯТИ
+        МЕНЕДЖЕРОВ И АРЕНДУ ОФИСА В МОСКВЕ-СИТИ.
+      </h3>
+      <video class="video" muted autoplay>
+        <source src="../video/video2.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+      <div class="video-overlay" onclick="openVideo(1)">&#x26F6;</div>
+      <div class="video-play" onclick="openVideo(1)">▶</div>
+      <div id="videoModal" class="modal">
+        <div id="modalContent" class="modal-content">
+          <button id="closeModalBtn" class="close">&times;</button>
+          <video id="modalVideo" controls autoplay>
+            <source id="modalVideoSource" type="video/mp4" />
+            <!-- <source src="showreel.mp4" type="video/mp4"> -->
+          </video>
+        </div>
+      </div>
+    </section>
+    <section class="work_methods">
+      <h2></h2>
+      <h3 class="first"></h3>
+      <h3 class="second"></h3>
+      <p class="first"></p>
+      <p class="second"></p>
+    </section>
+    <section class="video"></section>
+  </body>
+  <section class="form">
+  <script
+    type="module"
+    src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"
+  ></script>
+  <button>
+    <a href="">
+      <spline-viewer
+        hint
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/2l7dwlYlyKLoGaIk/scene.splinecode"
+      >
+      </spline-viewer>
+      <div class="sign">
+        <p>записаться</p>
+        <img src="../images/Frame 40.svg" alt="" />
+      </div>
+    </a>
+  </button>
+</section>
+
+<section class="camera" data-proportion-h="1">
+  <picture>
+    <source srcset="../images_1440/bg.png" media="(max-width: 1551px)" />
+    <source srcset="../images_1024/bg.png" media="(max-width: 1124px)" />
+    <source srcset="../images_375/bg.png" media="(max-width:800px)" />
+    <source srcset="../images/bg.png" media="(min-width:1920px)" />
+    <img src="../images/bg.png" alt="" />
+  </picture>
+  <div class="blik">
+    <img src="../images/blik.svg" alt="" />
+  </div>
+  <div class="image-slider">
+    <button id="prevBtn" class="arrow"></button>
+    <div class="points">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <button id="nextBtn" class="arrow"></button>
+  </div>
+  <div class="images">
+    <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
+  </div>
+</section>
+
+<script>
+  const images = [
+    "../images/Ellipse 6.svg",
+    "../images/image1.png",
+    "../images/image3.png",
+    "../images/image4.png",
+    "../images/image5.png",
+    "../images/image6.png",
+    "../images/image7.png",
+  ];
+
+  let currentInd = 0;
+
+  const sliderImage = document.getElementById("sliderImage");
+  const dots = document.querySelectorAll(".dot");
+
+  function updateActiveDot() {
+    console.log("now index: ", currentInd);
+    dots.forEach((dot, index) => {
+      if (index - 4 === currentInd) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentInd = (currentInd - 1 + images.length) % images.length;
+    sliderImage.src = images[currentInd];
+    updateActiveDot();
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentInd = (currentInd + 1) % images.length;
+    sliderImage.src = images[currentInd];
+    updateActiveDot();
+  });
+
+  updateActiveDot();
+</script>
+
+<footer>
+  <div class="line"></div>
+  <div class="icon">
+    <img src="../images/logo.svg" alt="" />
+  </div>
+  <nav>
+    <ul class="information">
+      <li>plus7production@gmail.com</li>
+      <li>+7 916 463 12 32</li>
+      <li>
+        Самокатная ул., 4, стр. 1, Москва, Креативный кластер Кристалл, этаж 1
+      </li>
+    </ul>
+    <ul class="menu">
+      <li><a href="about_us.html" class="left">О нас</a></li>
+      <li><a href="#" class="left">Услуги</a></li>
+      <li><a href="#" class="right">Проекты</a></li>
+      <li><a href="#" class="right">Контакты</a></li>
+    </ul>
+    <ul class="media">
+      <li><a href="#">VK</a></li>
+      <li><a href="#">Teleqram</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </nav>
+  <p>© Все права защищены, 2024</p>
+</footer>
+
+</html>

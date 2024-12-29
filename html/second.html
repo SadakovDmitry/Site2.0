@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @@include('partials/head.html')
+    <link rel="stylesheet" href="../css/styles_smm.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+  </head>
+  <body>
+    @@include('partials/menu.html')
+    <main>
+      <div class="image">
+        <img src="../images/smm.png" alt="Example Image" />
+      </div>
+      <div class="text">
+        <p>Продвижение в youtube и instagram</p>
+      </div>
+    </main>
+    <section class="first">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+      <div class="dot"></div>
+    </section>
+    <section class="second">
+      <div class="text">
+        <p class="left">ЗРИТЕЛЬ ПОКУПАЕТ ГЛАЗАМИ! ФАКТ ИЗВЕСТНЫЙ</p>
+        <div class="right">
+          <p class="up">
+            НО У КАЖДОГО «ПРОДУКТА», БУДЬ ТО ЭЛИТНАЯ НЕДВИЖИМОСТЬ, ТЕХНИКА ДЛЯ
+            ПЕРЕРАБОТКИ ОТХОДОВ ИЛИ МУЗЫКАЛЬНАЯ ГРУППА, СВОЙ ЗРИТЕЛЬ,
+            СООТВЕТСТВЕННО, И ВИДИТ ОН ПО-СВОЕМУ. ПОЭТОМУ МЕТОД ПРОДВИЖЕНИЯ,
+            УСПЕШНО ПРОДАЮЩИЙ ОБОРУДОВАНИЕ ДЛЯ ПЕРЕРАБОТКИ ОТХОДОВ, ВРЯД ЛИ
+            СРАБОТАЕТ ПРИ ПРОДВИЖЕНИИ МУЗЫКАЛЬНОЙ ГРУППЫ.
+          </p>
+          <p class="down">
+            СОЗДАНИЕ КОМПЛЕКСНОЙ СТРАТЕГИИ ДЛЯ УСПЕШНОГО ПРОДВИЖЕНИЯ БРЕНДА —
+            ЭТО, СВОЕГО РОДА, ИСКУССТВО, КОТОРОЕ НЕ ТЕРПИТ ТРИВИАЛЬНЫХ ПОДХОДОВ.
+            ИНДИВИДУАЛЬНЫЙ МЕТОД ПРОДВИЖЕНИЯ ДЛЯ КАЖДОГО КЛИЕНТА, А В РЕЗУЛЬТАТЕ
+            ТОЧНОЕ ПОПАДАНИЕ В ЦЕЛЕВУЮ АУДИТОРИЮ ИДЕАЛЬНО РАЗРАБОТАННЫМ
+            КОНТЕНТОМ — ОСНОВНОЙ ПРИНЦИП РАБОТЫ +7 GROUP.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="third">
+      <p class="text">
+        МЫ ПРЕДОСТАВЛЯЕМ УСЛУГИ ПО ВЕДЕНИЮ INSTAGRAM АККАУНТОВ И YOUTUBE КАНАЛОВ
+        ЛЮБЫХ ТЕМАТИК ПОД КЛЮЧ
+      </p>
+    </section>
+    <div class="video-gallery">
+      <div class="video-item video1">
+        <video class="video" muted autoplay>
+          <source src="../video/video1.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay" onclick="openVideo(0)">&#x26F6;</div>
+        <div class="video-play" onclick="openVideo(0)">▶</div>
+        <div class="text">
+          <p class="customer">ЗАКАЗЧИК</p>
+          <p class="year">2024</p>
+        </div>
+      </div>
+      <div class="video-item video2">
+        <video class="video" muted autoplay>
+          <source src="../video/video2.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay" onclick="openVideo(1)">&#x26F6;</div>
+        <div class="video-play" onclick="openVideo(1)">▶</div>
+        <div class="text">
+          <p class="customer">ЗАКАЗЧИК</p>
+          <p class="year">2024</p>
+        </div>
+      </div>
+      <div class="video-item video3">
+        <video class="video" muted autoplay>
+          <source src="../video/video3.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay" onclick="openVideo(2)">&#x26F6;</div>
+        <div class="video-play" onclick="openVideo(2)">▶</div>
+        <div class="text">
+          <p class="customer">ЗАКАЗЧИК</p>
+          <p class="year">2024</p>
+        </div>
+      </div>
+      <!-- Добавьте больше видео, если нужно -->
+      <div class="video-item video4">
+        <video class="video" muted autoplay>
+          <source src="../video/video4.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay" onclick="openVideo(3)">&#x26F6;</div>
+        <div class="video-play" onclick="openVideo(3)">▶</div>
+        <div class="text">
+          <p class="customer">ЗАКАЗЧИК</p>
+          <p class="year">2024</p>
+        </div>
+      </div>
+      <div class="video-item video5">
+        <video class="video" muted autoplay>
+          <source src="../video/video5.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay" onclick="openVideo(4)">&#x26F6;</div>
+        <div class="video-play" onclick="openVideo(4)">▶</div>
+        <div class="text">
+          <p class="customer">ЗАКАЗЧИК</p>
+          <p class="year">2024</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для полного размера видео -->
+    <div id="videoModal" class="modal">
+      <div id="modalContent" class="modal-content">
+        <button id="closeModalBtn" class="close">&times;</button>
+        <video id="modalVideo" controls autoplay>
+          <source id="modalVideoSource" type="video/mp4" />
+          <!-- <source src="showreel.mp4" type="video/mp4"> -->
+        </video>
+      </div>
+    </div>
+    <section class="fifth">
+      <div class="list">
+        <li class="first_str">
+          <p class="slesh">/.</p>
+          <p class="text">АНАЛИЗ ЦЕЛЕВОЙ АУДИТОРИИ ВАШЕГО БРЕНДА</p>
+        </li>
+        <li class="second_str">
+          <p class="slesh">/.</p>
+          <p class="text">
+            ПРИДУМЫВАЕМ МЕТОД ПОДАЧИ И ФОРМАТЫ КОНТЕНТА, КОТОРЫЕ ЗАЦЕПЯТ ИМЕННО
+            ВАШУ ЦЕЛЕВУЮ АУДИТОРИЮ
+          </p>
+        </li>
+        <li class="third_str">
+          <p class="slesh">/.</p>
+          <p class="text">СОЗДАЁМ НЕОБХОДИМЫЙ ФОТО- И ВИДЕОКОНТЕНТ</p>
+        </li>
+        <li class="fourth_str">
+          <p class="slesh">/.</p>
+          <p class="text">
+            ОСУЩЕСТВЛЯЕМ КОМПЛЕКСНОЕ ПРОДВИЖЕНИЕ С ПОМОЩЬЮ ИНСТРУМЕНТОВ SEO И
+            ТАРГЕТА
+          </p>
+        </li>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+
+    @@include('partials/footer.html')
+  </body>
+</html>

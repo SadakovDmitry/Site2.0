@@ -1,0 +1,584 @@
+footer li,
+footer a,
+footer p {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form {
+  border-top: 0.5px solid rgba(255, 255, 255, 0.25);
+  background-color: #202120;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form spline-viewer {
+  width: 255px;
+  height: 1000px;
+  margin-top: -270px;
+}
+
+button {
+  background-color: #202120;
+  border: 0;
+  height: 498px;
+  width: 255px;
+}
+
+button a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sign {
+  display: none;
+  position: absolute;
+  align-self: center;
+  top: 385px;
+  font-size: 24px;
+  z-index: 2;
+}
+
+.sign img {
+  position: absolute;
+  margin-top: -30px;
+  right: 46.5%;
+  width: 40px;
+  height: 40px;
+}
+
+button:hover .sign {
+  display: block;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* FORTH SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.camera {
+  position: relative;
+  background-color: #202120;
+  width: 100%;
+  height: 0;
+  padding-top: 118.3%;
+  top: -1px;
+  bottom: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.camera picture img {
+  right: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+}
+
+.image-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 75%;
+  height: 64px;
+  width: 100%;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.image-slider .points {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  max-width: 268px;
+  margin: 0 20px; /* Отступы слева и справа */
+  padding: 28px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 32px;
+  z-index: 5;
+}
+
+.image-slider .points .dot {
+  position: static;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.image-slider img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.arrow {
+  /* position: relative;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0px 0px;
+  z-index: 1;
+  border-radius: 50%;
+  width: 14px;
+  height: 28px; */
+  position: relative; /* Или absolute, если требуется */
+  z-index: 10; /* Убедитесь, что кнопка выше других элементов */
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  padding: 10px; /* Увеличьте область клика */
+  width: 40px; /* Достаточный размер для клика */
+  height: 30px;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+
+  transform: rotate(45deg);
+}
+
+.arrow:hover::after {
+  border-top: 2px solid #202120;
+  border-right: 2px solid #202120;
+}
+
+#prevBtn {
+  margin-right: -20px;
+  right: -20px;
+  transform: rotate(180deg);
+}
+
+#nextBtn {
+  margin-left: -20px;
+  left: -20px;
+}
+
+.image-slider .points .dot.active {
+  background-color: #ffffff;
+  /* border: 2px solid #000; */
+}
+
+.images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 25%;
+  top: 0;
+  padding-top: 166%;
+}
+
+.blik {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 25%;
+  top: 0;
+  padding-top: 166%;
+  z-index: 2;
+}
+
+.images img {
+  position: absolute;
+  object-fit: contain;
+  left: 0;
+  top: 0;
+  width: 49.8%;
+  height: 49.8%;
+}
+
+.blik img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 49.8%;
+  height: 49.8%;
+}
+
+footer {
+  position: relative;
+  background: #060606;
+  width: 100%;
+  height: 257px;
+  top: -1px;
+  bottom: -1px;
+}
+
+.line {
+  position: absolute;
+  left: 3.5%;
+  right: 3.5%;
+  bottom: 255px;
+  height: 1px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.icon {
+  position: absolute;
+  height: 78px;
+  bottom: 127px;
+  left: 66px;
+}
+
+footer p {
+  position: absolute;
+  bottom: 32px;
+  left: 3.4%;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.information {
+  position: absolute;
+  left: 26.8%;
+  bottom: 127px;
+  width: 570px;
+}
+
+.menu {
+  position: absolute;
+  left: 74.2%;
+  bottom: 127px;
+  width: 110px;
+}
+
+.media {
+  position: absolute;
+  left: 86.5%;
+  bottom: 150px;
+  width: 110px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  font-size: 18px;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 10px;
+  line-height: 11.25px;
+}
+
+@media (max-width: 1551px) {
+  button a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .sign img {
+    margin-top: -20px;
+    scale: 50%;
+  }
+
+  .camera {
+    height: 0;
+    padding-top: 118.3%;
+    top: -1px;
+    bottom: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .camera picture {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .image-slider {
+    top: 67%;
+  }
+
+  .images {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 25%;
+    top: 0;
+    padding-top: 253%;
+  }
+
+  .blik {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 25%;
+    top: 0;
+    padding-top: 253%;
+    z-index: 2;
+  }
+
+  .images img {
+    left: 0;
+    top: 0;
+    width: 49.8%;
+    height: 49.8%;
+  }
+
+  .blik img {
+    left: 0;
+    top: 0;
+    width: 49.8%;
+    height: 49.8%;
+  }
+
+  footer {
+    top: -2px;
+    height: 250px;
+  }
+
+  .line {
+    bottom: 250px;
+  }
+
+  .icon {
+    height: 78px;
+    bottom: 122px;
+  }
+
+  footer p {
+    bottom: 25.5px;
+    font-size: 18px;
+  }
+
+  .information {
+    bottom: 86px;
+    width: 336px;
+  }
+
+  .menu {
+    bottom: 86px;
+    width: 200px;
+  }
+
+  .media {
+    position: absolute;
+    left: 86.5%;
+    bottom: 117px;
+    width: 110px;
+  }
+
+  li {
+    line-height: 21.06px;
+  }
+}
+
+@media (max-width: 1124px) {
+  .form {
+    height: 411px;
+  }
+
+  .form spline-viewer {
+    width: 255px;
+    height: 1000px;
+    margin-top: -270px;
+  }
+
+  button {
+    background-color: #202120;
+    border: 0;
+    height: 411px;
+    width: 255px;
+  }
+
+  .sign {
+    top: 370px;
+  }
+
+  .sign img {
+    margin-top: -20px;
+    scale: 50%;
+  }
+
+  footer {
+    height: 475px;
+  }
+
+  footer::after {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 0;
+    left: 3.1%;
+    right: 3.1%;
+  }
+
+  .line {
+    bottom: 277px;
+  }
+
+  .icon {
+    height: 78px;
+    bottom: 355px;
+    left: 3.1%;
+  }
+
+  .information {
+    left: 3.1%;
+    bottom: 131px;
+    width: 300px;
+  }
+
+  .menu {
+    position: absolute;
+    width: 100%;
+    padding-right: 0;
+    left: -7%;
+    top: 42px;
+    text-align: right;
+    margin-right: 0;
+  }
+
+  .media {
+    width: 70px;
+    right: 3.1%;
+    bottom: 131px;
+    text-align: right;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .form spline-viewer {
+    height: 738px;
+    margin-top: -90px;
+    scale: 65%;
+  }
+
+  .image-slider .points {
+    max-width: 134px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .image-slider .points .dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .arrow::after {
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+  }
+
+  footer {
+    height: 521px;
+  }
+  .information {
+    left: 4.3%;
+    width: 343px;
+    bottom: 112px;
+  }
+  .information li {
+    line-height: 21px;
+  }
+  .icon {
+    top: 34px;
+    width: 150px;
+    height: 61.87px;
+  }
+  .icon img {
+    top: 34px;
+    width: 150px;
+    height: 61.87px;
+  }
+
+  .media {
+    right: 4.3%;
+    left: auto;
+    top: 34px;
+    bottom: auto;
+    width: 118px;
+    height: 83px;
+    font-size: 18px;
+    padding-right: 0;
+  }
+  .menu {
+    top: 185px;
+    left: 0;
+    bottom: auto;
+    height: 52px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer p {
+    width: 317px;
+  }
+
+  footer::after {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 0;
+    left: 4.3%;
+    right: 4.3%;
+  }
+
+  footer::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 151px;
+    left: 4.3%;
+    right: 4.3%;
+  }
+
+  .menu .right {
+    position: absolute;
+    margin-top: -40px;
+    right: 4.3%;
+  }
+
+  .menu .left {
+    position: absolute;
+    left: 4.3%;
+  }
+
+  li {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 11.25px;
+  }
+
+  .media li,
+  .information li {
+    margin-bottom: 10px;
+  }
+
+  .line {
+    bottom: 250px;
+  }
+}

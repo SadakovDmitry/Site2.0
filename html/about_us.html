@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @@include('partials/head.html')
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/about_us.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+  </head>
+  <body>
+    @@include('partials/menu.html')
+    <main>
+      <img src="../images/about.png" alt="О нас" class="about_us" />
+      <h1>О нас</h1>
+      <div class="text">
+        <h3>
+          +7 GROUP — ЭТО СОЗДАНИЕ МЕДИАКОНТЕНТА ПОЛНОГО ЦИКЛА И ЛЮБОЙ СЛОЖНОСТИ:
+          ОТ РАЗРАБОТКИ ИДЕИ ДО ПОСТПРОДАКШЕНА
+        </h3>
+        <div class="describe">
+          <div class="top">
+            МЫ — НЕБОЛЬШАЯ КРЕАТИВНАЯ КОМАНДА. ВМЕСТЕ МЫ ПРОШЛИ «ОГОНЬ»
+            ФЕДЕРАЛЬНЫХ ТЕЛЕКАНАЛОВ, «ВОДУ» ХУДОЖЕСТВЕННЫХ ПОСТАНОВОЧНЫХ И
+            РЕКЛАМНЫХ СЪЁМОК И «МЕДНЫЕ ТРУБЫ» ОНЛАЙН-ПРОЕКТОВ. ЕСЛИ СЛОЖИТЬ ОПЫТ
+            НАШЕЙ КОМАНДЫ, ПОЛУЧИТСЯ ОКОЛО 100 ЛЕТ. МЫ АБСОЛЮТНО ЧЕСТНО МОЖЕМ
+            СКАЗАТЬ, ЧТО ЗНАЕМ О ВИДЕОПРОИЗВОДСТВЕ ВСЕ, НЕ ПЫТАЕМСЯ ГНАТЬСЯ ЗА
+            ТРЕНДАМИ, КРЕАТИВИМ И СОЗДАЁМ СВОИ. ПОМИМО ПЕРЕЧИСЛЕННЫХ ПОДВИГОВ ЗА
+            ПЛЕЧАМИ НАШИХ ГЕРОЕВ ГРАНТ МИНКУЛЬТА, ЛАУРЕАТСТВА НА ПИТЧИНГАХ И
+            ФЕСТИВАЛЯХ, РАЗРАБОТКА И ИСПОЛНЕНИЕ БРЕНДМЕНЕДЖМЕНТА В
+            АУДИОВИЗУАЛЬНЫХ ФОРМАТАХ И, КОНЕЧНО, РЕЙТИНГОВЫЕ ВИДЕО В СЕТИ.
+          </div>
+          <div class="bottom">
+            В НАШЕЙ КОМАНДЕ ЕСТЬ И ХУДОЖНИКИ, КОТОРЫЕ СОЗДАЮТ ГРАФИЧЕСКОЕ
+            ОБРАМЛЕНИЕ ДЛЯ ВИДЕО, А ТАКЖЕ РИСУЮТ ЛОГОТИПЫ И ДЕЛАЮТ КРЕАТИВНЫЕ
+            LOOK-BOOKS.
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="border">
+      <div class="horizontal"></div>
+      <div class="part1"></div>
+      <div class="part2"></div>
+      <div class="dot"></div>
+    </div>
+    <section class="describe_section">
+      <h3 class="text">
+        НЕ ПУГАЙТЕСЬ НАШИХ ЦЕН! ОНИ НИЗКИЕ ТОЛЬКО ПО ТОЙ ПРИЧИНЕ, ЧТО НАША
+        ДРУЖНАЯ КОМАНДА НЕ ОБРЕМЕНЕНА ОГРОМНЫМ АДМИНИСТРАТИВНЫМ ШТАТОМ, ПОЭТОМУ
+        РАБОТАЯ С НАМИ, ВАМ НЕ ПРИДЁТСЯ ОПЛАЧИВАТЬ ТРУД ДЕСЯТКА СЕКРЕТАРЕЙ, ПЯТИ
+        МЕНЕДЖЕРОВ И АРЕНДУ ОФИСА В МОСКВЕ-СИТИ.
+      </h3>
+      <video class="video" muted autoplay>
+        <source src="../video/video2.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+      <div class="video-overlay" onclick="openVideo(1)">&#x26F6;</div>
+      <div class="video-play" onclick="openVideo(1)">▶</div>
+      <div id="videoModal" class="modal">
+        <div id="modalContent" class="modal-content">
+          <button id="closeModalBtn" class="close">&times;</button>
+          <video id="modalVideo" controls autoplay>
+            <source id="modalVideoSource" type="video/mp4" />
+            <!-- <source src="showreel.mp4" type="video/mp4"> -->
+          </video>
+        </div>
+      </div>
+    </section>
+    <section class="work_methods">
+      <h2></h2>
+      <h3 class="first"></h3>
+      <h3 class="second"></h3>
+      <p class="first"></p>
+      <p class="second"></p>
+    </section>
+    <section class="video"></section>
+  </body>
+  @@include('partials/footer.html')
+</html>

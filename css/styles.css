@@ -1,0 +1,723 @@
+* {
+  font-family: "Porsche";
+  font-display: swap;
+  src: local(Porsche), url(../font/Porsche\ Regular_0.ttf),
+    url(../font/Porsche-Regular_0.woff);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SPLINE SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.mobile {
+  display: none;
+}
+
+main spline-viewer {
+  position: relative;
+  height: 970px;
+}
+
+main {
+  width: 100%;
+  height: 839px;
+  position: relative;
+  overflow: hidden;
+}
+
+p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  width: 734px;
+  height: 54px;
+}
+
+.text {
+  display: flex;
+  position: absolute;
+  left: 64px;
+  width: 100%;
+  top: 676px;
+  color: #fff;
+}
+
+.text h1 {
+  position: absolute;
+  left: 50.1%;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 81px;
+  text-align: right;
+  height: 81px;
+  width: 458px;
+  align-self: center;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* FIRST SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.first {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 15.3125%; */
+  width: 100%;
+  height: 294px;
+  overflow: hidden;
+  background-color: #202120;
+}
+
+.first video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.first .play {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.first .play::after {
+  position: absolute;
+  top: 43%;
+  left: 45%;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  border: 13px solid transparent;
+  border-bottom-color: #930909;
+  transform: rotate(90deg);
+  content: "";
+}
+
+.first .play:hover {
+  background: #202120;
+}
+
+.first .play:hover::after {
+  border-bottom-color: #fff;
+}
+
+.first .play:active {
+  background: #191919;
+}
+
+.first .play:active::after {
+  border-bottom-color: #fff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  max-height: 1024px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  object-fit: contain;
+}
+
+.modal-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 75px;
+  height: 75px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000000;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 20px 20px;
+  z-index: 1001;
+}
+
+.close:hover {
+  color: #ffffff;
+  background: #202120;
+}
+
+.close:active {
+  color: #ffffff;
+  background: #0f0f0f;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SECOND SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.second {
+  position: relative;
+  width: 100%;
+  height: 1920px;
+  background-color: #202120;
+  overflow: hidden;
+}
+
+.second .button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  width: 50%;
+  height: 50%;
+}
+
+.second h3 {
+  background-color: #202120;
+  border: 40px solid #202120;
+  z-index: 1;
+}
+
+.second .pr {
+  border-left: none;
+  left: 0;
+  top: 0;
+  border-top: none;
+}
+
+.second .prod {
+  left: 50%;
+  top: 0;
+  border-right: none;
+  border-top: none;
+}
+
+.second .web {
+  left: 0;
+  top: 50%;
+  border-left: none;
+}
+
+.second .smm {
+  left: 50%;
+  top: 50%;
+  border-right: none;
+}
+
+.button p {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.button .number {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  width: 31px;
+  height: 14px;
+}
+
+.vertical {
+  position: absolute;
+  width: 1px;
+  height: 86.7%;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.horizontal {
+  position: absolute;
+  width: 86.7%;
+  height: 1px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.vertical,
+.horizontal {
+  display: none;
+}
+
+.dot {
+  position: absolute;
+  background: #fff;
+  width: 6px;
+  height: 6px;
+  left: 93.5%;
+  top: 888px;
+  border-radius: 50%;
+}
+
+.button .describe {
+  display: none;
+  position: absolute;
+  left: 69.6%;
+  top: 884px;
+}
+
+.second .button:hover {
+  background-color: #191919;
+}
+
+.second .button:hover .horizontal {
+  display: block;
+}
+
+.second .button:hover .vertical {
+  display: block;
+}
+
+.second .button:hover h3 {
+  background-color: #191919;
+  border: 32px solid #191919;
+}
+
+.second .button:hover .describe {
+  display: block;
+}
+
+.second .button:active {
+  background-color: #0f0f0f;
+}
+
+.second .button:active .horizontal {
+  display: block;
+}
+
+.second .button:active .vertical {
+  display: block;
+}
+
+.second .button:active h3 {
+  background-color: #0f0f0f;
+  border: 32px solid #0f0f0f;
+}
+
+.second .button:active .describe {
+  display: block;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* THIRD SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* ADAPTATION SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 1551px) {
+  main {
+    height: 909px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 18px;
+    width: 505px;
+    height: 36px;
+  }
+
+  .text {
+    top: 783px;
+  }
+
+  .text h1 {
+    right: 426px;
+    font-size: 46px;
+    line-height: 52px;
+    height: 52px;
+    width: 293px;
+  }
+
+  .first {
+    height: 250px;
+  }
+
+  .first .play {
+    width: 120px;
+    height: 120px;
+  }
+
+  .first .play::after {
+    border: 13px solid transparent;
+    border-bottom-color: #930909;
+    transform: rotate(90deg);
+    content: "";
+  }
+
+  .second {
+    height: 1440px;
+  }
+
+  .second h3 {
+    border: 32px solid #202120;
+  }
+
+  .button p {
+    font-size: 12px;
+    line-height: 13.5px;
+  }
+
+  .button .number {
+    top: 48px;
+    left: 48px;
+    width: 19px;
+    height: 14px;
+  }
+
+  .dot {
+    top: 666px;
+  }
+
+  .button .describe {
+    top: 662px;
+  }
+}
+
+@media (max-width: 1124px) {
+  main spline-viewer {
+    height: 727.3px;
+  }
+
+  main {
+    height: 650px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 13.5px;
+    width: 396px;
+    height: 28px;
+  }
+
+  .text {
+    position: absolute;
+    left: 32px;
+    top: 547px;
+  }
+
+  .text h1 {
+    font-size: 36px;
+    line-height: 40.5px;
+    height: 41px;
+    width: 229px;
+  }
+
+  .first {
+    height: 200px;
+  }
+
+  .first .play {
+    width: 120px;
+    height: 120px;
+  }
+
+  .first .play::after {
+    border: 10px solid transparent;
+    border-bottom-color: #930909;
+  }
+
+  .second {
+    height: 1024px;
+  }
+
+  .second h3 {
+    border: 10px solid #202120;
+    font-size: 16px;
+  }
+
+  .button p {
+    font-size: 12px;
+    line-height: 13.5px;
+  }
+
+  .button .number {
+    position: absolute;
+    top: 34px;
+    left: 34px;
+    width: 19px;
+    height: 14px;
+  }
+
+  .dot {
+    width: 4.27px;
+    height: 4.27px;
+    top: 473.6px;
+  }
+
+  .button .describe {
+    left: 60%;
+    top: 469.22px;
+  }
+
+  .second .button:hover h3 {
+    border: 15px solid #191919;
+  }
+
+  .second .button:active h3 {
+    border: 15px solid #0f0f0f;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    height: 814px;
+    background-color: #202120;
+  }
+
+  main spline-viewer {
+    height: 600px;
+  }
+
+  main .text {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    margin-top: 25px;
+    width: 91.4%;
+    height: 56px;
+    left: 16px;
+    right: auto;
+    top: 625px;
+    z-index: 1;
+  }
+
+  .text h1 {
+    position: relative;
+    left: auto;
+    right: auto;
+    font-size: 50px;
+    line-height: 56.35px;
+    width: 91.4%;
+    height: 56px;
+    text-align: right;
+    align-self: center;
+  }
+
+  .text p {
+    position: relative;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13.5px;
+    width: 91.4%;
+    height: 28px;
+    text-align: right;
+    align-self: right;
+  }
+
+  .first {
+    height: 200px;
+  }
+
+  .first .play {
+    width: 120px;
+    height: 120px;
+  }
+
+  .second {
+    height: 1500px;
+  }
+
+  .second .button {
+    width: 100%;
+    height: 25%;
+  }
+
+  .second .pr {
+    top: 0;
+    left: 0;
+  }
+
+  .second .smm {
+    top: 75%;
+    left: 0;
+  }
+
+  .second .web {
+    top: 50%;
+    left: 0;
+  }
+  .second .prod {
+    top: 25%;
+    left: 0;
+  }
+  .second .button h3 {
+    font-size: 16px;
+    line-height: 22.5px;
+    text-align: center;
+    border: 15px solid #202120;
+  }
+  .web h3 {
+    width: 238px;
+  }
+  .second .button .number {
+    font-size: 12px;
+    line-height: 13.5px;
+  }
+  .second .button .dot {
+    top: 341.4px;
+    width: 3.13px;
+    height: 3.13px;
+  }
+  .second .button .describe {
+    top: 335.4px;
+    left: 48.8%;
+    font-size: 12px;
+    line-height: 13.5px;
+  }
+
+  .close {
+    top: 10px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    padding: 8px 14px;
+  }
+
+  .third spline-viewer {
+    height: 738px;
+    margin-top: -90px;
+    scale: 65%;
+  }
+
+  .image-slider .points {
+    max-width: 134px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .image-slider .points .dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .arrow::after {
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+  }
+
+  footer {
+    height: 521px;
+  }
+  .information {
+    left: 4.3%;
+    width: 343px;
+    bottom: 112px;
+  }
+  .information li {
+    line-height: 21px;
+  }
+  .icon {
+    top: 34px;
+    width: 150px;
+    height: 61.87px;
+  }
+  .icon img {
+    top: 34px;
+    width: 150px;
+    height: 61.87px;
+  }
+
+  .media {
+    right: 4.3%;
+    left: auto;
+    top: 34px;
+    bottom: auto;
+    width: 118px;
+    height: 83px;
+    font-size: 18px;
+    padding-right: 0;
+  }
+  .menu {
+    top: 185px;
+    left: 0;
+    bottom: auto;
+    height: 52px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer p {
+    width: 317px;
+  }
+
+  footer::after {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 0;
+    left: 4.3%;
+    right: 4.3%;
+  }
+
+  footer::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 151px;
+    left: 4.3%;
+    right: 4.3%;
+  }
+
+  .right {
+    position: absolute;
+    margin-top: -40px;
+    right: 4.3%;
+  }
+
+  .left {
+    position: absolute;
+    left: 4.3%;
+  }
+
+  li {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 11.25px;
+  }
+
+  .media li,
+  .information li {
+    margin-bottom: 10px;
+  }
+
+  .line {
+    bottom: 250px;
+  }
+}

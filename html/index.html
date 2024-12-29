@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('partials/head.html')
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <main>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"></script>
+    <spline-viewer
+      id="splineViewer2"
+      loading-anim-type="spinner-small-dark">
+    </spline-viewer>
+    <div class="text">
+      <p>коммуникационная группа полного цикла</p>
+      <h1>group</h1>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Функция для обновления URL и добавления тега <img>
+      function updateSplineURLs() {
+        const viewer2 = document.getElementById('splineViewer2');
+
+        if (viewer2) {
+          if (window.innerWidth <= 800) {
+            viewer2.setAttribute('url', 'https://prod.spline.design/IAquUKKdEnuTiWKY/scene.splinecode');
+
+            if (!viewer2.querySelector('img')) {
+              const img = document.createElement('img');
+              img.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAYAAAA6yNxSAAAJcklEQVR4AQCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8AgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/wCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8AgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/wCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8AgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/wCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8AgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/wCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8AgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/wCBAH7/ACMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/AIEAfv8AIx8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8BgQB+/wAjHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/yMfHf8jHx3/Ix8d/2VxE67vXV9DAAAAAElFTkSuQmCC'; // Замените на ваше изображение
+              img.alt = 'Fallback image';
+              img.style = 'width: 100%; height: 600px;';
+              viewer2.appendChild(img);
+            }
+          } else {
+            viewer2.setAttribute('url', 'https://prod.spline.design/8oVjzrAYTJsT5xlM/scene.splinecode');
+
+            // Убираем тег <img>, если размер больше 375px
+            const img = viewer2.querySelector('img');
+            if (img) {
+              viewer2.removeChild(img);
+            }
+          }
+        }
+      }
+
+      window.addEventListener('resize', updateSplineURLs);
+      updateSplineURLs();
+    });
+  </script>
+
+    <section class="first">
+        <video id="myVideo" autoplay muted loop playsinline>
+            <source src="../Showreel_CUT.mp4" type="video/mp4">
+        </video>
+        <button id="openModalBtn" class="play"></button>
+
+        <div id="videoModal" class="modal">
+          <div id="modalContent" class="modal-content">
+            <button id="closeModalBtn" class="close">&times;</button>
+            <video id="modalVideo" controls autoplay>
+                <source src="../showreel.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+    </section>
+    <script>
+      const openModalBtn = document.getElementById('openModalBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const videoModal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+
+      openModalBtn.addEventListener('click', function () {
+          videoModal.style.display = 'flex';
+          modalVideo.play();
+      });
+
+      closeModalBtn.addEventListener('click', function () {
+          videoModal.style.display = 'none';
+          modalVideo.pause();
+          modalVideo.currentTime = 0;
+      });
+
+      videoModal.addEventListener('click', function (e) {
+          if (e.target === videoModal) {
+              videoModal.style.display = 'none';
+              modalVideo.pause();
+              modalVideo.currentTime = 0;
+          }
+      });
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const modalVideo = document.getElementById('modalVideo');
+          if (modalVideo) {
+            modalVideo.addEventListener('loadedmetadata', adjustModalSize);
+          } else {
+            console.error("Элемент с ID 'modalVideo' не найден.");
+          }
+        });
+
+        window.addEventListener('resize', adjustModalSize);
+
+        function adjustModalSize() {
+            const modalContent = document.getElementById('modalContent');
+            if (!modalVideo || !modalVideo.videoWidth || !modalVideo.videoHeight) {
+                console.warn('Видео еще не загрузилось.');
+                return;
+            }
+
+            const videoWidth = modalVideo.videoWidth;
+            const videoHeight = modalVideo.videoHeight;
+
+            const videoAspectRatio = videoWidth / videoHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            if (windowWidth / windowHeight > videoAspectRatio) {
+                modalContent.style.width = `${windowHeight * videoAspectRatio}px`;
+                modalContent.style.height = `${windowHeight}px`;
+            } else {
+                modalContent.style.width = `${windowWidth}px`;
+                modalContent.style.height = `${windowWidth / videoAspectRatio}px`;
+            }
+        }
+
+        if (modalVideo.readyState >= 1) {
+            adjustModalSize();
+        } else {
+            modalVideo.addEventListener('loadedmetadata', adjustModalSize);
+        }
+    </script>
+    <section class="second">
+        <a class="button pr" href="second.html?section=pr">
+            <div class="vertical"></div>
+            <div class="horizontal"></div>
+            <div class="dot"></div>
+            <h3>pr</h3>
+            <p class="number">01</p>
+            <p class="describe">10 проектов</p>
+        </a>
+        <a class="button prod" href="second.html?section=prod">
+            <div class="vertical"></div>
+            <div class="horizontal"></div>
+            <div class="dot"></div>
+            <h3>production</h3>
+            <p class="number">02</p>
+            <p class="describe">10 проектов</p>
+        </a>
+        <a class="button web" href="second.html?section=web">
+            <div class="vertical"></div>
+            <div class="horizontal"></div>
+            <div class="dot"></div>
+            <h3>web development</h3>
+            <p class="number">03</p>
+            <p class="describe">10 проектов</p>
+        </a>
+        <a class="button smm" href="second.html?section=smm">
+            <div class="vertical"></div>
+            <div class="horizontal"></div>
+            <div class="dot"></div>
+            <h3>smm</h3>
+             <p class="number">04</p>
+             <p class="describe">10 проектов</p>
+        </a>
+    </section>
+
+    @@include('partials/footer.html')
+</body>
+</html>

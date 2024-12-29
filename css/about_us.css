@@ -1,0 +1,135 @@
+* {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+}
+
+body {
+  background-color: #202120;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MAIN */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+main {
+  position: relative;
+  height: 1059px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+main img {
+  position: absolute;
+  top: 260px;
+  left: 0;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 37.4px;
+}
+
+div {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+main h1 {
+  position: absolute;
+  left: 3.3%;
+  top: 508px;
+}
+
+main h3 {
+  position: absolute;
+  width: 38%;
+  height: 111px;
+  left: 3.25%;
+  top: 666px;
+}
+
+main .describe {
+  position: absolute;
+  right: 3.2%;
+  top: 666px;
+  width: 46.15%;
+}
+
+.describe .bottom {
+  margin-top: 24px;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* BORDER */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.border {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 74.08px;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.part1 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(45deg);
+}
+
+.part2 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(-45deg);
+}
+
+.border .dot {
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  background-color: #202120;
+  border-radius: 50%;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* DESCRIBE_SECTION */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.describe_section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  width: 100%;
+  height: 1620px;
+}
+
+.describe_section .text {
+  position: absolute;
+  top: 100px;
+  width: 46.15%;
+  height: 260px;
+}
