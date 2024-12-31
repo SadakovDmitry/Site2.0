@@ -4,6 +4,7 @@
     @@include('partials/head.html')
     <link rel="stylesheet" href="../css/styles_smm.css" />
     <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/video_sequence.css" />
   </head>
   <body>
     @@include('partials/menu.html')
@@ -47,80 +48,7 @@
         ЛЮБЫХ ТЕМАТИК ПОД КЛЮЧ
       </p>
     </section>
-    <div class="video-gallery">
-      <div class="video-item video1">
-        <video class="video" muted autoplay>
-          <source src="../video/video1.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay" onclick="openVideo(0)">&#x26F6;</div>
-        <div class="video-play" onclick="openVideo(0)">▶</div>
-        <div class="text">
-          <p class="customer">ЗАКАЗЧИК</p>
-          <p class="year">2024</p>
-        </div>
-      </div>
-      <div class="video-item video2">
-        <video class="video" muted autoplay>
-          <source src="../video/video2.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay" onclick="openVideo(1)">&#x26F6;</div>
-        <div class="video-play" onclick="openVideo(1)">▶</div>
-        <div class="text">
-          <p class="customer">ЗАКАЗЧИК</p>
-          <p class="year">2024</p>
-        </div>
-      </div>
-      <div class="video-item video3">
-        <video class="video" muted autoplay>
-          <source src="../video/video3.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay" onclick="openVideo(2)">&#x26F6;</div>
-        <div class="video-play" onclick="openVideo(2)">▶</div>
-        <div class="text">
-          <p class="customer">ЗАКАЗЧИК</p>
-          <p class="year">2024</p>
-        </div>
-      </div>
-      <!-- Добавьте больше видео, если нужно -->
-      <div class="video-item video4">
-        <video class="video" muted autoplay>
-          <source src="../video/video4.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay" onclick="openVideo(3)">&#x26F6;</div>
-        <div class="video-play" onclick="openVideo(3)">▶</div>
-        <div class="text">
-          <p class="customer">ЗАКАЗЧИК</p>
-          <p class="year">2024</p>
-        </div>
-      </div>
-      <div class="video-item video5">
-        <video class="video" muted autoplay>
-          <source src="../video/video5.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay" onclick="openVideo(4)">&#x26F6;</div>
-        <div class="video-play" onclick="openVideo(4)">▶</div>
-        <div class="text">
-          <p class="customer">ЗАКАЗЧИК</p>
-          <p class="year">2024</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Модальное окно для полного размера видео -->
-    <div id="videoModal" class="modal">
-      <div id="modalContent" class="modal-content">
-        <button id="closeModalBtn" class="close">&times;</button>
-        <video id="modalVideo" controls autoplay>
-          <source id="modalVideoSource" type="video/mp4" />
-          <!-- <source src="showreel.mp4" type="video/mp4"> -->
-        </video>
-      </div>
-    </div>
+    @@include('partials/video_sequence.html')
     <section class="fifth">
       <div class="list">
         <li class="first_str">
@@ -147,8 +75,7 @@
         </li>
       </div>
     </section>
-    <script src="../script.js"></script>
-
+    <script src="../second.js"></script>
     @@include('partials/footer.html')
   </body>
 </html>

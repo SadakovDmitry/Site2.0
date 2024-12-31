@@ -4,7 +4,8 @@
     @@include('partials/head.html')
     <link rel="stylesheet" href="../css/menu.css" />
     <link rel="stylesheet" href="../css/about_us.css" />
-    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/one_video.css" />
+    <link rel="stylesheet" href="../css/video_sequence.css" />
   </head>
   <body>
     @@include('partials/menu.html')
@@ -49,30 +50,139 @@
         РАБОТАЯ С НАМИ, ВАМ НЕ ПРИДЁТСЯ ОПЛАЧИВАТЬ ТРУД ДЕСЯТКА СЕКРЕТАРЕЙ, ПЯТИ
         МЕНЕДЖЕРОВ И АРЕНДУ ОФИСА В МОСКВЕ-СИТИ.
       </h3>
-      <video class="video" muted autoplay>
-        <source src="../video/video2.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-      <div class="video-overlay" onclick="openVideo(1)">&#x26F6;</div>
-      <div class="video-play" onclick="openVideo(1)">▶</div>
-      <div id="videoModal" class="modal">
-        <div id="modalContent" class="modal-content">
-          <button id="closeModalBtn" class="close">&times;</button>
-          <video id="modalVideo" controls autoplay>
-            <source id="modalVideoSource" type="video/mp4" />
-            <!-- <source src="showreel.mp4" type="video/mp4"> -->
-          </video>
+      <script>
+        const newVideoSrc = "../video/video1.mp4";
+      </script>
+      @@include('partials/one_video.html')
+    </section>
+    <section class="work_methods">
+      <h1>МЕТОД РАБОТЫ</h1>
+      <div class="line before"></div>
+      <div class="first">
+        <div class="dash">/.</div>
+        <h3>КАКИМ ХОЧЕТ БЫТЬ ГЕРОЙ, БУДЬ ТО МИНИСТР ИЛИ ЖК БИЗНЕС-КЛАССА?</h3>
+        <div class="text">
+          <div class="top">
+            НЕ СЕКРЕТ, ЧТО СУЩЕСТВУЮТ ЗАКОНЫ ДРАМАТУРГИИ, КОТОРЫЕ НЕОБХОДИМЫ ДЛЯ
+            СОЗДАНИЯ НАСТОЯЩЕГО АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ, БУДЬ ТО ВИРУСНАЯ
+            РЕКЛАМА, ИМИДЖЕВОЕ ВИДЕО ИЛИ ПОЛНОМЕТРАЖНЫЙ ФИЛЬМ.
+          </div>
+          <div class="middle">
+            НО «ВПИХИВАНИЕ» ТЕМЫ В РАМКИ ЖЕСТКОГО СТРУКТУРНОГО ФОРМАТА ЧАСТО
+            НИЧЕМ НЕ ОТЛИЧАЕТСЯ ОТ СТАРОГО И НЕДОБРОГО «ПРОКРУСТОВА ЛОЖЕ»: ВО
+            ИМЯ ОТРАБОТАННОЙ, ПУСТЬ ДАЖЕ УДАЧНОЙ СХЕМЫ ПРОИЗВОДИТЕЛЬ
+            ВИДЕОКОНТЕНТА ЖЕРТВУЕТ ТОЙ ИЛИ ИНОЙ ГРАНЬЮ ИНДИВИДУАЛЬНОСТИ ГЕРОЯ
+            АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ. И НЕВАЖНО, КТО ИЛИ ЧТО (ЧЕЛОВЕК ИЛИ
+            ПРЕДМЕТ) В ДАННОМ СЛУЧАЕ ВЫСТУНО «ВПИХИВАНИЕ» ТЕМЫ В РАМКИ ЖЕСТКОГО
+            СТРУКТУРНОГО ФОРМАТА ЧАСТО НИЧЕМ НЕ ОТЛИЧАЕТСЯ ОТ СТАРОГО И
+            НЕДОБРОГО «ПРОКРУСТОВА ЛОЖЕ»: ВО ИМЯ ОТРАБОТАННОЙ, ПУСТЬ ДАЖЕ
+            УДАЧНОЙ СХЕМЫ ПРОИЗВОДИТЕЛЬ ВИДЕОКОНТЕНТА ЖЕРТВУЕТ ТОЙ ИЛИ ИНОЙ
+            ГРАНЬЮ ИНДИВИДУАЛЬНОСТИ ГЕРОЯ АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ. И
+            НЕВАЖНО, КТО ИЛИ ЧТО (ЧЕЛОВЕК ИЛИ ПРЕДМЕТ) В ДАННОМ СЛУЧАЕ ВЫСТУПАЕТ
+            В РОЛИ ЭТОГО САМОГО ГЕРОЯ.
+          </div>
+          <div class="low">
+            ТАКОЙ КОНТЕНТ, БЕЗУСЛОВНО, ПОЛУЧАЕТСЯ ПРАВИЛЬНЫМ, ДАЖЕ ПРОФЕССИОНАЛ
+            НЕ ПРИДЕРЕТСЯ НИ К ОДНОЙ МОНТАЖНОЙ СКЛЕЕЧКЕ, ОДИН ПЛАН КРАШЕ
+            ДРУГОГО. КАЗАЛОСЬ БЫ, ВСЕ ОТЛИЧНО, НО НЕ «ЦЕПЛЯЕТ». ВИДЕО ЗАБЫВАЕТСЯ
+            БЫСТРО, А ЗНАЧИТ, ЕГО КПД СТРЕМИТСЯ К НУЛЮ.
+          </div>
+        </div>
+      </div>
+      <div class="line after"></div>
+      <div class="second">
+        <div class="dash">/.</div>
+        <h3>КТО ВИНОВАТ И ЧТО ДЕЛАТЬ?</h3>
+        <div class="text">
+          <div class="top">
+            ВИНЫ ГЕРОЯ В ЭТОМ НЕТ. МНОГОЛЕТНИЙ ОПЫТ ДОКАЗАЛ НАМ, ЧТО У КАЖДОГО
+            ГЕРОЯ, БУДЬ ТО МИНИСТР ИЛИ КОРЕННОЙ ЖИТЕЛЬ ЧУКОТКИ, ДОМ ЗАСТРОЙЩИКА,
+            АВТОМОБИЛЬ ИЛИ ГУБНАЯ ПОМАДА ИЗ ИНТЕРНЕТ-МАГАЗИНА, ЕСТЬ ХАРИЗМА,
+            ЭНЕРГЕТИКА ИЛИ, ПОПРОСТУ, ДУША. РАССМОТРЕТЬ И ОСОЗНАТЬ ЭТУ ХАРИЗМУ —
+            НАША ПЕРВОСТЕПЕННАЯ ЗАДАЧА. ЭТО КЛЮЧИК К ВЫХОДУ ИЗ ОТРАБОТАННЫХ
+            ПРИВЫЧНЫХ СХЕМ И СОЗДАНИЮ НОВОГО, ЭКСКЛЮЗИВНОГО ФОРМАТА,
+            РАСКРЫВАЮЩЕГО ОБРАЗ ИМЕННО ВАШЕГО ГЕРОЯ. ПРИ ЭТОМ ЗАКОНЫ ДРАМАТУРГИИ
+            НИКУДА НЕ ИСЧЕЗАЮТ, НАОБОРОТ, ОНИ НАЧИНАЮТ РАБОТАТЬ НА ИДЕЮ —
+            ЧЕЛОВЕК, ЛИБО ПРОДУКТ НАЧИНАЕТ СВЕРКАТЬ ВСЕМИ ГРАНЯМИ, РАСКРЫВАЯ
+            СВОЮ СУТЬ И ЦЕПЛЯЯ ЕЮ ЗРИТЕЛЯ. ПОЭТОМУ РАЗРАБАТЫВАЯ СЦЕНАРИЙ И
+            ВИЗУАЛЬНУЮ КОНЦЕПЦИЮ ВИДЕО, МЫ, ПРЕЖДЕ ВСЕГО, АНАЛИЗИРУЕМ, КАКИМ САМ
+            ГЕРОЙ ХОЧЕТ БЫТЬ В КАДРЕ, А НЕ ПОДСТРАИВАЕМ ЕГО ПОД ПРИХОТИ ИЛИ
+            УДОБСТВА КЛАССИЧЕСКОЙ КОНЦЕПЦИИ ИЛИ ВИДЕНИЕ РЕЖИССЁРА.
+          </div>
+          <div class="low">
+            ИЗОБРАЖЕНИЕ С ПОМОЩЬЮ АУДИОВИЗУАЛЬНЫХ ПРИЁМОВ ИНДИВИДУАЛЬНОСТИ И
+            ИНТЕРЕСНЕЙШИХ ГРАНЕЙ ХАРАКТЕРОВ НАШИХ ГЕРОЕВ — ОСНОВНОЙ ПРИНЦИП
+            РАБОТЫ +7GROUP.
+          </div>
         </div>
       </div>
     </section>
-    <section class="work_methods">
-      <h2></h2>
-      <h3 class="first"></h3>
-      <h3 class="second"></h3>
-      <p class="first"></p>
-      <p class="second"></p>
+    @@include('partials/video_sequence.html')
+    <section class="what_do_we_do">
+      <h1>ЧТО МЫ ДЕЛАЕМ</h1>
+      <div class="text">
+        <div class="top">
+          АУДИОВИЗУАЛЬНЫЙ КОНТЕНТ — ЭТО ИСКУССТВО. ПОЭТОМУ МЫ НЕ РАБОТАЕМ ПО
+          КЛИШИРОВАННЫМ СХЕМАМ И ОЧЕНЬ РАДЫ НЕСТАНДАРТНЫМ, КРЕАТИВНЫМ ЗАДАЧАМ.
+        </div>
+        <div class="bottom">
+          ДЛЯ ВАШЕГО УДОБСТВА МЫ ПРЕДОСТАВЛЯЕМ ТИПИЧНЫЙ ПЕРЕЧЕНЬ ФОРМАТОВ И
+          УСЛУГ, НО ЕСЛИ ВАШ ПРОЕКТ ТРЕБУЕТ НЕОРДИНАРНЫХ РЕШЕНИЙ, ВЫСШЕЙ СТЕПЕНИ
+          ХУДОЖЕСТВЕННОСТИ И К НЕМУ НЕЛЬЗЯ ПОДОБРАТЬ РЕФЕРЕНСЫ — ПРОСТО ОПИШИТЕ
+          ВАШУ ЗАДАЧУ В ФОРМЕ НИЖЕ И МЫ ВМЕСТЕ РАЗРАБОТАЕМ УНИКАЛЬНЫЙ ПРОЕКТ, НЕ
+          ИМЕЮЩИЙ АНАЛОГОВ.
+        </div>
+      </div>
+      <div class="do_list">
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">ПРОМО-РОЛИКИ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">РЕКЛАМНЫЕ РОЛИКИ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">ИМИДЖЕВЫЕ РОЛИКИ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">КОНТЕНТ С ПРОДУКТ ПЛЕЙСМЕНТ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">ПРОДАЮЩИЕ ВИДЕО</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">ПРОМО НЕДВИЖИМОСТИ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">РУМ-ТУРЫ</div>
+          <div class="price">от 36 000</div>
+        </div>
+        <div class="line"></div>
+        <div class="li">
+          <div class="dash">/.</div>
+          <div class="name">ПОСТАНОВОЧНАЯ ПРЕДМЕТНАЯ СЪЁМКА</div>
+          <div class="price">от 36 000</div>
+        </div>
+      </div>
     </section>
-    <section class="video"></section>
+    @@include('partials/footer.html')
   </body>
-  @@include('partials/footer.html')
 </html>

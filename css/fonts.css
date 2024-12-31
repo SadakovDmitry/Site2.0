@@ -21,7 +21,11 @@ footer p {
   color: #fff;
 }
 
-h1 {
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
   font-family: "Porsche";
   font-display: swap;
   src: local(Porsche), url(../font/Porsche\ Regular_0.ttf),
