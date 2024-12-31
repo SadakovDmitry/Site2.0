@@ -1,0 +1,582 @@
+main p{
+  font-family: "Porsche";
+  font-display: swap;
+  src: local(Porsche), url(../font/Porsche\ Regular_0.ttf),
+    url(../font/Porsche-Regular_0.woff);
+}
+
+* {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+}
+
+body {
+  background-color: #202120;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MAIN */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+main {
+  position: relative;
+  background-color: #202120;
+  width: 100%;
+  height: 0;
+  padding-top: 29%;
+  padding-bottom: 7%;
+  top: 0px;
+  bottom: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+main img {
+  /* position: absolute; */
+  width: 100%;
+  /* margin-left: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; */
+  object-fit: contain;
+}
+
+.text {
+  position: absolute;
+  width: 50%;
+  height: 93%;
+  left: 4.5%;
+  top: 0;
+  padding-top: 25%;
+
+  /* color: #fff;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 59.3px; */
+  z-index: 10;
+}
+
+.text p {
+  color: #fff;
+  font-weight: 400;
+  font-size: clamp(14px, 4vw, 72px);
+  line-height: 1.2;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* INFO SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.info {
+    position: relative;
+    width: 93.33%;
+    margin: 20px 0;
+    margin-left: 3.33%;
+}
+
+.info-column:first-child {
+    position: absolute;
+    text-align: left;
+    /* width: 100px; */
+}
+
+.info-column:nth-child(2) {
+    position: absolute;
+    left: 130px;
+    text-align: left;
+}
+
+.info-column:last-child {
+    text-align: right;
+}
+
+.info-column h4 {
+    margin: 0;
+    font-size: clamp(4px, 1vw, 12px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+}
+
+.info-column p {
+    margin: 5px 0 0;
+    font-family: "Porsche", sans-serif;
+    font-size: clamp(6px, 1.2vw, 14px);
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SECOND SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.second {
+  position: relative;
+  background-color: #202120;
+  width: 100%;
+  height: 252.1px;
+  padding: 0;
+  /* padding-top: 16.25%; */
+}
+
+.second .text {
+  position: absolute;
+  padding: 0;
+  left: 3.33%;
+  top: 23.8%;
+  right: 3.33%;
+  /* bottom: 19.2%; */
+  height: 76.2%;
+  width: 93.33%;
+}
+
+.second .text .left {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 26.5%;
+  height: 100%;
+}
+
+.second .text .right {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 50%;
+  height: 80%;
+}
+
+.second .text .right p {
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: clamp(7px, 1.2vw, 15px);
+  line-height: 1.2;
+}
+
+.second .text .left {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: clamp(11px, 1.5vw, 34px);
+  line-height: 1.2;
+}
+
+.second .text .right .up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 43.75%; */
+  height: auto;
+}
+
+.second .text .right .down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* height: 43.75%; */
+  height: auto;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* BORDER */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.border {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 74.08px;
+  margin-top: 5%;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.part1 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(45deg);
+}
+
+.part2 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(-45deg);
+}
+
+.border .dot {
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  background-color: #202120;
+  border-radius: 50%;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* DESCRIBE_SECTION */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.describe_section {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  height: auto;
+}
+
+.describe_section .text {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  position: relative;
+  margin-top: 100px;
+  width: 46.15%;
+  height: auto;
+  margin-bottom: 100px;
+  text-align: justify;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MEDIA SECTION*/
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.media-block {
+  margin: 0;
+  padding: 0;
+}
+
+.media-block > * {
+  margin-bottom: 10px;
+}
+
+/* Видео */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.full-width-video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px; /* Диаметр кнопки */
+  height: 160px; /* Диаметр кнопки */
+  background-color: #fff; /* Белый фон */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Плавное изменение цвета кнопки */
+}
+
+.play-button::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 13px solid rgba(149, 9, 9, 1); /* Красный треугольник */
+  border-top: 6.5px solid transparent;
+  border-bottom: 6.5px solid transparent;
+  transform: translateX(13px); /* Смещаем треугольник внутрь кнопки */
+  margin-left: -10px;
+  transition: border-left-color 0.3s ease; /* Плавное изменение цвета треугольника */
+}
+
+.play-button:hover {
+  background-color: #202120;
+}
+
+.play-button:hover::before {
+  border-left-color: #fff;
+}
+
+.play-button:active {
+  background-color: #191919;
+}
+
+.play-button:active::before {
+  border-left-color: #fff;
+}
+
+/* Ряд фотографий */
+.photo-row {
+    display: flex;
+    gap: 10px;
+}
+
+.half-width-photo {
+    width: calc(50% - 5px);
+    display: block;
+    object-fit: cover;
+}
+
+.full-width-photo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  max-height: 1024px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  object-fit: contain;
+}
+
+.modal-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 75px;
+  height: 75px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000000;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 20px 20px;
+  z-index: 1001;
+}
+
+.close:hover {
+  color: #ffffff;
+  background: #202120;
+}
+
+.close:active {
+  color: #ffffff;
+  background: #0f0f0f;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* DESCRIBE_SECTION 2 */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.describe_section_2 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  height: auto;
+}
+
+.describe_section_2 .text {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  position: relative;
+  margin-top: 100px;
+  width: 46.15%;
+  height: auto;
+  margin-bottom: 100px;
+  text-align: justify;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SWITCH PROJECT SECTION */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.project_switch {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.project_switch .switch_side {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    overflow: hidden;
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+.project_switch .switch_side img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project_switch .switch_side:hover img {
+    transform: scale(1.1);
+}
+
+.project_switch .switch_side .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Porsche", sans-serif;
+    font-size: clamp(12px, 3vw, 24px);
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    opacity: 1; /* Текст всегда виден */
+}
+
+.project_switch .switch_side .overlay span {
+    font-family: "Porsche", sans-serif;
+    font-size: clamp(8px, 1.8vw, 36px);
+    font-weight: 400;
+}
+
+.project_switch .switch_side:hover .overlay {
+    background: rgba(0, 0, 0, 0.7); /* Затемнение при наведении */
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* ADAPTATION SECTION */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 1440px) {
+  .info-column:nth-child(2) {
+    left: 100px;
+  }
+
+  .play-button {
+    width: 118px;
+    height: 118px;
+  }
+
+  .play-button::before {
+    margin-left: -10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .second {
+    height: 160px;
+  }
+
+  .info-column:nth-child(2) {
+    left: 70px;
+  }
+
+  .part1 {
+    width: 70px;
+  }
+
+  .part2 {
+    width: 70px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .second {
+    height: 100px;
+  }
+
+  .second .text .right {
+    width: 100%;
+  }
+
+  .describe_section .text {
+    width: 98%;
+  }
+
+  .describe_section_2 .text {
+    width: 98%;
+  }
+
+  .photo-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .half-width-photo,
+  .full-width-photo,
+  .full-width-video {
+    width: 100%;
+    object-fit: cover; /* Обрезает до заполнения */
+    aspect-ratio: 1 / 1; /* Делаем квадратным */
+  }
+
+  .project_switch {
+    flex-direction: column; /* Меняем направление на колонку */
+  }
+
+  .project_switch .switch_side {
+    width: 100%; /* Каждая кнопка занимает всю ширину */
+    height: 0;
+    padding-bottom: 100%; /* Высота равна ширине (квадратные изображения) */
+  }
+}

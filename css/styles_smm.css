@@ -971,3 +971,13 @@ li {
     line-height: 1.2;
   }
 }
+
+@media (max-width: 400px) {
+  .second {
+    height: 100px;
+  }
+
+  .second .text .right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,389 @@
+main p{
+  font-family: "Porsche";
+  font-display: swap;
+  src: local(Porsche), url(../font/Porsche\ Regular_0.ttf),
+    url(../font/Porsche-Regular_0.woff);
+}
+
+* {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+}
+
+body {
+  background-color: #202120;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MAIN */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+main {
+  position: relative;
+  background-color: #202120;
+  width: 100%;
+  height: 0;
+  padding-top: 23%;
+  padding-bottom: 7%;
+  top: 0px;
+  bottom: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+main img {
+  position: absolute;
+  width: 100%;
+  margin-left: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  filter: blur(6px);
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  height: 93%;
+  left: 4.5%;
+  top: 0;
+  padding-top: 25%;
+
+  /* color: #fff;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 59.3px; */
+  width: 96%;
+  z-index: 10;
+}
+
+.text p {
+  color: #fff;
+  font-weight: 400;
+  font-size: clamp(14px, 4vw, 72px);
+  line-height: 0.9;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SECOND SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.second {
+  position: relative;
+  background-color: #202120;
+  width: 100%;
+  height: 252.1px;
+  padding: 0;
+  /* padding-top: 16.25%; */
+}
+
+.second .text {
+  position: absolute;
+  padding: 0;
+  left: 3.33%;
+  top: 23.8%;
+  right: 3.33%;
+  /* bottom: 19.2%; */
+  height: 76.2%;
+  width: 93.33%;
+}
+
+.second .text .left {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 26.5%;
+  height: 100%;
+}
+
+.second .text .right {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 50%;
+  height: 80%;
+}
+
+.second .text .right p {
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: clamp(7px, 1.2vw, 15px);
+  line-height: 1.2;
+}
+
+.second .text .left {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: clamp(11px, 1.5vw, 34px);
+  line-height: 1.2;
+}
+
+.second .text .right .up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 43.75%; */
+  height: auto;
+}
+
+.second .text .right .down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* height: 43.75%; */
+  height: auto;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* PROJECTS */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.projects-menu {
+    padding-top: 5%;
+    /* margin-top: 100px; */
+}
+
+.projects-menu .filters {
+    left: 0px;
+    top: 0px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.projects-menu .filters button {
+    height: 50px;
+    font-family: "Porsche", sans-serif;
+    /* padding: 10px 20px; */
+    font-size: clamp(2px, 1vw, 16px);
+    background-color: #202120;
+    color: rgba(255, 255, 255, 0.2);
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+}
+
+.projects-menu .filters button:hover {
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.filtered-out {
+    display: none ;
+}
+
+.projects {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься */
+    justify-content: center; /* Центрирует объекты */
+    /* padding-top: 50px; */
+    left: 0px;
+}
+
+.project {
+    position: relative;
+    width: calc(33.33% - 2px); /* 3 объекта в строке (с учётом отступов) */
+    max-width: 800px; /* Максимальный размер квадрата */
+    aspect-ratio: 1; /* Делает объект квадратным */
+    overflow: hidden; /* Обрезает содержимое */
+    background-color: #000000; /* Цвет фона */
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняет квадрат, сохраняя пропорции */
+}
+
+.project .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3%;
+    width: 94%;
+    height: 94%;
+    pointer-events: none;
+}
+
+.project .year {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: clamp(4px, 1vw, 14px);
+    font-family: "Porsche", sans-serif;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.project .category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: clamp(4px, 1vw, 14px);
+    font-family: "Porsche", sans-serif;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.project .title {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: clamp(4px, 0.8vw, 14px);
+    font-family: "Porsche", sans-serif;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.project .vertical {
+  position: absolute;
+  width: 1px;
+  height: 60%;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.project .horizontal {
+  position: absolute;
+  width: 60%;
+  height: 1px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.project .vertical,
+.project .horizontal {
+  display: none;
+}
+
+.project:hover {
+  background-color: #191919;
+}
+
+.project:hover .horizontal {
+  display: block;
+}
+
+.project:hover .vertical {
+  display: block;
+}
+
+.project:active .horizontal {
+  display: block;
+}
+
+.project:active .vertical {
+  display: block;
+}
+
+.loadMore {
+    display: block;
+    height: 200px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 10px 20px;
+    font-family: "Porsche", sans-serif;
+    font-size: clamp(4px, 1vw, 16px);
+    background-color: #202120;
+    color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plus {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.loadMore span {
+    margin-top: 10px;
+    font-family: "Porsche", sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.loadMore:hover {
+    background-color: #444;
+}
+
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* ADAPTATION SECTION */
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 1440px) {
+  .projects-menu .filters {
+    width: 100%;
+  }
+
+  .project {
+    position: relative;
+    width: calc(50% - 2px);
+  }
+}
+
+@media (max-width: 800px) {
+  .project {
+    position: relative;
+    width: calc(100% - 2px);
+  }
+
+  .second {
+    height: 200px;
+  }
+
+  .projects-menu .filters {
+    width: 100%;
+  }
+
+  .projects-menu .filters button {
+    height: 50px;
+  }
+
+  .loadMore {
+    height: 100px;
+  }
+
+  .plus {
+    position: relative;
+    width: 70px;
+    height: 70px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .second {
+    height: 100px;
+  }
+
+  .second .text .right {
+    width: 100%;
+  }
+}
