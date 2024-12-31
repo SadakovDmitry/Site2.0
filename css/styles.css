@@ -38,7 +38,7 @@ p {
 .text {
   display: flex;
   position: absolute;
-  left: 64px;
+  left: 3.33%;
   width: 100%;
   top: 676px;
   color: #fff;
@@ -46,7 +46,7 @@ p {
 
 .text h1 {
   position: absolute;
-  left: 50.1%;
+  left: 46.66%;
   font-weight: 400;
   font-size: 72px;
   line-height: 81px;
