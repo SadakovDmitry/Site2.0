@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/SadakovDmitry/Site2.0#readme",
   "devDependencies": {
-    "gulp": "^5.0.0",
-    "gulp-file-include": "^2.3.0"
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-gh-pages": "^0.5.4"
   }
 }
