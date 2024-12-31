@@ -20,7 +20,7 @@ footer p {
 .form spline-viewer {
   width: 255px;
   height: 1000px;
-  margin-top: -270px;
+  margin-top: -200px;
 }
 
 button {
@@ -249,21 +249,21 @@ footer p {
 .information {
   position: absolute;
   left: 26.8%;
-  bottom: 127px;
+  bottom: 117px;
   width: 570px;
 }
 
 .menu {
   position: absolute;
   left: 74.2%;
-  bottom: 127px;
+  bottom: 87px;
   width: 110px;
 }
 
 .media {
   position: absolute;
   left: 86.5%;
-  bottom: 150px;
+  bottom: 117px;
   width: 110px;
 }
 
@@ -277,7 +277,7 @@ li {
   color: #fff;
   list-style: none;
   margin-bottom: 10px;
-  line-height: 11.25px;
+  line-height: 21px;
 }
 
 @media (max-width: 1551px) {
@@ -498,9 +498,11 @@ li {
     width: 343px;
     bottom: 112px;
   }
+
   .information li {
     line-height: 21px;
   }
+
   .icon {
     top: 34px;
     width: 150px;
@@ -570,7 +572,7 @@ li {
   li {
     font-size: 18px;
     margin-bottom: 20px;
-    line-height: 11.25px;
+    line-height: 41px;
   }
 
   .media li,
