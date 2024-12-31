@@ -128,7 +128,6 @@ main .text h3 {
 }
 
 @media (max-width: 500px) {
-
   main .text h3 {
     width: 80%;
   }
@@ -205,10 +204,10 @@ main .text h3 {
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-/* DESCRIBE_SECTION */
+/* describe_section_ */
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
-.describe_section {
+.describe_section_ {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -220,7 +219,7 @@ main .text h3 {
   margin-bottom: 180px;
 }
 
-.describe_section .text {
+.describe_section_ .text {
   margin-top: 100px;
   width: 46.15%;
   height: auto;
@@ -228,22 +227,22 @@ main .text h3 {
   text-align: justify;
 }
 
-.describe_section .item {
+.describe_section_ .item {
   width: 46.15%;
   height: calc(100vh - 100px);
   object-fit: contain;
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-/* DESCRIBE_SECTION MOBILE*/
+/* describe_section_ MOBILE*/
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
 @media (max-width: 800px) {
-  .describe_section .text {
+  .describe_section_ .text {
     width: 60%;
   }
 
-  .describe_section .item {
+  .describe_section_ .item {
     width: 60%;
     height: calc(100vh - 100px);
     object-fit: contain;
@@ -251,11 +250,11 @@ main .text h3 {
 }
 
 @media (max-width: 500px) {
-  .describe_section .text {
+  .describe_section_ .text {
     width: 80%;
   }
 
-  .describe_section .item {
+  .describe_section_ .item {
     width: 80%;
     height: calc(100vh - 300px);
     object-fit: contain;
@@ -346,50 +345,51 @@ main .text h3 {
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 /* WORK_METHODS MOBILE*/
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
 @media (max-width: 800px) {
   .work_methods .first,
   .work_methods .second {
-  width: 80%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.work_methods .before {
-  top: 40vw;
-}
+  .work_methods .before {
+    top: 20vw;
+  }
 
-.work_methods h3 {
-  width: 80%;
-  padding-right: 0;
-  text-align: justify;
-}
+  .work_methods h3 {
+    width: 80%;
+    padding-right: 0;
+    text-align: justify;
+  }
 
-.work_methods .second h3 {
-  padding-right: 0;
-}
+  .work_methods .second h3 {
+    padding-right: 0;
+  }
 
-.work_methods .dash {
-  margin-right: 0;
-  font-size: 20px;
-}
+  .work_methods .dash {
+    margin-right: 0;
+    font-size: 20px;
+  }
 
-.work_methods .top {
-  margin-top: 10vw;
-  margin-bottom: 10vw;
-}
+  .work_methods .top {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+  }
 
-.work_methods .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 5%;
-}
+  .work_methods .text {
+    width: 80%;
+  }
 }
 
 @media (max-width: 500px) {
-
+  .work_methods .before {
+    top: 40vw;
+  }
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
@@ -400,20 +400,18 @@ main .text h3 {
   position: relative;
   display: block;
   width: 100%;
-  padding-top: 75%;
+  height: auto;
   margin-bottom: 180px;
 }
 
 .what_do_we_do h1 {
-  position: absolute;
-  left: 3.3%;
-  top: 180px;
+  margin-left: 3.3%;
+  margin-top: 6.21vw;
 }
 
 .what_do_we_do .text {
-  position: absolute;
-  top: 338px;
-  right: 3.3%;
+  margin-top: 5.21vw;
+  margin-right: 3.3%;
   margin-left: 50.55%;
   margin-bottom: 10px;
   text-align: justify;
@@ -424,8 +422,7 @@ main .text h3 {
 }
 
 .what_do_we_do .do_list {
-  position: absolute;
-  top: 588px;
+  top: 5.21vw;
   display: flex;
   left: 3.3%;
   right: 3.3%;
@@ -435,15 +432,18 @@ main .text h3 {
 .do_list .li {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
-  height: 84px;
+  height: auto;
 }
 
 .do_list .price {
   display: none;
 }
 
-.do_list .dash, .do_list .name, .do_list .price {
+.do_list .dash,
+.do_list .name,
+.do_list .price {
   font-size: 20px;
   line-height: 84px;
   text-align: center;
@@ -453,7 +453,8 @@ main .text h3 {
   background-color: #fff;
 }
 
-.do_list .li:hover .dash, .do_list .li:hover .name{
+.do_list .li:hover .dash,
+.do_list .li:hover .name {
   color: #000;
 }
 
@@ -472,4 +473,30 @@ main .text h3 {
 
 .do_list .dash {
   margin-right: 14.8%;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* WHAT_DO_WE_DO MOBILE*/
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 800px) {
+  .what_do_we_do .text {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10vw;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 625px) {
+  .do_list .name {
+    width: 45%;
+    text-align: left;
+    line-height: normal;
+  }
+
+  .do_list .li {
+    height: auto;
+    font-size: 10px;
+  }
 }

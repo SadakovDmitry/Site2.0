@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href = "styles.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-  </style>
-  <title>+7 GROUP</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/fonts.css" />
+<link rel="stylesheet" href="../css/footer.css" />
+<title>+7 GROUP</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
   <main>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"></script>
     <spline-viewer
       id="splineViewer2"
-      loading-anim-type="spinner-small-dark">
+      loading-anim-type="spinner-smasll-dark">
     </spline-viewer>
     <div class="text">
       <p>коммуникационная группа полного цикла</p>
@@ -58,7 +58,7 @@
 
     <section class="first">
         <video id="myVideo" autoplay muted loop playsinline>
-            <source src="Showreel_CUT.mp4" type="video/mp4">
+            <source src="../Showreel_CUT.mp4" type="video/mp4">
         </video>
         <button id="openModalBtn" class="play"></button>
 
@@ -66,7 +66,7 @@
           <div id="modalContent" class="modal-content">
             <button id="closeModalBtn" class="close">&times;</button>
             <video id="modalVideo" controls autoplay>
-                <source src="showreel.mp4" type="video/mp4">
+                <source src="../showreel.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -170,112 +170,126 @@
              <p class="describe">10 проектов</p>
         </a>
     </section>
-    <section class="third">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"></script>
-        <button>
-            <a href="">
-            <spline-viewer hint loading-anim-type="spinner-small-dark" url="https://prod.spline.design/2l7dwlYlyKLoGaIk/scene.splinecode">
-            </spline-viewer>
-            <div class="sign">
-                <p>записаться</p>
-                <img src="images/Frame 40.svg" alt="">
-            </div>
-            </a>
-        </button>
-    </section>
-    <section class="fourth" data-proportion-h="1">
-        <picture>
-            <source srcset="images_1440/bg.png" media = "(max-width: 1551px)">
-            <source srcset="images_1024/bg.png" media = "(max-width: 1124px)">
-            <source srcset="images_375/bg.png" media = "(max-width:800px)">
-            <source srcset="images/bg.png" media = "(min-width:1920px)">
-            <img src="images/bg.png" alt="">
-        </picture>
-        <div class="blik">
-            <img src="images/blik.svg" alt="">
-        </div>
-        <div class="image-slider">
-          <button id="prevBtn" class="arrow"></button>
-          <div class="points">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <button id="nextBtn" class="arrow"></button>
-        </div>
-        <div class="images">
-            <img id="sliderImage" src="images/Ellipse 6.svg" alt="Slide 1">
-        </div>
-    </section>
-    <script>
-      const images = [
-          "images/Ellipse 6.svg",
-          "images/image1.png",
-          "images/image3.png",
-          "images/image4.png",
-          "images/image5.png",
-          "images/image6.png",
-          "images/image7.png",
-      ];
 
-      let currentIndex = 0;
+    <section class="form">
+  <script
+    type="module"
+    src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"
+  ></script>
+  <button>
+    <a href="">
+      <spline-viewer
+        hint
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/2l7dwlYlyKLoGaIk/scene.splinecode"
+      >
+      </spline-viewer>
+      <div class="sign">
+        <p>записаться</p>
+        <img src="../images/Frame 40.svg" alt="" />
+      </div>
+    </a>
+  </button>
+</section>
 
-      const sliderImage = document.getElementById('sliderImage');
-      const dots = document.querySelectorAll('.dot');
+<section class="camera" data-proportion-h="1">
+  <picture>
+    <source srcset="../images_1440/bg.png" media="(max-width: 1551px)" />
+    <source srcset="../images_1024/bg.png" media="(max-width: 1124px)" />
+    <source srcset="../images_375/bg.png" media="(max-width:800px)" />
+    <source srcset="../images/bg.png" media="(min-width:1920px)" />
+    <img src="../images/bg.png" alt="" />
+  </picture>
+  <div class="blik">
+    <img src="../images/blik.svg" alt="" />
+  </div>
+  <div class="image-slider">
+    <button id="prevBtn" class="arrow"></button>
+    <div class="points">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <button id="nextBtn" class="arrow"></button>
+  </div>
+  <div class="images">
+    <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
+  </div>
+</section>
 
-      function updateActiveDot() {
-          console.log("now index: ", currentIndex);
-          dots.forEach((dot, index) => {
-              if ((index - 4) === currentIndex) {
-                  dot.classList.add('active');
-              } else {
-                  dot.classList.remove('active');
-              }
-          });
+<script>
+  const images = [
+    "../images/Ellipse 6.svg",
+    "../images/image1.png",
+    "../images/image3.png",
+    "../images/image4.png",
+    "../images/image5.png",
+    "../images/image6.png",
+    "../images/image7.png",
+  ];
+
+  let currentInd = 0;
+
+  const sliderImage = document.getElementById("sliderImage");
+  const dots = document.querySelectorAll(".dot");
+
+  function updateActiveDot() {
+    console.log("now index: ", currentInd);
+    dots.forEach((dot, index) => {
+      if (index - 4 === currentInd) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
       }
+    });
+  }
 
-      document.getElementById('prevBtn').addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          sliderImage.src = images[currentIndex];
-          updateActiveDot();
-      });
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentInd = (currentInd - 1 + images.length) % images.length;
+    sliderImage.src = images[currentInd];
+    updateActiveDot();
+  });
 
-      document.getElementById('nextBtn').addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          sliderImage.src = images[currentIndex];
-          updateActiveDot();
-      });
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentInd = (currentInd + 1) % images.length;
+    sliderImage.src = images[currentInd];
+    updateActiveDot();
+  });
 
-      updateActiveDot();
-    </script>
-    <footer>
-        <div class="line"></div>
-        <div class="icon">
-            <img src="images/logo.svg" alt="">
-        </div>
-        <nav>
-            <ul class="information">
-                <li>plus7production@gmail.com</li>
-                <li>+7 916 463 12 32</li>
-                <li>Самокатная ул., 4, стр. 1, Москва, Креативный кластер Кристалл, этаж 1</li>
-            </ul>
-            <ul class="menu">
-                <li> <a href="about_us.html" class = "left">О нас</a></li>
-                <li><a href="#" class = "left">Услуги</a></li>
-                <li><a href="projects.html" class = "right">Проекты</a></li>
-                <li><a href="contacts.html" class = "right">Контакты</a></li>
-            </ul>
-            <ul class="media">
-                <li> <a href="#">VK</a></li>
-                <li><a href="#">Teleqram</a></li>
-                <li><a href="#">YouTube</a></li>
-            </ul>
-        </nav>
-        <p>© Все права защищены, 2024</p>
-    </footer>
+  updateActiveDot();
+</script>
+
+<footer>
+  <div class="line"></div>
+  <div class="icon">
+    <img src="../images/logo.svg" alt="" />
+  </div>
+  <nav>
+    <ul class="information">
+      <li>plus7production@gmail.com</li>
+      <li>+7 916 463 12 32</li>
+      <li>
+        Самокатная ул., 4, стр. 1, Москва, Креативный кластер Кристалл, этаж 1
+      </li>
+    </ul>
+    <ul class="menu">
+      <li><a href="about_us.html" class="left">О нас</a></li>
+      <li><a href="#" class="left">Услуги</a></li>
+      <li><a href="projects.html" class="right">Проекты</a></li>
+      <li><a href="#" class="right">Контакты</a></li>
+    </ul>
+    <ul class="media">
+      <li><a href="#">VK</a></li>
+      <li><a href="#">Teleqram</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </nav>
+  <p>© Все права защищены, 2024</p>
+</footer>
+
 </body>
 </html>

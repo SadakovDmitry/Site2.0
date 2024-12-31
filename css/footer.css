@@ -222,7 +222,7 @@ footer {
   bottom: -1px;
 }
 
-.line {
+footer .line {
   position: absolute;
   left: 3.5%;
   right: 3.5%;
