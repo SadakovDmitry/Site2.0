@@ -84,30 +84,41 @@ p {
 }
 
 .first .play {
-  position: relative;
+  /* position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-}
-
-.first .play::after {
+  border-radius: 50%; */
   position: absolute;
-  top: 43%;
-  left: 45%;
-  bottom: 0;
-  height: 0;
-  width: 0;
-  border: 13px solid transparent;
-  border-bottom-color: #930909;
-  transform: rotate(90deg);
-  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.first .play:hover {
+.first .play::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 13px solid rgba(149, 9, 9, 1);
+  border-top: 6.5px solid transparent;
+  border-bottom: 6.5px solid transparent;
+  transition: border-left-color 0.3s ease;
+}
+
+/* .first .play:hover {
   background: #202120;
 }
 
@@ -121,6 +132,22 @@ p {
 
 .first .play:active::after {
   border-bottom-color: #fff;
+} */
+
+.play:hover {
+  background-color: #202120;
+}
+
+.play:hover::before {
+  border-left-color: #fff;
+}
+
+.play:active {
+  background-color: #191919;
+}
+
+.play:active::before {
+  border-left-color: #fff;
 }
 
 .modal {
@@ -204,8 +231,10 @@ p {
 }
 
 .second h3 {
+  text-align: center;
   background-color: #202120;
   border: 40px solid #202120;
+  font-size: 36px;
   z-index: 1;
 }
 
@@ -299,6 +328,7 @@ p {
 .second .button:hover h3 {
   background-color: #191919;
   border: 32px solid #191919;
+  font-size: 24px;
 }
 
 .second .button:hover .describe {
@@ -320,6 +350,7 @@ p {
 .second .button:active h3 {
   background-color: #0f0f0f;
   border: 32px solid #0f0f0f;
+  font-size: 24px;
 }
 
 .second .button:active .describe {
@@ -367,19 +398,21 @@ p {
     height: 120px;
   }
 
-  .first .play::after {
-    border: 13px solid transparent;
-    border-bottom-color: #930909;
-    transform: rotate(90deg);
-    content: "";
-  }
-
   .second {
     height: 1440px;
   }
 
   .second h3 {
     border: 32px solid #202120;
+    font-size: 28px;
+  }
+
+  .second .button:hover h3 {
+    font-size: 20px;
+  }
+
+  .second .button:active h3 {
+    font-size: 20px;
   }
 
   .button p {
@@ -441,18 +474,21 @@ p {
     height: 120px;
   }
 
-  .first .play::after {
-    border: 10px solid transparent;
-    border-bottom-color: #930909;
-  }
-
   .second {
     height: 1024px;
   }
 
   .second h3 {
-    border: 10px solid #202120;
+    border: 32px solid #202120;
     font-size: 16px;
+  }
+
+  .second .button:hover h3 {
+    font-size: 12px;
+  }
+
+  .second .button:active h3 {
+    font-size: 12px;
   }
 
   .button p {
@@ -572,14 +608,20 @@ p {
     left: 0;
   }
   .second .button h3 {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 22.5px;
     text-align: center;
     border: 15px solid #202120;
   }
-  .web h3 {
-    width: 238px;
+
+  .second .button:hover h3 {
+    font-size: 18px;
   }
+
+  .second .button:active h3 {
+    font-size: 18px;
+  }
+
   .second .button .number {
     font-size: 12px;
     line-height: 13.5px;
