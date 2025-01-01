@@ -86,6 +86,7 @@
   width: 100%;
   height: calc(100% - 30px);
   background-color: #202120;
+  filter: grayscale(100%);
   object-fit: cover;
 }
 

@@ -22,7 +22,7 @@
         <img src="../images/smm.png" alt="Example Image" />
       </div>
       <div class="text">
-        <p>Продвижение в youtube и instagram</p>
+        <h1>Продвижение в youtube и instagram</h1>
       </div>
     </main>
     <section class="first">
@@ -32,30 +32,32 @@
     </section>
     <section class="second">
       <div class="text">
-        <p class="left">ЗРИТЕЛЬ ПОКУПАЕТ ГЛАЗАМИ! ФАКТ ИЗВЕСТНЫЙ</p>
-        <div class="right">
-          <p class="up">
+        <h3 class="left">
+          ЗРИТЕЛЬ ПОКУПАЕТ ГЛАЗАМИ! ФАКТ ИЗВЕСТНЫЙ
+        </h3>
+        <div class="describe">
+          <div class="top">
             НО У КАЖДОГО «ПРОДУКТА», БУДЬ ТО ЭЛИТНАЯ НЕДВИЖИМОСТЬ, ТЕХНИКА ДЛЯ
             ПЕРЕРАБОТКИ ОТХОДОВ ИЛИ МУЗЫКАЛЬНАЯ ГРУППА, СВОЙ ЗРИТЕЛЬ,
             СООТВЕТСТВЕННО, И ВИДИТ ОН ПО-СВОЕМУ. ПОЭТОМУ МЕТОД ПРОДВИЖЕНИЯ,
             УСПЕШНО ПРОДАЮЩИЙ ОБОРУДОВАНИЕ ДЛЯ ПЕРЕРАБОТКИ ОТХОДОВ, ВРЯД ЛИ
             СРАБОТАЕТ ПРИ ПРОДВИЖЕНИИ МУЗЫКАЛЬНОЙ ГРУППЫ.
-          </p>
-          <p class="down">
+          </div>
+          <div class="bottom">
             СОЗДАНИЕ КОМПЛЕКСНОЙ СТРАТЕГИИ ДЛЯ УСПЕШНОГО ПРОДВИЖЕНИЯ БРЕНДА —
             ЭТО, СВОЕГО РОДА, ИСКУССТВО, КОТОРОЕ НЕ ТЕРПИТ ТРИВИАЛЬНЫХ ПОДХОДОВ.
             ИНДИВИДУАЛЬНЫЙ МЕТОД ПРОДВИЖЕНИЯ ДЛЯ КАЖДОГО КЛИЕНТА, А В РЕЗУЛЬТАТЕ
             ТОЧНОЕ ПОПАДАНИЕ В ЦЕЛЕВУЮ АУДИТОРИЮ ИДЕАЛЬНО РАЗРАБОТАННЫМ
             КОНТЕНТОМ — ОСНОВНОЙ ПРИНЦИП РАБОТЫ +7 GROUP.
-          </p>
+          </div>
         </div>
       </div>
     </section>
     <section class="third">
-      <p class="text">
+      <h3 class="text">
         МЫ ПРЕДОСТАВЛЯЕМ УСЛУГИ ПО ВЕДЕНИЮ INSTAGRAM АККАУНТОВ И YOUTUBE КАНАЛОВ
         ЛЮБЫХ ТЕМАТИК ПОД КЛЮЧ
-      </p>
+      </h3>
     </section>
     <div class="video-gallery">
   <div class="video-item video1">
@@ -140,6 +142,7 @@
           <p class="slesh">/.</p>
           <p class="text">АНАЛИЗ ЦЕЛЕВОЙ АУДИТОРИИ ВАШЕГО БРЕНДА</p>
         </li>
+        <div class="line"></div>
         <li class="second_str">
           <p class="slesh">/.</p>
           <p class="text">
@@ -147,10 +150,12 @@
             ВАШУ ЦЕЛЕВУЮ АУДИТОРИЮ
           </p>
         </li>
+        <div class="line"></div>
         <li class="third_str">
           <p class="slesh">/.</p>
           <p class="text">СОЗДАЁМ НЕОБХОДИМЫЙ ФОТО- И ВИДЕОКОНТЕНТ</p>
         </li>
+        <div class="line"></div>
         <li class="fourth_str">
           <p class="slesh">/.</p>
           <p class="text">
@@ -222,15 +227,15 @@
     "../images/image7.png",
   ];
 
-  let currentInd = 0;
+  let nowPhotoIndex = 0;
 
   const sliderImage = document.getElementById("sliderImage");
   const dots = document.querySelectorAll(".dot");
 
   function updateActiveDot() {
-    console.log("now index: ", currentInd);
-    dots.forEach((dot, index) => {
-      if (index - 4 === currentInd) {
+    console.log("now photo_index: ", nowPhotoIndex);
+    dots.forEach((dot, photo_index) => {
+      if (photo_index - 4 === nowPhotoIndex) {
         dot.classList.add("active");
       } else {
         dot.classList.remove("active");
@@ -239,14 +244,14 @@
   }
 
   document.getElementById("prevBtn").addEventListener("click", () => {
-    currentInd = (currentInd - 1 + images.length) % images.length;
-    sliderImage.src = images[currentInd];
+    nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
+    sliderImage.src = images[nowPhotoIndex];
     updateActiveDot();
   });
 
   document.getElementById("nextBtn").addEventListener("click", () => {
-    currentInd = (currentInd + 1) % images.length;
-    sliderImage.src = images[currentInd];
+    nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+    sliderImage.src = images[nowPhotoIndex];
     updateActiveDot();
   });
 

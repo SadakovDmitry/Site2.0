@@ -69,7 +69,7 @@ p {
   width: 100%;
   height: 294px;
   overflow: hidden;
-  background-color: #202120;
+  background-color: #191919;
 }
 
 .first video {
@@ -218,6 +218,7 @@ p {
   height: 1920px;
   background-color: #202120;
   overflow: hidden;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
 }
 
 .second .button {

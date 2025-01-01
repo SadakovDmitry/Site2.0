@@ -12,30 +12,40 @@ let currentIndex = 0; // Индекс текущего видео
 const videoElements = document.querySelectorAll(".video");
 
 videoElements.forEach((video, index) => {
-  console.log("now video index: ", index);
   if (index !== currentIndex) {
     video.pause(); // Останавливаем все видео
+    video.style.filter = "grayscale(100%)"; // Добавляем черно-белый фильтр
   } else {
     video.muted = true; // Запускаем первое видео без звука
+    video.style.filter = "none"; // Снимаем фильтр для текущего видео
     video.play();
   }
 });
 
 // Функция для запуска текущего видео
 function playCurrentVideo() {
-  videoElements[currentIndex].muted = true; // Убедитесь, что видео без звука
-  videoElements[currentIndex].play(); // Запуск текущего видео
+  const currentVideo = videoElements[currentIndex];
+
+  currentVideo.muted = true; // Убедитесь, что видео без звука
+  currentVideo.style.filter = "none"; // Снимаем фильтр
+  currentVideo.play(); // Запуск текущего видео
 
   // Добавляем обработчик события завершения видео
-  videoElements[currentIndex].addEventListener("ended", onVideoEnded);
+  currentVideo.addEventListener("ended", onVideoEnded);
 }
 
 // Обработчик завершения видео
 function onVideoEnded() {
-  videoElements[currentIndex].currentTime = 0; // Сброс текущего видео на начало
-  videoElements[currentIndex].removeEventListener("ended", onVideoEnded); // Удаляем обработчик события
-  currentIndex = (currentIndex + 1) % videoElements.length; // Переход к следующему видео
-  playCurrentVideo(); // Запуск следующего видео
+  const currentVideo = videoElements[currentIndex];
+  currentVideo.style.filter = "grayscale(100%)"; // Применяем черно-белый фильтр
+  currentVideo.currentTime = 0; // Сброс текущего видео на начало
+  currentVideo.removeEventListener("ended", onVideoEnded); // Удаляем обработчик события
+
+  // Переход к следующему видео
+  currentIndex = (currentIndex + 1) % videoElements.length;
+
+  // Запуск следующего видео
+  playCurrentVideo();
 }
 
 // Инициализация: запуск первого видео
@@ -94,12 +104,14 @@ videoElements.forEach((video, index) => {
   video.addEventListener("mouseover", () => {
     // Останавливаем текущее воспроизводимое видео
     videoElements[currentIndex].pause();
+    videoElements[currentIndex].style.filter = "grayscale(100%)";
     videoElements[currentIndex].currentTime = 0;
 
     // Обновляем индекс текущего видео
     currentIndex = index;
 
     // Запускаем видео под курсором
+    videoElements[currentIndex].style.filter = "none";
     video.muted = true; // Без звука
     video.play();
   });
@@ -116,7 +128,6 @@ function openVideo(index) {
   const modal = document.getElementById("videoModal");
   const modalVideo = document.getElementById("modalVideo");
   const modalVideoSource = document.getElementById("modalVideoSource");
-
   modal.style.display = "flex"; // Открыть модальное окно
   modalVideoSource.src = videos[index]; // Установить видео источник
   modalVideo.load(); // Перезагрузить видео

@@ -54,10 +54,10 @@ const section = getURLParameter("section");
 
 // Находим элементы на странице для замены
 const mainPhoto = document.querySelector("main .image img");
-const mainText = document.querySelector("main .text p");
+const mainText = document.querySelector("main .text h1");
 const secondLeft = document.querySelector(".second .text .left");
-const secondUp = document.querySelector(".second .text .right .up");
-const secondDown = document.querySelector(".second .text .right .down");
+const secondUp = document.querySelector(".second .text .describe .top");
+const secondDown = document.querySelector(".second .text .describe .bottom");
 const thirdText = document.querySelector(".third .text");
 
 // Обновляем содержимое в зависимости от секции

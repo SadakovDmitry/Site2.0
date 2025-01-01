@@ -1,6 +1,8 @@
 const videoElement = document.getElementById("video_");
 const sourceElement = document.getElementById("videoSource_");
 
+// const nowPhotoIndex = 0;
+
 sourceElement.setAttribute("src", newVideoSrc);
 videoElement.load();
 videoElement.play();

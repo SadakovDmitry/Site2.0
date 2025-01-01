@@ -248,15 +248,15 @@
     "../images/image7.png",
   ];
 
-  let currentInd = 0;
+  let nowPhotoIndex = 0;
 
   const sliderImage = document.getElementById("sliderImage");
   const dots = document.querySelectorAll(".dot");
 
   function updateActiveDot() {
-    console.log("now index: ", currentInd);
-    dots.forEach((dot, index) => {
-      if (index - 4 === currentInd) {
+    console.log("now photo_index: ", nowPhotoIndex);
+    dots.forEach((dot, photo_index) => {
+      if (photo_index - 4 === nowPhotoIndex) {
         dot.classList.add("active");
       } else {
         dot.classList.remove("active");
@@ -265,14 +265,14 @@
   }
 
   document.getElementById("prevBtn").addEventListener("click", () => {
-    currentInd = (currentInd - 1 + images.length) % images.length;
-    sliderImage.src = images[currentInd];
+    nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
+    sliderImage.src = images[nowPhotoIndex];
     updateActiveDot();
   });
 
   document.getElementById("nextBtn").addEventListener("click", () => {
-    currentInd = (currentInd + 1) % images.length;
-    sliderImage.src = images[currentInd];
+    nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+    sliderImage.src = images[nowPhotoIndex];
     updateActiveDot();
   });
 
