@@ -59,6 +59,11 @@ main .text {
   margin-bottom: 12.8vw;
 }
 
+  div {
+    font-size: 15px;
+    font-family: "Arian", sans-serif;
+  }
+
 div {
   font-size: clamp(7px, 1.2vw, 15px);
   line-height: 1.6;
@@ -116,10 +121,12 @@ main .text h3 {
 
   .describe div {
     margin-top: 10vw;
+
   }
 
   div {
     font-size: 15px;
+    font-family: "Arian", sans-serif;
   }
 
   .describe .bottom {

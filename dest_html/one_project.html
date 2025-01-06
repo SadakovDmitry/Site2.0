@@ -13,10 +13,11 @@
   </head>
   <body>
     <section class="logo-section">
-  <div class="icon1">
+  <a class="icon1" href="index.html">
     <img src="../images/logo.png" alt="Logo" />
-  </div>
+  </a>
 </section>
+
     <main>
       <div class="image">
         <img src="../images/first-project.png" alt="Example Image" />
@@ -72,7 +73,7 @@
     <div class="media-block">
         <!-- Видео -->
         <div class="video-container">
-            <video class="full-width-video" src="../showreel.mp4" muted></video>
+            <video class="full-width-video" src="../showreel.mp4" muted autoplay></video>
             <button class="play-button" id="openModalBtn">&#9658;</button>
         </div>
 
@@ -90,7 +91,7 @@
     <div id="videoModal" class="modal">
         <div id="modalContent" class="modal-content">
           <button id="closeModalBtn" class="close">&times;</button>
-          <video id="modalVideo" controls autoplay>
+          <video id="modalVideo" controls autoplay muted>
               <source src="../showreel.mp4" type="video/mp4">
           </video>
         </div>

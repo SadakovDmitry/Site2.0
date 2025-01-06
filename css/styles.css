@@ -31,7 +31,7 @@ p {
   font-weight: 400;
   font-size: 24px;
   line-height: 27px;
-  width: 734px;
+  width: 534px;
   height: 54px;
 }
 
@@ -46,9 +46,9 @@ p {
 
 .text h1 {
   position: absolute;
-  left: 46.66%;
+  left: 64.66%;
   font-weight: 400;
-  font-size: 72px;
+  font-size: 80px;
   line-height: 81px;
   text-align: right;
   height: 81px;
@@ -274,7 +274,7 @@ p {
   position: absolute;
   top: 64px;
   left: 64px;
-  width: 31px;
+  width: 41px;
   height: 14px;
 }
 
@@ -374,7 +374,7 @@ p {
   p {
     font-size: 16px;
     line-height: 18px;
-    width: 505px;
+    width: 405px;
     height: 36px;
   }
 
@@ -384,7 +384,7 @@ p {
 
   .text h1 {
     right: 426px;
-    font-size: 46px;
+    font-size: 52px;
     line-height: 52px;
     height: 52px;
     width: 293px;
@@ -424,7 +424,7 @@ p {
   .button .number {
     top: 48px;
     left: 48px;
-    width: 19px;
+    width: 29px;
     height: 14px;
   }
 
@@ -449,7 +449,7 @@ p {
   p {
     font-size: 12px;
     line-height: 13.5px;
-    width: 396px;
+    width: 296px;
     height: 28px;
   }
 
@@ -460,7 +460,7 @@ p {
   }
 
   .text h1 {
-    font-size: 36px;
+    font-size: 42px;
     line-height: 40.5px;
     height: 41px;
     width: 229px;
@@ -501,7 +501,7 @@ p {
     position: absolute;
     top: 34px;
     left: 34px;
-    width: 19px;
+    width: 29px;
     height: 14px;
   }
 
