@@ -44,7 +44,7 @@ h3 {
   display: block;
   text-align: left;
   font-size: clamp(15px, 2vw, 30px);
-  line-height: 1.6;
+  line-height: 1.1;
 }
 
 main .text {
@@ -59,14 +59,14 @@ main .text {
   margin-bottom: 12.8vw;
 }
 
-  div {
-    font-size: 15px;
-    font-family: "Arian", sans-serif;
-  }
+div {
+  font-size: 15px;
+  font-family: "Arian", sans-serif;
+}
 
 div {
   font-size: clamp(7px, 1.2vw, 15px);
-  line-height: 1.6;
+  line-height: 1.1;
   text-align: justify;
 }
 
@@ -451,6 +451,7 @@ main .text h3 {
 .do_list .dash,
 .do_list .name,
 .do_list .price {
+  font-family: "Poiret One", sans-serif;
   font-size: 20px;
   line-height: 84px;
   text-align: center;
@@ -470,7 +471,7 @@ main .text h3 {
   color: #000;
   text-align: right;
   position: absolute;
-  right: 0;
+  right: 64px;
 }
 
 .what_do_we_do .line {
@@ -486,12 +487,22 @@ main .text h3 {
 /* WHAT_DO_WE_DO MOBILE*/
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
+@media (max-width: 1024px) {
+  .do_list .li:hover .price {
+    right: 32px;
+  }
+}
+
 @media (max-width: 800px) {
   .what_do_we_do .text {
     margin-right: 5%;
     margin-left: 5%;
     margin-bottom: 10vw;
     text-align: justify;
+  }
+
+  .do_list .li:hover .price {
+    right: 16px;
   }
 }
 

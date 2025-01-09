@@ -43,12 +43,7 @@ main {
 }
 
 main img {
-  /* position: absolute; */
   width: 100%;
-  /* margin-left: 0;
-  right: 0;
-  left: 0;
-  bottom: 0; */
   object-fit: contain;
 }
 
@@ -59,11 +54,6 @@ main img {
   left: 4.5%;
   top: 0;
   padding-top: 25%;
-
-  /* color: #fff;
-  font-weight: 400;
-  font-size: 72px;
-  line-height: 59.3px; */
   z-index: 10;
 }
 

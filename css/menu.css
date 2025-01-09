@@ -19,7 +19,8 @@
   top: 0;
   left: 3.33%;
   padding-top: 3.33%;
-}
+  z-index: 100;
+  }
 
 .icon1 img {
   position: relative;
@@ -29,8 +30,9 @@
   height: auto;
   /* margin-left: 64px;
   margin-top: 64px; */
-  z-index: 2;
+  z-index: 100;
 }
+
 
 
 @media (max-width: 800px) {

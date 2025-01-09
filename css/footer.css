@@ -6,55 +6,156 @@ footer p {
   font-style: normal;
 }
 
+#openFormBtn {
+  border: 0;
+  background-color: #202120;
+}
+
 .form {
+  position: relative;
   background-color: #202120;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
   width: 100%;
   overflow: hidden;
 }
 
 .form spline-viewer {
-  width: 255px;
-  height: 900px;
-  margin-top: -200px;
+  height: 20vw;
+  width: auto;
+  margin-top: 100px;
 }
 
-button {
-  background-color: #202120;
-  border: 0;
-  height: 498px;
-  width: 255px;
+@media(max-width: 1350px) {
+  .form spline-viewer {
+    height: 350px;
+    scale: 80%;
+  }
 }
 
-button a {
+@media(max-width: 1000px) {
+  .form spline-viewer {
+    height: 300px;
+    scale: 60%;
+    width: auto;
+  }
+}
+
+@media(max-width: 800px) {
+  .form spline-viewer {
+    height: 270px;
+    scale: 60%;
+    width: auto;
+  }
+}
+
+#openFormBtn .href {
+  width: 100%;
+}
+
+
+.form .sign {
+  display: none;
+}
+
+.href:hover .sign {
   position: relative;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content:inherit;
+  font-size: clamp(10px, 2vw, 24px);
+  z-index: 100;
 }
 
-.sign {
-  display: none;
-  position: absolute;
-  align-self: center;
-  top: 385px;
-  font-size: 24px;
-  z-index: 2;
-}
-
-.sign img {
-  position: absolute;
-  margin-top: -30px;
-  right: 46.5%;
+.href:hover .sign img {
+  justify-self: center;
   width: 40px;
   height: 40px;
 }
 
-button:hover .sign {
-  display: block;
+.sign p {
+  height: auto;
+  width: auto;
+}
+
+.popup-form {
+  display: none; /* Изначально форма скрыта */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  z-index: 1000; /* Поверх всего контента */
+}
+
+.popup-content h2 {
+  text-align: center;
+  font-size: clamp(10px, 2vw, 48px);
+  padding-bottom: 10%;
+}
+
+.popup-content {
+  background-color: #202120;
+  padding-top: 8.5%;
+  padding-left: 7.4%;
+  padding-right: 7.4%;
+  padding-bottom: 5.6%;
+  margin: 10% auto;
+  width: 50%;
+  height: 50vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: clamp(24px, 1vw, 32px);
+  cursor: pointer;
+}
+
+form {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: none;
+  background-color: #202120; /* Полупрозрачный фон */
+  color: rgba(255, 255, 255, 1);
+  font-size: clamp(10px, 1vw, 32px);
+}
+
+#message {
+  border-left: none;
+  border-top: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2); /* Полупрозрачный текст-подсказка */
+  font-size: clamp(10px, 1vw, 32px);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+.popup-form .popup-content button {
+  height: 48px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
 }
 
 /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
@@ -280,17 +381,6 @@ li {
 }
 
 @media (max-width: 1551px) {
-  button a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .sign img {
-    margin-top: -20px;
-    scale: 50%;
-  }
 
   .camera {
     height: 0;
@@ -389,31 +479,6 @@ li {
 }
 
 @media (max-width: 1124px) {
-  .form {
-    height: 411px;
-  }
-
-  .form spline-viewer {
-    width: 255px;
-    height: 1000px;
-    margin-top: -270px;
-  }
-
-  button {
-    background-color: #202120;
-    border: 0;
-    height: 411px;
-    width: 255px;
-  }
-
-  .sign {
-    top: 370px;
-  }
-
-  .sign img {
-    margin-top: -20px;
-    scale: 50%;
-  }
 
   footer {
     height: 475px;
@@ -465,11 +530,6 @@ li {
 }
 
 @media (max-width: 800px) {
-  .form spline-viewer {
-    height: 738px;
-    margin-top: -120px;
-    scale: 65%;
-  }
 
   .image-slider .points {
     max-width: 134px;

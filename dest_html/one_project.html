@@ -193,21 +193,68 @@
     type="module"
     src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"
   ></script>
-  <button>
-    <a href="">
-      <spline-viewer
-        hint
-        loading-anim-type="spinner-small-dark"
-        url="https://prod.spline.design/2l7dwlYlyKLoGaIk/scene.splinecode"
-      >
-      </spline-viewer>
+  <button id="openFormBtn">
+    <div class="href">
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.58/build/spline-viewer.js"></script>
+      <spline-viewer hint loading-anim-type="spinner-small-dark" url="https://prod.spline.design/mlR0qejGlDrEsL8t/scene.splinecode"></spline-viewer>
       <div class="sign">
         <p>записаться</p>
         <img src="../images/Frame 40.svg" alt="" />
       </div>
-    </a>
+    </div>
   </button>
+  <div id="popupForm" class="popup-form">
+    <div class="popup-content">
+      <span id="closeFormBtn" class="close-btn">&times;</span>
+      <h2>Записаться на консультацию</h2>
+      <form id="contactForm" action="your-server-endpoint" method="POST">
+        <!-- <label for="name">Имя:</label> -->
+        <input type="text" id="name" name="name" placeholder="имя" required><br><br>
+
+        <!-- <label for="email">Email:</label> -->
+        <input type="email" id="email" name="email" placeholder="email" required><br><br>
+
+        <!-- <label for="phone">Телефон:</label> -->
+        <input type="tel" id="phone" name="phone" placeholder="+7" required><br><br>
+
+        <!-- <label for="message">Описание задачи:</label> -->
+        <textarea id="message" name="message" placeholder="Опишите вашу задачу" rows="1" required></textarea><br><br>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
 </section>
+
+<script>
+  const openFormBtn = document.getElementById('openFormBtn');
+  const popupForm = document.getElementById('popupForm');
+  const closeFormBtn = document.getElementById('closeFormBtn');
+
+  // Открыть форму при нажатии на кнопку
+  openFormBtn.addEventListener('click', function() {
+  popupForm.style.display = 'block';
+});
+
+// Закрытие pop-up формы
+closeFormBtn.addEventListener('click', function() {
+  popupForm.style.display = 'none';
+});
+
+// Закрытие при клике вне формы
+window.addEventListener('click', function(event) {
+  if (event.target === popupForm) {
+    popupForm.style.display = 'none';
+  }
+});
+
+// Предотвращение стандартного действия формы
+contactForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Останавливаем стандартную отправку
+  alert('Форма отправлена успешно!');
+  popupForm.style.display = 'none'; // Закрываем форму
+});
+</script>
 
 <section class="camera" data-proportion-h="1">
   <picture>
@@ -282,9 +329,9 @@
 
 <footer>
   <div class="line"></div>
-  <div class="icon">
+  <a class="icon" href="index.html">
     <img src="../images/logo.svg" alt="" />
-  </div>
+  </a>
   <nav>
     <ul class="information">
       <li>plus7production@gmail.com</li>
@@ -295,7 +342,7 @@
     </ul>
     <ul class="menu">
       <li><a href="about_us.html" class="left">О нас</a></li>
-      <li><a href="#" class="left">Услуги</a></li>
+      <li><a href="index.html#services" class="left">Услуги</a></li>
       <li><a href="projects.html" class="right">Проекты</a></li>
       <li><a href="#" class="right">Контакты</a></li>
     </ul>
