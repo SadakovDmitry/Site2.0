@@ -5,8 +5,15 @@
   ></script>
   <button id="openFormBtn">
     <div class="href">
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.58/build/spline-viewer.js"></script>
-      <spline-viewer hint loading-anim-type="spinner-small-dark" url="https://prod.spline.design/mlR0qejGlDrEsL8t/scene.splinecode"></spline-viewer>
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@1.9.58/build/spline-viewer.js"
+      ></script>
+      <spline-viewer
+        hint
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/mlR0qejGlDrEsL8t/scene.splinecode"
+      ></spline-viewer>
       <div class="sign">
         <p>записаться</p>
         <img src="../images/Frame 40.svg" alt="" />
@@ -19,16 +26,41 @@
       <h2>Записаться на консультацию</h2>
       <form id="contactForm" action="your-server-endpoint" method="POST">
         <!-- <label for="name">Имя:</label> -->
-        <input type="text" id="name" name="name" placeholder="имя" required><br><br>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="имя"
+          required
+        /><br /><br />
 
         <!-- <label for="email">Email:</label> -->
-        <input type="email" id="email" name="email" placeholder="email" required><br><br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email"
+          required
+        /><br /><br />
 
         <!-- <label for="phone">Телефон:</label> -->
-        <input type="tel" id="phone" name="phone" placeholder="+7" required><br><br>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+7"
+          required
+        /><br /><br />
 
         <!-- <label for="message">Описание задачи:</label> -->
-        <textarea id="message" name="message" placeholder="Опишите вашу задачу" rows="1" required></textarea><br><br>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Опишите вашу задачу"
+          rows="1"
+          required
+        ></textarea
+        ><br /><br />
 
         <button type="submit">Отправить</button>
       </form>
@@ -37,43 +69,40 @@
 </section>
 
 <script>
-  const openFormBtn = document.getElementById('openFormBtn');
-  const popupForm = document.getElementById('popupForm');
-  const closeFormBtn = document.getElementById('closeFormBtn');
+  const openFormBtn = document.getElementById("openFormBtn");
+  const popupForm = document.getElementById("popupForm");
+  const closeFormBtn = document.getElementById("closeFormBtn");
 
   // Открыть форму при нажатии на кнопку
-  openFormBtn.addEventListener('click', function() {
-  popupForm.style.display = 'block';
-});
+  openFormBtn.addEventListener("click", function () {
+    popupForm.style.display = "block";
+  });
 
-// Закрытие pop-up формы
-closeFormBtn.addEventListener('click', function() {
-  popupForm.style.display = 'none';
-});
+  // Закрытие pop-up формы
+  closeFormBtn.addEventListener("click", function () {
+    popupForm.style.display = "none";
+  });
 
-// Закрытие при клике вне формы
-window.addEventListener('click', function(event) {
-  if (event.target === popupForm) {
-    popupForm.style.display = 'none';
-  }
-});
+  // Закрытие при клике вне формы
+  window.addEventListener("click", function (event) {
+    if (event.target === popupForm) {
+      popupForm.style.display = "none";
+    }
+  });
 
-// Предотвращение стандартного действия формы
-contactForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Останавливаем стандартную отправку
-  alert('Форма отправлена успешно!');
-  popupForm.style.display = 'none'; // Закрываем форму
-});
+  // Предотвращение стандартного действия формы
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Останавливаем стандартную отправку
+    alert("Форма отправлена успешно!");
+    popupForm.style.display = "none"; // Закрываем форму
+  });
 </script>
 
 <section class="camera" data-proportion-h="1">
   <picture>
-    <source srcset="../images_1440/bg.png" media="(max-width: 1551px)" />
-    <source srcset="../images_1024/bg.png" media="(max-width: 1124px)" />
-    <source srcset="../images_375/bg.png" media="(max-width:800px)" />
-    <source srcset="../images/bg.png" media="(min-width:1920px)" />
-    <img src="../images/bg.png" alt="" />
+    <img id="png_1920" src="../images/1920.png" alt="" />
   </picture>
+  <script src="../camera.js"></script>
   <div class="blik">
     <img src="../images/blik.svg" alt="" />
   </div>
@@ -92,49 +121,108 @@ contactForm.addEventListener('submit', function(event) {
   </div>
   <div class="images">
     <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <circle
+        id="timeline"
+        cx="6.55"
+        cy="197"
+        r="96"
+        stroke="#930909"
+        stroke-width="2"
+        fill="none"
+      />
+    </svg>
   </div>
 </section>
 
 <script>
-  const images = [
-    "../images/Ellipse 6.svg",
-    "../images/image1.png",
-    "../images/image3.png",
-    "../images/image4.png",
-    "../images/image5.png",
-    "../images/image6.png",
-    "../images/image7.png",
-  ];
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+      "../images/Ellipse 6.svg",
+      "../images/image1.png",
+      "../images/image3.png",
+      "../images/image4.png",
+      "../images/image5.png",
+      "../images/image6.png",
+      "../images/image7.png",
+    ];
 
-  let nowPhotoIndex = 0;
+    let nowPhotoIndex = 0;
 
-  const sliderImage = document.getElementById("sliderImage");
-  const dots = document.querySelectorAll(".dot");
+    const sliderImage = document.getElementById("sliderImage");
+    const dots = document.querySelectorAll(".dot");
+    const timeline = document.getElementById("timeline");
 
-  function updateActiveDot() {
-    console.log("now photo_index: ", nowPhotoIndex);
-    dots.forEach((dot, photo_index) => {
-      if (photo_index - 4 === nowPhotoIndex) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
+    // Функция для обновления изображения слайдера
+    function updateSlider() {
+      sliderImage.src = images[nowPhotoIndex];
+    }
+
+    // Функция для начала анимации таймлайна
+    function startTimelineAnimation() {
+      timeline.style.animation = "fillTimeline 5s linear forwards";
+      resetTimeline();
+    }
+
+    // Функция для сброса анимации таймлайна с задержкой
+    function resetTimeline() {
+      timeline.style.animation = "none"; // Останавливаем анимацию
+      // Принудительно пересчитываем DOM
+      timeline.offsetHeight;
+      // Ждем пару миллисекунд перед перезапуском анимации
+      setTimeout(() => {
+        timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
+      }, 10);
+    }
+
+    function updateActiveDot() {
+      dots.forEach((dot, photo_index) => {
+        if ((photo_index - 1) % images.length === nowPhotoIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+    // Функция для перехода к следующему слайду
+    function nextSlide() {
+      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+      updateSlider(); // Обновляем изображение
+      updateActiveDot();
+      resetTimeline(); // Сбрасываем таймлайн
+    }
+
+    // Функция для обновления активной точки (dot)
+
+    updateActiveDot();
+
+    // Добавляем обработчики для кнопок "prev" и "next"
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
+      updateSlider();
+      updateActiveDot();
+      resetTimeline();
     });
-  }
 
-  document.getElementById("prevBtn").addEventListener("click", () => {
-    nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
-    sliderImage.src = images[nowPhotoIndex];
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+      updateSlider();
+      updateActiveDot();
+      resetTimeline();
+    });
+
+    // Инициализация: устанавливаем первое изображение и начинаем анимацию
+    resetTimeline();
+    updateSlider();
+    resetTimeline();
     updateActiveDot();
-  });
+    resetTimeline();
+    startTimelineAnimation();
+    resetTimeline();
 
-  document.getElementById("nextBtn").addEventListener("click", () => {
-    nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
-    sliderImage.src = images[nowPhotoIndex];
-    updateActiveDot();
+    // Автоматическая смена слайдов каждые 5 секунд
+    setInterval(nextSlide, 5000);
   });
-
-  updateActiveDot();
 </script>
 
 <footer>

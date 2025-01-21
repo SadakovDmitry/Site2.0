@@ -27,14 +27,14 @@ footer p {
   margin-top: 100px;
 }
 
-@media(max-width: 1350px) {
+@media (max-width: 1350px) {
   .form spline-viewer {
     height: 350px;
     scale: 80%;
   }
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
   .form spline-viewer {
     height: 300px;
     scale: 60%;
@@ -42,7 +42,7 @@ footer p {
   }
 }
 
-@media(max-width: 800px) {
+@media (max-width: 800px) {
   .form spline-viewer {
     height: 270px;
     scale: 60%;
@@ -54,7 +54,6 @@ footer p {
   width: 100%;
 }
 
-
 .form .sign {
   display: none;
 }
@@ -64,7 +63,7 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:inherit;
+  justify-content: inherit;
   font-size: clamp(10px, 2vw, 24px);
   z-index: 100;
 }
@@ -73,6 +72,7 @@ footer p {
   justify-self: center;
   width: 40px;
   height: 40px;
+  margin-bottom: 0;
 }
 
 .sign p {
@@ -125,7 +125,8 @@ form {
   flex-direction: column;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   margin: 0;
   width: 100%;
@@ -141,12 +142,14 @@ input, textarea {
   border-top: none;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: rgba(255, 255, 255, 0.2); /* Полупрозрачный текст-подсказка */
   font-size: clamp(10px, 1vw, 32px);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -224,16 +227,6 @@ input:focus, textarea:focus {
 }
 
 .arrow {
-  /* position: relative;
-  background: rgba(0, 0, 0, 0);
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0px 0px;
-  z-index: 1;
-  border-radius: 50%;
-  width: 14px;
-  height: 28px; */
   position: relative; /* Или absolute, если требуется */
   z-index: 10; /* Убедитесь, что кнопка выше других элементов */
   background: rgba(0, 0, 0, 0);
@@ -313,6 +306,35 @@ input:focus, textarea:focus {
   height: 49.8%;
 }
 
+.images svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 51.5%;
+  height: 51%;
+}
+
+#timeline {
+  stroke-dasharray: 700; /* Длина окружности */
+  stroke-dashoffset: 700; /* Начальная точка */
+  transition: stroke-dashoffset 5s linear; /* Плавное заполнение */
+  position: absolute; /* Чтобы разместить его внутри родительского контейнера */
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  z-index: 100;
+}
+
+@keyframes fillTimeline {
+  0% {
+    stroke-dashoffset: 700;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 footer {
   position: relative;
   background: #060606;
@@ -381,20 +403,20 @@ li {
 }
 
 @media (max-width: 1551px) {
-
   .camera {
     height: 0;
-    padding-top: 118.3%;
+    padding-top: 115.8%;
     top: -1px;
     bottom: 0;
     margin: 0;
     overflow: hidden;
   }
 
-  .camera picture {
+  .camera picture img {
     width: 100%;
     bottom: 0;
     position: absolute;
+    top: 0;
     right: 0;
     left: 0;
     margin: 0;
@@ -410,7 +432,7 @@ li {
     height: 0;
     left: 25%;
     top: 0;
-    padding-top: 253%;
+    padding-top: 245%;
   }
 
   .blik {
@@ -419,7 +441,7 @@ li {
     height: 0;
     left: 25%;
     top: 0;
-    padding-top: 253%;
+    padding-top: 245%;
     z-index: 2;
   }
 
@@ -478,7 +500,38 @@ li {
   }
 }
 
-@media (max-width: 1124px) {
+@media (max-width: 1125px) {
+  .camera {
+    padding-top: 156.02%;
+  }
+
+  .images {
+    padding-top: 255%;
+    left: 16%;
+  }
+
+  .blik {
+    padding-top: 255%;
+    left: 16%;
+  }
+
+  .images img {
+    width: 68%;
+    height: 68%;
+  }
+
+  .blik img {
+    width: 68%;
+    height: 68%;
+  }
+
+  .images svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 71%;
+    height: 70.5%;
+  }
 
   footer {
     height: 475px;
@@ -530,6 +583,37 @@ li {
 }
 
 @media (max-width: 800px) {
+  .camera {
+    padding-top: 228.98%;
+  }
+
+  .images {
+    padding-top: 250%;
+    left: 2.5%;
+  }
+
+  .blik {
+    padding-top: 250%;
+    left: 2.5%;
+  }
+
+  .images img {
+    width: 95%;
+    height: 95%;
+  }
+
+  .blik img {
+    width: 95%;
+    height: 95%;
+  }
+
+  .images svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 97.5%;
+  }
 
   .image-slider .points {
     max-width: 134px;

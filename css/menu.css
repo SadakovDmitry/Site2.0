@@ -1,42 +1,159 @@
 .logo-section {
-  position: absolute;
+  position: relative;
+  top: 3.33vw;
   width: 100%;
-  /* height: 200px; */
-  height: 0;
-  padding-top: 10.5%;
-
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   background-color: #202120;
 }
 
 .icon1 {
-  position: absolute;
-  width: 9.9%;
-  /* height: 100px; */
-  height: 0;
-  top: 0;
-  left: 3.33%;
-  padding-top: 3.33%;
+  width: 189.09px;
+  height: 78px;
   z-index: 100;
-  }
+  margin-left: 3.3vw;
+  display: flex;
+  align-items: center;
+}
 
 .icon1 img {
-  position: relative;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: auto;
-  /* margin-left: 64px;
-  margin-top: 64px; */
+  width: 189.09px;
+  height: 78px;
   z-index: 100;
 }
 
+.logo-section nav {
+  position: absolute;
+  right: 3.3vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  z-index: 100;
+}
 
+.logo-section nav .title {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-section span {
+  margin-right: 2vw;
+  font-size: 14px;
+}
+
+.logo-section nav ul {
+  display: none;
+}
+
+.logo-section nav .menu_cross {
+  display: none;
+}
+
+.logo-section nav.open .menu_cross {
+  display: block;
+  cursor: pointer;
+}
+
+.logo-section nav.open .title {
+  display: none;
+}
+
+.logo-section li {
+  height: 14px;
+}
+
+.logo-section li a {
+  font-size: 14px;
+  white-space: nowrap; /* Текст будет в одной строке */
+  overflow: hidden; /* Прячет лишний текст, если он выходит за границы контейнера */
+  text-overflow: ellipsis;
+}
+
+.title {
+  z-index: 100;
+}
+
+.logo-section nav .title .menu_dot {
+  display: block;
+  z-index: 100;
+}
+
+.logo-section nav.open .menu_dot {
+  display: none;
+}
+
+.logo-section nav.open ul {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  position: absolute;
+  right: 3.3vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 100;
+}
+
+.logo-section li {
+  margin-left: 6.25%;
+}
+
+@media (max-width: 1024px) {
+  .icon1 {
+    width: 150px;
+    height: auto;
+  }
+  .icon1 img {
+    width: 70%;
+    height: auto;
+  }
+
+  .logo-section span {
+    margin-right: 2vw;
+    font-size: 12px;
+  }
+
+  .logo-section li a {
+    font-size: 12px;
+  }
+  .logo-section li {
+    height: 12px;
+  }
+}
 
 @media (max-width: 800px) {
   .icon1 {
-    width: 17.9%;
+    width: 130px;
+    height: auto;
+  }
+
+  .logo-section span {
+    margin-right: 2vw;
+    font-size: 10px;
+  }
+
+  .logo-section li a {
+    font-size: 10px;
+  }
+
+  .logo-section li {
+    height: 10px;
+  }
+
+  .logo-section nav.open ul {
+    flex-direction: column;
+    height: auto;
+    right: 6.5vw;
+    align-items: center;
+    top: 0vw;
+    background-color: #191919;
+    border: 10px solid #191919;
   }
 }

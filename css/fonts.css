@@ -25,7 +25,11 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2 , .form p{
+h1,
+h2,
+.form p,
+.logo-section a,
+span {
   font-family: "Porsche";
   font-display: swap;
   src: local(Porsche), url(../font/Porsche\ Regular_0.ttf),

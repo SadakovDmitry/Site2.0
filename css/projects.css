@@ -260,8 +260,13 @@ main .text {
   display: none;
 }
 
-.project:hover {
-  background-color: #191919;
+.project:hover img {
+  background-color: rgba(25, 25, 25, 1);
+  filter: opacity(0.4);
+}
+
+.project:hover .info {
+  display: none;
 }
 
 .project:hover .horizontal {

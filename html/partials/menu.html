@@ -2,4 +2,48 @@
   <a class="icon1" href="index.html">
     <img src="../images/logo.png" alt="Logo" />
   </a>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="about_us.html">О нас</a></li>
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="projects.html">Проекты</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+    <svg
+      class="menu_cross"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="5" y1="5" x2="20" y2="20" stroke="white" stroke-width="1" />
+      <line x1="5" y1="20" x2="20" y2="5" stroke="white" stroke-width="1" />
+    </svg>
+    <div class="title">
+      <span>Меню</span>
+      <svg
+        class="menu_dot"
+        width="4"
+        height="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="2" cy="2" r="2" fill="white" />
+      </svg>
+    </div>
+  </nav>
 </section>
+
+<script>
+  let menuElem = document.getElementById("menu");
+  let titleElem = menuElem.querySelector(".title");
+  let circleElem = menuElem.querySelector(".menu_cross");
+
+  titleElem.onclick = function () {
+    menuElem.classList.toggle("open");
+  };
+
+  circleElem.onclick = function () {
+    menuElem.classList.remove("open");
+  };
+</script>
