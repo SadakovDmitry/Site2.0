@@ -454,16 +454,26 @@
 </section>
 
 <script>
+  const images = [
+    "../images/IMG_4653.png",
+    "../images/1I8A9580.png",
+    "../images/7L8A4657.png",
+    "../images/7L8A4661.png",
+    "../images/IMG_4447.png",
+    "../images/IMG_4656.png",
+    // "../images/image7.png",
+  ];
+
   document.addEventListener("DOMContentLoaded", () => {
-    const images = [
-      "../images/Ellipse 6.svg",
-      "../images/image1.png",
-      "../images/image3.png",
-      "../images/image4.png",
-      "../images/image5.png",
-      "../images/image6.png",
-      "../images/image7.png",
-    ];
+    // const images = [
+    //   "../images/IMG_4653.png",
+    //   "../images/1I8A9580.png",
+    //   "../images/7L8A4657.png",
+    //   "../images/7L8A4661.png",
+    //   "../images/IMG_4447.png",
+    //   "../images/IMG_4656.png",
+    //   "../images/image7.png",
+    // ];
 
     let nowPhotoIndex = 0;
 
@@ -495,7 +505,7 @@
 
     function updateActiveDot() {
       dots.forEach((dot, photo_index) => {
-        if ((photo_index - 1) % images.length === nowPhotoIndex) {
+        if ((photo_index - 1) % /* images.length */ 7 === nowPhotoIndex) {
           dot.classList.add("active");
         } else {
           dot.classList.remove("active");
