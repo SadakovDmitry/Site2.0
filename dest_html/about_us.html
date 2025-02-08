@@ -66,7 +66,7 @@
     <main>
       <img src="../images/about.png" alt="О нас" class="about_us" />
       <h1>О нас</h1>
-      <div class="text">
+      <!-- <div class="text">
         <h3>
           +7 GROUP — ЭТО СОЗДАНИЕ МЕДИАКОНТЕНТА ПОЛНОГО ЦИКЛА И ЛЮБОЙ СЛОЖНОСТИ:
           ОТ РАЗРАБОТКИ ИДЕИ ДО ПОСТПРОДАКШЕНА
@@ -89,7 +89,7 @@
             LOOK-BOOKS.
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
     <div class="border">
       <div class="horizontal"></div>
@@ -99,34 +99,103 @@
     </div>
     <section class="describe_section_">
       <h3 class="text">
-        НЕ ПУГАЙТЕСЬ НАШИХ ЦЕН! ОНИ НИЗКИЕ ТОЛЬКО ПО ТОЙ ПРИЧИНЕ, ЧТО НАША
-        ДРУЖНАЯ КОМАНДА НЕ ОБРЕМЕНЕНА ОГРОМНЫМ АДМИНИСТРАТИВНЫМ ШТАТОМ, ПОЭТОМУ
-        РАБОТАЯ С НАМИ, ВАМ НЕ ПРИДЁТСЯ ОПЛАЧИВАТЬ ТРУД ДЕСЯТКА СЕКРЕТАРЕЙ, ПЯТИ
-        МЕНЕДЖЕРОВ И АРЕНДУ ОФИСА В МОСКВЕ-СИТИ.
+        +7 GROUP — коммуникационная группа полного цикла. Решаем задачи бизнеса
+        под ключ: от имиджевого PR и рекламного видеопроизводства до GR и
+        оптимизации финансовых потоков.
       </h3>
-      <script>
-        const newVideoSrc = "../video/video1.mp4";
-      </script>
-      <div class="item">
-  <video id="video_" class="video_" muted autoplay>
-    <source id="videoSource_" src="" type="video/mp4" />
-    Ваш браузер не поддерживает видео.
-  </video>
-  <div class="video-overlay_">&#x26F6;</div>
-  <div class="video-play_">▶</div>
-</div>
-<div id="videoModal_" class="modal_">
-  <div id="modalContent_" class="modal-content_">
-    <button id="closeModalBtn_" class="close_">&times;</button>
-    <video id="modalVideo_" controls autoplay>
-      <source id="modalVideoSource_" type="video/mp4" />
-      <!-- <source src="showreel.mp4" type="video/mp4"> -->
-    </video>
-  </div>
-</div>
-<script src="../video.js"></script>
-
     </section>
+    <section class="describe_section_">
+      <h3 class="text">
+        Для каждого клиента +7 GROUP создаёт индивидуальную стратегию,
+        основанную на потребностях и задачах сопровождаемого бизнеса.
+      </h3>
+    </section>
+    <section class="bubbles">
+      <div class="experience">
+        <h3 class="text">Опыт</h3>
+        <div class="information">
+          <button class="bubble b3">
+            <p class="invisible">20 лет</p>
+            <p class="visible">на федеральных ТВ-каналах</p>
+          </button>
+          <button class="bubble b5">
+            <p class="invisible">1000+</p>
+            <p class="visible">имиджевых публикаций</p>
+          </button>
+          <button class="bubble b4">
+            <p class="invisible">100+</p>
+            <p class="visible">продающих роликов</p>
+          </button>
+          <button class="bubble b1">
+            <p class="invisible">8 лет</p>
+            <p class="visible">на зарубежных рынках</p>
+          </button>
+          <button class="rect r1">
+            <p class="invisible"></p>
+            <p class="visible">Лауреаты кинофестивалей и литературных премий</p>
+          </button>
+          <button class="bubble b2">
+            <p class="invisible">Годы</p>
+            <p class="visible">работы в ведущих СМИ</p>
+          </button>
+          <button class="rect r2">
+            <p class="invisible"></p>
+            <p class="visible">Гранд Минкульта</p>
+          </button>
+          <button class="bubble b6">
+            <p class="invisible">10+</p>
+            <p class="visible">документальных и игровых проектов</p>
+          </button>
+        </div>
+      </div>
+      <div class="customers">
+        <h3 class="text">Клиенты</h3>
+        <div class="information">
+          <button class="bubble b1">
+            <p class="invisible"></p>
+            <p class="visible">от небольших стартапов</p>
+          </button>
+          <button class="bubble b2">
+            <p class="invisible"></p>
+            <p class="visible">до Роснефть и МинЭк</p>
+          </button>
+        </div>
+      </div>
+    </section>
+    <script>
+      const buttons = document.querySelectorAll(".bubble");
+      let isMouseOverAnyButton = false;
+
+      // Функция для выбора случайной кнопки
+      function randomHover() {
+        if (!isMouseOverAnyButton) {
+          const randomIndex = Math.floor(Math.random() * buttons.length);
+          const randomButton = buttons[randomIndex];
+
+          // Добавляем класс hovered, чтобы кнопка "вела себя" как на которую навели
+          buttons[randomIndex].classList.add("hover");
+
+          // Убираем класс через 1 секунду, чтобы эффект был заметен
+          setTimeout(() => {
+            randomButton.classList.remove("hover");
+          }, 2000);
+        }
+      }
+
+      // Слушаем событие наведения мыши на кнопки
+      buttons.forEach((button) => {
+        button.addEventListener("mouseover", () => {
+          isMouseOverAnyButton = true;
+        });
+
+        button.addEventListener("mouseout", () => {
+          isMouseOverAnyButton = false;
+        });
+      });
+
+      // Запускаем функцию randomHover каждые 3 секунды
+      setInterval(randomHover, 3000);
+    </script>
     <section class="work_methods">
       <h1>МЕТОД РАБОТЫ</h1>
       <div class="line before"></div>
