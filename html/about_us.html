@@ -60,36 +60,36 @@
       <div class="experience">
         <h3 class="text">Опыт</h3>
         <div class="information">
-          <button class="bubble b3">
-            <p class="invisible">20 лет</p>
+          <button class="bubble b3" onmouseover="changeText(this, '20 лет')" onmouseout="changeText(this, 'Работа')">
+            <p class="invisible">Работа</p>
             <p class="visible">на федеральных ТВ-каналах</p>
           </button>
-          <button class="bubble b5">
-            <p class="invisible">1000+</p>
+          <button class="bubble b5" onmouseover="changeText(this, '1000+')" onmouseout="changeText(this, 'Генерация')">
+            <p class="invisible">Генерация</p>
             <p class="visible">имиджевых публикаций</p>
           </button>
-          <button class="bubble b4">
-            <p class="invisible">100+</p>
+          <button class="bubble b4" onmouseover="changeText(this, '100+')" onmouseout="changeText(this, 'Создание')">
+            <p class="invisible">Создание</p>
             <p class="visible">продающих роликов</p>
           </button>
-          <button class="bubble b1">
-            <p class="invisible">8 лет</p>
+          <button class="bubble b1" onmouseover="changeText(this, '8 лет')" onmouseout="changeText(this, 'Работа')">
+            <p class="invisible">Работа</p>
             <p class="visible">на зарубежных рынках</p>
           </button>
           <button class="rect r1">
             <p class="invisible"></p>
             <p class="visible">Лауреаты кинофестивалей и литературных премий</p>
           </button>
-          <button class="bubble b2">
-            <p class="invisible">Годы</p>
-            <p class="visible">работы в ведущих СМИ</p>
+          <button class="bubble b2" onmouseover="changeText(this, 'Годы')" onmouseout="changeText(this, 'Работа')">
+            <p class="invisible">Работа</p>
+            <p class="visible">в ведущих СМИ</p>
           </button>
           <button class="rect r2">
             <p class="invisible"></p>
             <p class="visible">Гранд Минкульта</p>
           </button>
-          <button class="bubble b6">
-            <p class="invisible">10+</p>
+          <button class="bubble b6" onmouseover="changeText(this, '10+')" onmouseout="changeText(this, 'Создание')">
+            <p class="invisible">Создание</p>
             <p class="visible">документальных и игровых проектов</p>
           </button>
         </div>
@@ -109,14 +109,48 @@
       </div>
     </section>
     <script>
+      // function changeText(element, newText) {
+      //   element.querySelector('.invisible').textContent = newText;
+      // }
+      function changeText(element, newText) {
+          const visibleText = element.querySelector('.invisible');
+          const invisibleText = element.querySelector('.visible');
+
+          // Плавное скрытие старого текста
+          visibleText.style.opacity = "0";
+
+          setTimeout(() => {
+              // Меняем текст после исчезновения
+              visibleText.textContent = newText;
+              visibleText.style.opacity = "1"; // Плавно показываем новый текст
+          }, 300);
+      }
+
+
       const buttons = document.querySelectorAll(".bubble");
       let isMouseOverAnyButton = false;
 
       // Функция для выбора случайной кнопки
       function randomHover() {
         if (!isMouseOverAnyButton) {
+          console.log(isMouseOverAnyButton);
           const randomIndex = Math.floor(Math.random() * buttons.length);
           const randomButton = buttons[randomIndex];
+
+          const mouseOverEvent = new MouseEvent('mouseover', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+
+          const mouseOutEvent = new MouseEvent('mouseout', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+
+          // Симулируем событие mouseover на случайно выбранной кнопке
+          randomButton.dispatchEvent(mouseOverEvent);
 
           // Добавляем класс hovered, чтобы кнопка "вела себя" как на которую навели
           buttons[randomIndex].classList.add("hover");
@@ -124,6 +158,7 @@
           // Убираем класс через 1 секунду, чтобы эффект был заметен
           setTimeout(() => {
             randomButton.classList.remove("hover");
+            randomButton.dispatchEvent(mouseOutEvent);
           }, 2000);
         }
       }
@@ -142,134 +177,125 @@
       // Запускаем функцию randomHover каждые 3 секунды
       setInterval(randomHover, 3000);
     </script>
-    <section class="work_methods">
-      <h1>МЕТОД РАБОТЫ</h1>
-      <div class="line before"></div>
-      <div class="first">
-        <div class="dash">/.</div>
-        <h3>КАКИМ ХОЧЕТ БЫТЬ ГЕРОЙ, БУДЬ ТО МИНИСТР ИЛИ ЖК БИЗНЕС-КЛАССА?</h3>
-        <div class="text">
-          <div class="top">
-            НЕ СЕКРЕТ, ЧТО СУЩЕСТВУЮТ ЗАКОНЫ ДРАМАТУРГИИ, КОТОРЫЕ НЕОБХОДИМЫ ДЛЯ
-            СОЗДАНИЯ НАСТОЯЩЕГО АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ, БУДЬ ТО ВИРУСНАЯ
-            РЕКЛАМА, ИМИДЖЕВОЕ ВИДЕО ИЛИ ПОЛНОМЕТРАЖНЫЙ ФИЛЬМ.
-          </div>
-          <div class="middle">
-            НО «ВПИХИВАНИЕ» ТЕМЫ В РАМКИ ЖЕСТКОГО СТРУКТУРНОГО ФОРМАТА ЧАСТО
-            НИЧЕМ НЕ ОТЛИЧАЕТСЯ ОТ СТАРОГО И НЕДОБРОГО «ПРОКРУСТОВА ЛОЖЕ»: ВО
-            ИМЯ ОТРАБОТАННОЙ, ПУСТЬ ДАЖЕ УДАЧНОЙ СХЕМЫ ПРОИЗВОДИТЕЛЬ
-            ВИДЕОКОНТЕНТА ЖЕРТВУЕТ ТОЙ ИЛИ ИНОЙ ГРАНЬЮ ИНДИВИДУАЛЬНОСТИ ГЕРОЯ
-            АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ. И НЕВАЖНО, КТО ИЛИ ЧТО (ЧЕЛОВЕК ИЛИ
-            ПРЕДМЕТ) В ДАННОМ СЛУЧАЕ ВЫСТУНО «ВПИХИВАНИЕ» ТЕМЫ В РАМКИ ЖЕСТКОГО
-            СТРУКТУРНОГО ФОРМАТА ЧАСТО НИЧЕМ НЕ ОТЛИЧАЕТСЯ ОТ СТАРОГО И
-            НЕДОБРОГО «ПРОКРУСТОВА ЛОЖЕ»: ВО ИМЯ ОТРАБОТАННОЙ, ПУСТЬ ДАЖЕ
-            УДАЧНОЙ СХЕМЫ ПРОИЗВОДИТЕЛЬ ВИДЕОКОНТЕНТА ЖЕРТВУЕТ ТОЙ ИЛИ ИНОЙ
-            ГРАНЬЮ ИНДИВИДУАЛЬНОСТИ ГЕРОЯ АУДИОВИЗУАЛЬНОГО ПРОИЗВЕДЕНИЯ. И
-            НЕВАЖНО, КТО ИЛИ ЧТО (ЧЕЛОВЕК ИЛИ ПРЕДМЕТ) В ДАННОМ СЛУЧАЕ ВЫСТУПАЕТ
-            В РОЛИ ЭТОГО САМОГО ГЕРОЯ.
-          </div>
-          <div class="low">
-            ТАКОЙ КОНТЕНТ, БЕЗУСЛОВНО, ПОЛУЧАЕТСЯ ПРАВИЛЬНЫМ, ДАЖЕ ПРОФЕССИОНАЛ
-            НЕ ПРИДЕРЕТСЯ НИ К ОДНОЙ МОНТАЖНОЙ СКЛЕЕЧКЕ, ОДИН ПЛАН КРАШЕ
-            ДРУГОГО. КАЗАЛОСЬ БЫ, ВСЕ ОТЛИЧНО, НО НЕ «ЦЕПЛЯЕТ». ВИДЕО ЗАБЫВАЕТСЯ
-            БЫСТРО, А ЗНАЧИТ, ЕГО КПД СТРЕМИТСЯ К НУЛЮ.
-          </div>
-        </div>
+    <section class="leaders">
+      <h1>Руководители</h1>
+      <div class="leader">
+        <img src="../images/IMG_4627.JPG" alt="Руководитель 1" />
+        <p>Александр Кривошеев</p>
       </div>
-      <div class="line after"></div>
-      <div class="second">
-        <div class="dash">/.</div>
-        <h3>КТО ВИНОВАТ И ЧТО ДЕЛАТЬ?</h3>
-        <div class="text">
-          <div class="top">
-            ВИНЫ ГЕРОЯ В ЭТОМ НЕТ. МНОГОЛЕТНИЙ ОПЫТ ДОКАЗАЛ НАМ, ЧТО У КАЖДОГО
-            ГЕРОЯ, БУДЬ ТО МИНИСТР ИЛИ КОРЕННОЙ ЖИТЕЛЬ ЧУКОТКИ, ДОМ ЗАСТРОЙЩИКА,
-            АВТОМОБИЛЬ ИЛИ ГУБНАЯ ПОМАДА ИЗ ИНТЕРНЕТ-МАГАЗИНА, ЕСТЬ ХАРИЗМА,
-            ЭНЕРГЕТИКА ИЛИ, ПОПРОСТУ, ДУША. РАССМОТРЕТЬ И ОСОЗНАТЬ ЭТУ ХАРИЗМУ —
-            НАША ПЕРВОСТЕПЕННАЯ ЗАДАЧА. ЭТО КЛЮЧИК К ВЫХОДУ ИЗ ОТРАБОТАННЫХ
-            ПРИВЫЧНЫХ СХЕМ И СОЗДАНИЮ НОВОГО, ЭКСКЛЮЗИВНОГО ФОРМАТА,
-            РАСКРЫВАЮЩЕГО ОБРАЗ ИМЕННО ВАШЕГО ГЕРОЯ. ПРИ ЭТОМ ЗАКОНЫ ДРАМАТУРГИИ
-            НИКУДА НЕ ИСЧЕЗАЮТ, НАОБОРОТ, ОНИ НАЧИНАЮТ РАБОТАТЬ НА ИДЕЮ —
-            ЧЕЛОВЕК, ЛИБО ПРОДУКТ НАЧИНАЕТ СВЕРКАТЬ ВСЕМИ ГРАНЯМИ, РАСКРЫВАЯ
-            СВОЮ СУТЬ И ЦЕПЛЯЯ ЕЮ ЗРИТЕЛЯ. ПОЭТОМУ РАЗРАБАТЫВАЯ СЦЕНАРИЙ И
-            ВИЗУАЛЬНУЮ КОНЦЕПЦИЮ ВИДЕО, МЫ, ПРЕЖДЕ ВСЕГО, АНАЛИЗИРУЕМ, КАКИМ САМ
-            ГЕРОЙ ХОЧЕТ БЫТЬ В КАДРЕ, А НЕ ПОДСТРАИВАЕМ ЕГО ПОД ПРИХОТИ ИЛИ
-            УДОБСТВА КЛАССИЧЕСКОЙ КОНЦЕПЦИИ ИЛИ ВИДЕНИЕ РЕЖИССЁРА.
-          </div>
-          <div class="low">
-            ИЗОБРАЖЕНИЕ С ПОМОЩЬЮ АУДИОВИЗУАЛЬНЫХ ПРИЁМОВ ИНДИВИДУАЛЬНОСТИ И
-            ИНТЕРЕСНЕЙШИХ ГРАНЕЙ ХАРАКТЕРОВ НАШИХ ГЕРОЕВ — ОСНОВНОЙ ПРИНЦИП
-            РАБОТЫ +7GROUP.
-          </div>
-        </div>
+      <div class="leader">
+        <img src="../images/IMG_3643.PNG" alt="Руководитель 2" />
+        <p>Александрина Адамович</p>
       </div>
     </section>
-    @@include('partials/video_sequence.html')
-    <section class="what_do_we_do">
-      <h1>ЧТО МЫ ДЕЛАЕМ</h1>
-      <div class="text">
-        <div class="top">
-          АУДИОВИЗУАЛЬНЫЙ КОНТЕНТ — ЭТО ИСКУССТВО. ПОЭТОМУ МЫ НЕ РАБОТАЕМ ПО
-          КЛИШИРОВАННЫМ СХЕМАМ И ОЧЕНЬ РАДЫ НЕСТАНДАРТНЫМ, КРЕАТИВНЫМ ЗАДАЧАМ.
+
+    <section class="news">
+      <h1>Новости</h1>
+      <a href="https://ria.ru/20250208/makeevka-1998150461.html" class="new" data-logo="smm">
+        <img src="../images/first_project_media_2.png" alt="Проект smm" />
+        <div class="info">
+          <span class="year">2023</span>
+          <img class="logo" src="../images/11zon_cropped (1).png"></img>
+          <span class="title">новость</span>
         </div>
-        <div class="bottom">
-          ДЛЯ ВАШЕГО УДОБСТВА МЫ ПРЕДОСТАВЛЯЕМ ТИПИЧНЫЙ ПЕРЕЧЕНЬ ФОРМАТОВ И
-          УСЛУГ, НО ЕСЛИ ВАШ ПРОЕКТ ТРЕБУЕТ НЕОРДИНАРНЫХ РЕШЕНИЙ, ВЫСШЕЙ СТЕПЕНИ
-          ХУДОЖЕСТВЕННОСТИ И К НЕМУ НЕЛЬЗЯ ПОДОБРАТЬ РЕФЕРЕНСЫ — ПРОСТО ОПИШИТЕ
-          ВАШУ ЗАДАЧУ В ФОРМЕ НИЖЕ И МЫ ВМЕСТЕ РАЗРАБОТАЕМ УНИКАЛЬНЫЙ ПРОЕКТ, НЕ
-          ИМЕЮЩИЙ АНАЛОГОВ.
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </a>
+      <a href="one_project.html?section=project_2" class="new" data-logo="web">
+        <img src="../images/first_project_media_2.png" alt="Проект web" />
+        <div class="info">
+          <span class="year">2022</span>
+          <img class="logo" src="../images/11zon_cropped (1).png"></img>
+          <span class="title">новость</span>
         </div>
-      </div>
-      <div class="do_list">
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">ПРОМО-РОЛИКИ</div>
-          <div class="price">от 36 000</div>
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </a>
+      <a href="one_project.html?section=project_3" class="new" data-logo="pr">
+        <img src="../images/first_project_media_2.png" alt="Проект pr" />
+        <div class="info">
+          <span class="year">2021</span>
+          <img class="logo" src="../images/11zon_cropped (1).png"></img>
+          <span class="title">новость</span>
         </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">РЕКЛАМНЫЕ РОЛИКИ</div>
-          <div class="price">от 36 000</div>
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </a>
+      <a href="one_project.html?section=project_1" class="new" data-logo="prod">
+        <img
+          src="../images/first_project_media_2.png"
+          alt="Проект production"
+        />
+        <div class="info">
+          <span class="year">2020</span>
+          <img class="logo" src="../images/11zon_cropped (1).png"></img>
+          <span class="title">новость</span>
         </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">ИМИДЖЕВЫЕ РОЛИКИ</div>
-          <div class="price">от 36 000</div>
-        </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">КОНТЕНТ С ПРОДУКТ ПЛЕЙСМЕНТ</div>
-          <div class="price">от 36 000</div>
-        </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">ПРОДАЮЩИЕ ВИДЕО</div>
-          <div class="price">от 36 000</div>
-        </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">ПРОМО НЕДВИЖИМОСТИ</div>
-          <div class="price">от 36 000</div>
-        </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">РУМ-ТУРЫ</div>
-          <div class="price">от 36 000</div>
-        </div>
-        <div class="line"></div>
-        <div class="li">
-          <div class="dash">/.</div>
-          <div class="name">ПОСТАНОВОЧНАЯ ПРЕДМЕТНАЯ СЪЁМКА</div>
-          <div class="price">от 36 000</div>
-        </div>
-      </div>
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </a>
     </section>
+    <div id="tg-posts" class="posts-grid"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo'; // Ваш Telegram Bot API токен
+            const chatId = '@plus7production'; // Ваш канал, например '@my_channel'
+
+            fetch(`https://api.telegram.org/bot${botToken}/getUpdates`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        let messages = data.result
+                            .filter(msg => msg.channel_post) // Берем только посты из канала
+                            .slice(-4) // Берем последние 4 поста
+                            .reverse(); // Чтобы отображались в правильном порядке
+
+                        let postsHtml = messages.map(msg => {
+                            let post = msg.channel_post;
+                            let text = post.text || 'Медиа-контент'; // Текст поста
+                            let mediaHtml = '';
+
+                            // Проверяем, есть ли фото в посте
+                            if (post.photo) {
+                                let lastPhoto = post.photo[post.photo.length - 1]; // Берем самое большое фото
+                                mediaHtml += `<img src="https://api.telegram.org/file/bot${botToken}/${lastPhoto.file_id}" alt="Фото">`;
+                            }
+
+                            // Проверяем, есть ли видео в посте
+                            if (post.video) {
+                                let video = post.video;
+                                mediaHtml += `<video controls><source src="https://api.telegram.org/file/bot${botToken}/${video.file_id}" type="video/mp4"></video>`;
+                            }
+
+                            // Проверяем, есть ли гиф-анимация
+                            if (post.animation) {
+                                let animation = post.animation;
+                                mediaHtml += `<img src="https://api.telegram.org/file/bot${botToken}/${animation.file_id}" alt="GIF">`;
+                            }
+
+                            // Проверяем, есть ли документы (например, PDF, DOC)
+                            if (post.document) {
+                                let document = post.document;
+                                mediaHtml += `<p><a href="https://api.telegram.org/file/bot${botToken}/${document.file_id}" target="_blank">📄 Скачать документ</a></p>`;
+                            }
+
+                            return `
+                                <div class="post">
+                                    ${mediaHtml}
+                                    <p>${text}</p>
+                                    <p><a href="https://t.me/${chatId}/${post.message_id}" target="_blank">🔗 Перейти к посту</a></p>
+                                </div>
+                            `;
+                        }).join('');
+
+                        document.getElementById('tg-posts').innerHTML = postsHtml;
+                    } else {
+                        document.getElementById('tg-posts').innerHTML = '<p>Ошибка при загрузке постов.</p>';
+                    }
+                })
+                .catch(error => console.error('Ошибка:', error));
+        });
+    </script>
     @@include('partials/footer.html')
   </body>
 </html>
