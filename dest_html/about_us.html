@@ -289,66 +289,128 @@
         <div class="horizontal"></div>
       </a>
     </section>
-    <div id="tg-posts" class="posts-grid"></div>
+    <div class="post-text">
+      <h1>Наши посты</h1>
+    </div>
+    <div id="tg-posts" class="posts-grid">
+      <!-- <h1>Наши посты</h1> -->
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo'; // Ваш Telegram Bot API токен
-            const chatId = '@plus7production'; // Ваш канал, например '@my_channel'
+document.addEventListener("DOMContentLoaded", async function () {
+    const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo';
+    const chatId = 'plus7production';
+    const container = document.getElementById('tg-posts');
 
-            fetch(`https://api.telegram.org/bot${botToken}/getUpdates`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        let messages = data.result
-                            .filter(msg => msg.channel_post) // Берем только посты из канала
-                            .slice(-4) // Берем последние 4 поста
-                            .reverse(); // Чтобы отображались в правильном порядке
+    async function fetchPosts() {
+        try {
+            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates`);
+            if (!response.ok) throw new Error("Ошибка API Telegram");
 
-                        let postsHtml = messages.map(msg => {
-                            let post = msg.channel_post;
-                            let text = post.text || 'Медиа-контент'; // Текст поста
-                            let mediaHtml = '';
+            const data = await response.json();
+            console.log("Полученные данные:", data.result);
 
-                            // Проверяем, есть ли фото в посте
-                            if (post.photo) {
-                                let lastPhoto = post.photo[post.photo.length - 1]; // Берем самое большое фото
-                                mediaHtml += `<img src="https://api.telegram.org/file/bot${botToken}/${lastPhoto.file_id}" alt="Фото">`;
-                            }
+            if (!data.result || data.result.length === 0) {
+                console.log("Нет обновлений");
+                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+                return;
+            }
 
-                            // Проверяем, есть ли видео в посте
-                            if (post.video) {
-                                let video = post.video;
-                                mediaHtml += `<video controls><source src="https://api.telegram.org/file/bot${botToken}/${video.file_id}" type="video/mp4"></video>`;
-                            }
+            // Фильтруем только channel_post и берем их содержимое
+            let messages = data.result
+                .filter(msg => msg.channel_post)
+                .map(msg => msg.channel_post)
+                .slice(-4)
+                .reverse();
 
-                            // Проверяем, есть ли гиф-анимация
-                            if (post.animation) {
-                                let animation = post.animation;
-                                mediaHtml += `<img src="https://api.telegram.org/file/bot${botToken}/${animation.file_id}" alt="GIF">`;
-                            }
+            console.log("Фильтрованные посты:", messages);
 
-                            // Проверяем, есть ли документы (например, PDF, DOC)
-                            if (post.document) {
-                                let document = post.document;
-                                mediaHtml += `<p><a href="https://api.telegram.org/file/bot${botToken}/${document.file_id}" target="_blank">📄 Скачать документ</a></p>`;
-                            }
+            if (messages.length === 0) {
+                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+                return;
+            }
 
-                            return `
-                                <div class="post">
-                                    ${mediaHtml}
-                                    <p>${text}</p>
-                                    <p><a href="https://t.me/${chatId}/${post.message_id}" target="_blank">🔗 Перейти к посту</a></p>
-                                </div>
-                            `;
-                        }).join('');
+            let postsHtml = await Promise.all(messages.map(async (post) => {
+                try {
+                    let text = post.text || post.caption || 'Медиа-контент';
+                    let mediaHtml = '';
 
-                        document.getElementById('tg-posts').innerHTML = postsHtml;
-                    } else {
-                        document.getElementById('tg-posts').innerHTML = '<p>Ошибка при загрузке постов.</p>';
-                    }
-                })
-                .catch(error => console.error('Ошибка:', error));
-        });
+//                     if (post.photo) {
+//                         text = post.caption || 'Медиа-контент';
+//                         let lastPhoto = post.photo[post.photo.length - 1];
+//                         let photoUrl = await getFileUrl(lastPhoto.file_id);
+//                         mediaHtml += photoUrl ? `<img src="${photoUrl}" alt="Фото">` : '';
+//                     }
+//
+//                     if (post.video) {
+//                         text = post.caption || 'Медиа-контент';
+//                         let videoUrl = await getFileUrl(post.video.file_id);
+//                         mediaHtml += videoUrl ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>` : '';
+//                     }
+//
+//                     if (post.animation) {
+//                         text = post.caption || 'Медиа-контент';
+//                         let gifUrl = await getFileUrl(post.animation.file_id);
+//                         mediaHtml += gifUrl ? `<img src="${gifUrl}" alt="GIF">` : '';
+//                     }
+//
+//                     if (post.document) {
+//                         text = post.caption || 'Медиа-контент';
+//                         let docUrl = await getFileUrl(post.document.file_id);
+//                         mediaHtml += docUrl ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>` : '';
+//                     }
+
+                    return `
+                        <div class="post">
+                            ${mediaHtml}
+                            <p>${text}</p>
+                            <p><a href="https://t.me/${chatId}/${post.message_id}" target="_blank">🔗 Перейти к посту</a></p>
+                        </div>
+                    `;
+                } catch (error) {
+                    console.error("Ошибка загрузки поста:", error);
+                    return getErrorBlock();
+                }
+            }));
+
+            while (postsHtml.length < 4) {
+                postsHtml.push(getErrorBlock());
+            }
+
+            container.innerHTML = postsHtml.join('');
+        } catch (error) {
+            console.error("Ошибка загрузки постов:", error);
+            container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+        }
+    }
+
+    async function getFileUrl(fileId) {
+        try {
+            let res = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`);
+            if (!res.ok) throw new Error("Ошибка API файлов");
+
+            let data = await res.json();
+            if (!data.result || !data.result.file_path) throw new Error("Файл не найден");
+
+            return `https://api.telegram.org/file/bot${botToken}/${data.result.file_path}`;
+        } catch (error) {
+            console.error("Ошибка загрузки файла:", error);
+            return '';
+        }
+    }
+
+    function getErrorBlock() {
+        return `
+            <div class="post error">
+                <p>Не удалось загрузить пост 😔</p>
+            </div>
+        `;
+    }
+
+    console.log("Запуск fetchPosts...");
+    fetchPosts();
+});
+
+
     </script>
     <section class="form">
   <script

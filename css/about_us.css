@@ -226,10 +226,10 @@ main .text h3 {
 }
 
 .describe_section_ .text {
-  margin-top: 100px;
+  margin-top: 50px;
   width: 46.15%;
   height: auto;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   text-align: justify;
   text-transform: uppercase;
 }
@@ -241,6 +241,8 @@ main .text h3 {
 @media (max-width: 800px) {
   .describe_section_ .text {
     width: 60%;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .describe_section_ .item {
@@ -1153,13 +1155,30 @@ main .text h3 {
 /* POSTS */
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
-.posts-grid {
+.post-text {
+  position: relative;
+  width: 100%;
+  left: 3.3%;
+  top: 0;
+  margin-bottom: 10vw;
+  margin-top: 5vw;
+  font-size: clamp(20px, 4vw, 120px);
+}
+
+.post-text h1 {
+  position: absolute;
+  left: 3.3%;
+  top: 0;
+  font-size: clamp(20px, 4vw, 120px);
+}
+
+/* .posts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   max-width: 800px;
   margin: auto;
-}
+} */
 
 .post {
   display: flex;
@@ -1169,7 +1188,7 @@ main .text h3 {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  /* text-align: left; */
   min-height: 300px; /* Минимальная высота */
 }
 
@@ -1194,6 +1213,96 @@ main .text h3 {
 .post p {
   font-size: 14px;
   color: #333;
+}
+
+.post.error p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.post.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #151615;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  min-height: 300px;
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
+}
+
+.posts-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* По умолчанию 2 колонки */
+  grid-gap: 20px;
+  /* max-width: 800px; */
+  width: 95%;
+  margin: auto;
+}
+
+/* Медиа-запрос для экранов шире 800px */
+@media (min-width: 801px) {
+  .posts-grid {
+    grid-template-columns: repeat(4, 1fr); /* Все посты в один ряд */
+    max-width: 100%; /* Растягиваем на всю ширину */
+  }
+}
+
+.post {
+  display: flex;
+  flex-direction: column; /* Контент располагается вертикально */
+  justify-content: space-between; /* Равномерное распределение */
+  background: #202120;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+  min-height: 300px; /* Минимальная высота */
+}
+
+.post img,
+.post video {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Ограничение высоты */
+  object-fit: contain; /* Оставляем исходные пропорции */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.post a {
+  display: block;
+  margin-top: auto; /* Линки всегда внизу */
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.post p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.post.error p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.post.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #151615;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  min-height: 300px;
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
