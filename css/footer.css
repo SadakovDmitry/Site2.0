@@ -378,7 +378,7 @@ footer p {
 .menu {
   position: absolute;
   left: 74.2%;
-  bottom: 87px;
+  bottom: 148px;
   width: 110px;
 }
 
@@ -484,7 +484,7 @@ li {
   }
 
   .menu {
-    bottom: 86px;
+    bottom: 148px;
     width: 200px;
   }
 
@@ -703,7 +703,7 @@ li {
 
   .menu .right {
     position: absolute;
-    margin-top: -40px;
+    margin-top: -20px;
     right: 4.3%;
   }
 

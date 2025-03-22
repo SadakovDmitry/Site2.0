@@ -22,8 +22,8 @@
     <ul>
       <li><a href="about_us.html">О нас</a></li>
       <li><a href="index.html#services">Услуги</a></li>
-      <li><a href="projects.html">Проекты</a></li>
-      <li><a href="#">Контакты</a></li>
+      <!-- <li><a href="projects.html">Проекты</a></li> -->
+      <li><a href="#footer">Контакты</a></li>
     </ul>
     <svg
       class="menu_cross"
@@ -244,7 +244,7 @@
     </section>
 
     <section class="news">
-      <h1>Новости</h1>
+      <h1>Публикации</h1>
       <a href="https://ria.ru/20250208/makeevka-1998150461.html" class="new" data-logo="smm">
         <img src="../images/first_project_media_2.png" alt="Проект smm" />
         <div class="info">
@@ -296,6 +296,8 @@
       <!-- <h1>Наши посты</h1> -->
     </div>
     <script>
+    let lastUpdateId = 0;
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];  // Загружаем посты из localStorage (если есть)
 document.addEventListener("DOMContentLoaded", async function () {
     const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo';
     const chatId = 'plus7production';
@@ -303,17 +305,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function fetchPosts() {
         try {
-            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates`);
+            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates?offset=${lastUpdateId + 1}`);
             if (!response.ok) throw new Error("Ошибка API Telegram");
 
             const data = await response.json();
             console.log("Полученные данные:", data.result);
 
-            if (!data.result || data.result.length === 0) {
-                console.log("Нет обновлений");
-                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
-                return;
-            }
+            // if (!data.result || data.result.length === 0) {
+            //     console.log("Нет обновлений");
+            //     container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+            //     return;
+            // }
 
             // Фильтруем только channel_post и берем их содержимое
             let messages = data.result
@@ -322,42 +324,66 @@ document.addEventListener("DOMContentLoaded", async function () {
                 .slice(-4)
                 .reverse();
 
+            lastUpdateId = data.result[data.result.length - 1].update_id;
             console.log("Фильтрованные посты:", messages);
 
-            if (messages.length === 0) {
-                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
-                return;
-            }
+            // if (messages.length === 0) {
+            //     container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+            //     return;
+            // }
 
-            let postsHtml = await Promise.all(messages.map(async (post) => {
+            console.log("Опубликованные посты:", posts);
+
+            await Promise.all(messages.map(async (post) => {
+                try {
+                    const isPostExist = posts.some(existingPost => existingPost.message_id === post.message_id);
+                    if (!isPostExist) {
+                        posts.push(post);
+                        if (posts.length > 4) {
+                            posts.shift();
+                        }
+                    }
+                } catch (error) {
+                    console.error("Ошибка загрузки поста:", error);
+                }
+            }));
+
+            // posts = posts.concat(messages);
+            // if (posts.length > 4) {
+            //     posts = posts.slice(-4);
+            // }
+
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            let postsHtml = await Promise.all(posts.map(async (post) => {
                 try {
                     let text = post.text || post.caption || 'Медиа-контент';
                     let mediaHtml = '';
 
-//                     if (post.photo) {
-//                         text = post.caption || 'Медиа-контент';
-//                         let lastPhoto = post.photo[post.photo.length - 1];
-//                         let photoUrl = await getFileUrl(lastPhoto.file_id);
-//                         mediaHtml += photoUrl ? `<img src="${photoUrl}" alt="Фото">` : '';
-//                     }
-//
-//                     if (post.video) {
-//                         text = post.caption || 'Медиа-контент';
-//                         let videoUrl = await getFileUrl(post.video.file_id);
-//                         mediaHtml += videoUrl ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>` : '';
-//                     }
-//
-//                     if (post.animation) {
-//                         text = post.caption || 'Медиа-контент';
-//                         let gifUrl = await getFileUrl(post.animation.file_id);
-//                         mediaHtml += gifUrl ? `<img src="${gifUrl}" alt="GIF">` : '';
-//                     }
-//
-//                     if (post.document) {
-//                         text = post.caption || 'Медиа-контент';
-//                         let docUrl = await getFileUrl(post.document.file_id);
-//                         mediaHtml += docUrl ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>` : '';
-//                     }
+                    if (post.photo) {
+                        text = post.caption || 'Медиа-контент';
+                        let lastPhoto = post.photo[post.photo.length - 1];
+                        let photoUrl = await getFileUrl(lastPhoto.file_id);
+                        mediaHtml += photoUrl ? `<img src="${photoUrl}" alt="Фото">` : '';
+                    }
+
+                    if (post.video) {
+                        text = post.caption || 'Медиа-контент';
+                        let videoUrl = await getFileUrl(post.video.file_id);
+                        mediaHtml += videoUrl ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>` : '';
+                    }
+
+                    if (post.animation) {
+                        text = post.caption || 'Медиа-контент';
+                        let gifUrl = await getFileUrl(post.animation.file_id);
+                        mediaHtml += gifUrl ? `<img src="${gifUrl}" alt="GIF">` : '';
+                    }
+
+                    if (post.document) {
+                        text = post.caption || 'Медиа-контент';
+                        let docUrl = await getFileUrl(post.document.file_id);
+                        mediaHtml += docUrl ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>` : '';
+                    }
 
                     return `
                         <div class="post">
@@ -409,8 +435,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("Запуск fetchPosts...");
     fetchPosts();
 });
-
-
     </script>
     <section class="form">
   <script
@@ -550,7 +574,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 </section>
 
 <script>
-
   document.addEventListener("DOMContentLoaded", () => {
     // const images = [
     //   "../images/IMG_4653.png",
@@ -640,7 +663,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 </script>
 
-<footer>
+<footer id="footer">
   <div class="line"></div>
   <a class="icon" href="index.html">
     <img src="../images/logo.svg" alt="" />
@@ -655,14 +678,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     </ul>
     <ul class="menu">
       <li><a href="about_us.html" class="left">О нас</a></li>
-      <li><a href="index.html#services" class="left">Услуги</a></li>
-      <li><a href="projects.html" class="right">Проекты</a></li>
-      <li><a href="#" class="right">Контакты</a></li>
+      <li><a href="index.html#services" class="right">Услуги</a></li>
+      <!-- <li><a href="projects.html" class="right">Проекты</a></li> -->
+      <!-- <li><a href="#footer" class="right">Контакты</a></li> -->
     </ul>
     <ul class="media">
-      <li><a href="#">VK</a></li>
-      <li><a href="#">Teleqram</a></li>
-      <li><a href="#">YouTube</a></li>
+      <li><a href="https://vk.com/plus7pr?from=groups">VK</a></li>
+      <li><a href="https://t.me/plus7production">Teleqram</a></li>
+      <li>
+        <a href="https://youtube.com/@plus_7productions837?si=MKJZR1agsTVpcOOF"
+          >YouTube</a
+        >
+      </li>
     </ul>
   </nav>
   <p>© Все права защищены, 2024</p>

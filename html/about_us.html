@@ -190,7 +190,7 @@
     </section>
 
     <section class="news">
-      <h1>Новости</h1>
+      <h1>Публикации</h1>
       <a href="https://ria.ru/20250208/makeevka-1998150461.html" class="new" data-logo="smm">
         <img src="../images/first_project_media_2.png" alt="Проект smm" />
         <div class="info">
@@ -242,6 +242,8 @@
       <!-- <h1>Наши посты</h1> -->
     </div>
     <script>
+    let lastUpdateId = 0;
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];  // Загружаем посты из localStorage (если есть)
 document.addEventListener("DOMContentLoaded", async function () {
     const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo';
     const chatId = 'plus7production';
@@ -249,17 +251,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function fetchPosts() {
         try {
-            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates`);
+            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates?offset=${lastUpdateId + 1}`);
             if (!response.ok) throw new Error("Ошибка API Telegram");
 
             const data = await response.json();
             console.log("Полученные данные:", data.result);
 
-            if (!data.result || data.result.length === 0) {
-                console.log("Нет обновлений");
-                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
-                return;
-            }
+            // if (!data.result || data.result.length === 0) {
+            //     console.log("Нет обновлений");
+            //     container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+            //     return;
+            // }
 
             // Фильтруем только channel_post и берем их содержимое
             let messages = data.result
@@ -268,14 +270,38 @@ document.addEventListener("DOMContentLoaded", async function () {
                 .slice(-4)
                 .reverse();
 
+            lastUpdateId = data.result[data.result.length - 1].update_id;
             console.log("Фильтрованные посты:", messages);
 
-            if (messages.length === 0) {
-                container.innerHTML = Array(4).fill(getErrorBlock()).join('');
-                return;
-            }
+            // if (messages.length === 0) {
+            //     container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+            //     return;
+            // }
 
-            let postsHtml = await Promise.all(messages.map(async (post) => {
+            console.log("Опубликованные посты:", posts);
+
+            await Promise.all(messages.map(async (post) => {
+                try {
+                    const isPostExist = posts.some(existingPost => existingPost.message_id === post.message_id);
+                    if (!isPostExist) {
+                        posts.push(post);
+                        if (posts.length > 4) {
+                            posts.shift();
+                        }
+                    }
+                } catch (error) {
+                    console.error("Ошибка загрузки поста:", error);
+                }
+            }));
+
+            // posts = posts.concat(messages);
+            // if (posts.length > 4) {
+            //     posts = posts.slice(-4);
+            // }
+
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            let postsHtml = await Promise.all(posts.map(async (post) => {
                 try {
                     let text = post.text || post.caption || 'Медиа-контент';
                     let mediaHtml = '';

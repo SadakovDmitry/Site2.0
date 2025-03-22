@@ -7,9 +7,56 @@
 <link rel="stylesheet" href="../css/footer.css" />
 <title>+7 GROUP</title>
 
+    <link rel="stylesheet" href="../css/menu.css" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
   </head>
   <body>
+    <section class="logo-section">
+      <nav id="menu">
+        <ul>
+          <li><a href="about_us.html">О нас</a></li>
+          <li><a href="index.html#services">Услуги</a></li>
+          <!-- <li><a href="projects.html">Проекты</a></li> -->
+          <li><a href="#footer">Контакты</a></li>
+        </ul>
+        <svg
+          class="menu_cross"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="5" y1="5" x2="20" y2="20" stroke="white" stroke-width="1" />
+          <line x1="5" y1="20" x2="20" y2="5" stroke="white" stroke-width="1" />
+        </svg>
+        <div class="title">
+          <span>Меню</span>
+          <svg
+            class="menu_dot"
+            width="4"
+            height="4"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="2" cy="2" r="2" fill="white" />
+          </svg>
+        </div>
+      </nav>
+    </section>
+
+    <script>
+      let menuElem = document.getElementById("menu");
+      let titleElem = menuElem.querySelector(".title");
+      let circleElem = menuElem.querySelector(".menu_cross");
+
+      titleElem.onclick = function () {
+        menuElem.classList.toggle("open");
+      };
+
+      circleElem.onclick = function () {
+        menuElem.classList.remove("open");
+      };
+    </script>
     <main>
       <script
         type="module"
@@ -160,7 +207,7 @@
         <div class="dot"></div>
         <h3>pr</h3>
         <p class="number">0 1</p>
-        <p class="describe">10 проектов</p>
+        <!-- <p class="describe">10 проектов</p> -->
       </a>
       <a class="button prod" href="second.html?section=prod">
         <div class="vertical"></div>
@@ -168,7 +215,7 @@
         <div class="dot"></div>
         <h3>production</h3>
         <p class="number">0 2</p>
-        <p class="describe">10 проектов</p>
+        <!-- <p class="describe">10 проектов</p> -->
       </a>
       <a class="button web" href="second.html?section=web">
         <div class="vertical"></div>
@@ -176,7 +223,7 @@
         <div class="dot"></div>
         <h3>web development</h3>
         <p class="number">0 3</p>
-        <p class="describe">10 проектов</p>
+        <!-- <p class="describe">10 проектов</p> -->
       </a>
       <a class="button smm" href="second.html?section=smm">
         <div class="vertical"></div>
@@ -184,7 +231,7 @@
         <div class="dot"></div>
         <h3>smm</h3>
         <p class="number">0 4</p>
-        <p class="describe">10 проектов</p>
+        <!-- <p class="describe">10 проектов</p> -->
       </a>
     </section>
 
@@ -326,7 +373,6 @@
 </section>
 
 <script>
-
   document.addEventListener("DOMContentLoaded", () => {
     // const images = [
     //   "../images/IMG_4653.png",
@@ -416,7 +462,7 @@
   });
 </script>
 
-<footer>
+<footer id="footer">
   <div class="line"></div>
   <a class="icon" href="index.html">
     <img src="../images/logo.svg" alt="" />
@@ -431,14 +477,18 @@
     </ul>
     <ul class="menu">
       <li><a href="about_us.html" class="left">О нас</a></li>
-      <li><a href="index.html#services" class="left">Услуги</a></li>
-      <li><a href="projects.html" class="right">Проекты</a></li>
-      <li><a href="#" class="right">Контакты</a></li>
+      <li><a href="index.html#services" class="right">Услуги</a></li>
+      <!-- <li><a href="projects.html" class="right">Проекты</a></li> -->
+      <!-- <li><a href="#footer" class="right">Контакты</a></li> -->
     </ul>
     <ul class="media">
-      <li><a href="#">VK</a></li>
-      <li><a href="#">Teleqram</a></li>
-      <li><a href="#">YouTube</a></li>
+      <li><a href="https://vk.com/plus7pr?from=groups">VK</a></li>
+      <li><a href="https://t.me/plus7production">Teleqram</a></li>
+      <li>
+        <a href="https://youtube.com/@plus_7productions837?si=MKJZR1agsTVpcOOF"
+          >YouTube</a
+        >
+      </li>
     </ul>
   </nav>
   <p>© Все права защищены, 2024</p>
