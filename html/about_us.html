@@ -348,10 +348,133 @@
     <div class="post-text">
       <h1>Наши посты</h1>
     </div>
-    <div id="tg-posts" class="posts-grid">
-      <!-- <h1>Наши посты</h1> -->
-    </div>
+    <div id="tg-posts" class="posts-grid"></div>
+
     <script>
+      let lastUpdateId = 0;
+      let posts = []; // Загружаем посты из файла на сервере
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        const botToken = "7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo";
+        const chatId = "plus7production";
+        const container = document.getElementById("tg-posts");
+
+        async function fetchPosts() {
+          try {
+            // Загружаем посты с сервера
+            const response = await fetch("../tg-posts.json");
+            if (!response.ok) throw new Error("Ошибка загрузки постов");
+
+            posts = await response.json();
+            console.log("Загруженные посты:", posts);
+
+            // Получаем новые посты с Telegram
+            const telegramResponse = await fetch(
+              `https://api.telegram.org/bot${botToken}/getUpdates?offset=${
+                lastUpdateId + 1
+              }`
+            );
+            if (!telegramResponse.ok) throw new Error("Ошибка API Telegram");
+
+            const data = await telegramResponse.json();
+            const newPosts = data.result
+              .filter((msg) => msg.channel_post)
+              .map((msg) => msg.channel_post)
+              .reverse();
+
+            if (newPosts.length > 0) {
+              lastUpdateId = data.result[data.result.length - 1].update_id;
+
+              // Отправляем новые посты на сервер для обновления файла
+              await fetch("../savePosts.php", {
+                method: "POST",
+                body: JSON.stringify(newPosts),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+
+              posts = [...newPosts, ...posts].slice(0, 4);
+            }
+
+            // Отображаем посты
+            let postsHtml = await Promise.all(
+              posts.map(async (post) => {
+                let text = post.text || post.caption || "Медиа-контент";
+                let mediaHtml = "";
+
+                if (post.photo) {
+                  let lastPhoto = post.photo[post.photo.length - 1];
+                  let photoUrl = await getFileUrl(lastPhoto.file_id);
+                  mediaHtml += photoUrl
+                    ? `<img src="${photoUrl}" alt="Фото">`
+                    : "";
+                }
+
+                if (post.video) {
+                  let videoUrl = await getFileUrl(post.video.file_id);
+                  mediaHtml += videoUrl
+                    ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>`
+                    : "";
+                }
+
+                if (post.animation) {
+                  let gifUrl = await getFileUrl(post.animation.file_id);
+                  mediaHtml += gifUrl ? `<img src="${gifUrl}" alt="GIF">` : "";
+                }
+
+                if (post.document) {
+                  let docUrl = await getFileUrl(post.document.file_id);
+                  mediaHtml += docUrl
+                    ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>`
+                    : "";
+                }
+
+                return `
+            <div class="post">
+              ${mediaHtml}
+              <p>${text}</p>
+              <p><a href="https://t.me/${chatId}/${post.message_id}" target="_blank">🔗 Перейти к посту</a></p>
+            </div>
+          `;
+              })
+            );
+
+            container.innerHTML = postsHtml.join("");
+          } catch (error) {
+            console.error("Ошибка загрузки постов:", error);
+            container.innerHTML = getErrorBlock();
+          }
+        }
+
+        async function getFileUrl(fileId) {
+          try {
+            let res = await fetch(
+              `https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`
+            );
+            if (!res.ok) throw new Error("Ошибка API файлов");
+
+            let data = await res.json();
+            return `https://api.telegram.org/file/bot${botToken}/${data.result.file_path}`;
+          } catch (error) {
+            console.error("Ошибка загрузки файла:", error);
+            return "";
+          }
+        }
+
+        function getErrorBlock() {
+          return `
+      <div class="post error">
+        <p>Не удалось загрузить пост 😔</p>
+      </div>
+    `;
+        }
+
+        fetchPosts();
+      });
+    </script>
+
+    <!-- <script>
       let lastUpdateId = 0;
       let posts = JSON.parse(localStorage.getItem("posts")) || []; // Загружаем посты из localStorage (если есть)
       document.addEventListener("DOMContentLoaded", async function () {
@@ -513,7 +636,7 @@
         console.log("Запуск fetchPosts...");
         fetchPosts();
       });
-    </script>
+    </script> -->
     @@include('partials/footer.html')
   </body>
 </html>
