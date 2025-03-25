@@ -8,6 +8,7 @@
 }
 
 body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #202120;
@@ -1019,6 +1020,174 @@ main .text h3 {
 /* WORK_METHODS */
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
+/* Стили для галереи */
+.photo-gallery {
+  display: flex;
+  overflow-x: scroll;
+  background-color: #202120;
+  gap: 40px;
+  padding: 60px;
+  padding-top: 0;
+  height: auto;
+
+  -webkit-overflow-scrolling: touch; /* Для плавного прокручивания на мобильных устройствах */
+  scroll-snap-type: x mandatory;
+}
+
+.photo-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Элементы изображения */
+.photo-item {
+  position: relative;
+  width: 40%;
+  height: auto;
+  overflow: hidden;
+  background-color: #202120;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.photo-item .text {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 400;
+  color: #fff;
+}
+
+.photo-item .title {
+  font-size: clamp(12px, 2vw, 60px);
+  font-weight: 500;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  margin-top: 5px;
+}
+
+/* Изображения */
+.photo {
+  width: 100%;
+  height: 17vw;
+  background-color: #202120;
+  object-fit: contain;
+}
+
+/* Иконка для открытия фото */
+.author,
+.date {
+  width: 100%;
+  font-size: clamp(6px, 1.5vw, 50px);
+  font-weight: 400;
+  color: #fff;
+}
+
+.author {
+  text-align: left;
+}
+
+.date {
+  text-align: right;
+}
+
+/* .photo1 {
+  height: 150px;
+}
+
+.photo2 {
+  height: 200px;
+}
+
+.photo3 {
+  height: 250px;
+}
+
+.photo4 {
+  height: 150px;
+}
+
+.photo5 {
+  height: 100px;
+} */
+
+/* Поддержка для мобильных устройств */
+@media (max-width: 768px) {
+  .photo-gallery {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* .photo1 {
+    height: 250px;
+  }
+
+  .photo2 {
+    height: 200px;
+  }
+
+  .photo3 {
+    height: 250px;
+  }
+
+  .photo4 {
+    height: 150px;
+  }
+
+  .photo5 {
+    height: 100px;
+  } */
+
+  .photo-item {
+    width: 60%;
+  }
+
+  .author,
+  .date {
+    font-size: clamp(6px, 2.3vw, 50px);
+  }
+
+  .photo-item .title {
+    font-size: clamp(12px, 3vw, 60px);
+  }
+
+  /* .photo {
+    height: calc(100% - 20px);
+  }
+
+  .author {
+    padding-bottom: calc(20px + 17.5px);
+    padding-right: 15px;
+    font-size: 20px;
+  }
+
+  .photo-item .text {
+    height: 20px;
+    left: 5px;
+    top: calc(100% - 20px);
+  }
+
+  .photo-item .text .title {
+    font-size: clamp(6px, 2vw, 8px);
+    line-height: 1.2;
+  }
+
+  .photo-item .text .year {
+    font-size: clamp(6px, 2vw, 8px);
+    line-height: 1.2;
+  } */
+}
+
 .news h1 {
   position: absolute;
   left: 3.3%;
@@ -1026,28 +1195,23 @@ main .text h3 {
   font-size: clamp(20px, 4vw, 120px);
 }
 
-.hidden {
-  display: none !important;
-}
-
 .news {
   position: relative;
   display: flex;
-  flex-wrap: wrap; /* Позволяет элементам переноситься */
-  justify-content: center; /* Центрирует объекты */
-  /* padding-top: 50px; */
+  flex-wrap: wrap;
+  justify-content: center;
   left: 0px;
   gap: 5%;
   padding-top: 13%;
 }
-
+/*
 .new {
   position: relative;
-  width: calc(45% - 2px); /* 3 объекта в строке (с учётом отступов) */
-  max-width: 1200px; /* Максимальный размер квадрата */
-  aspect-ratio: 0.8; /* Делает объект квадратным */
-  overflow: hidden; /* Обрезает содержимое */
-  background-color: #000000; /* Цвет фона */
+  width: calc(45% - 2px);
+  max-width: 1200px;
+  aspect-ratio: 0.8;
+  overflow: hidden;
+  background-color: #000000;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
@@ -1058,7 +1222,7 @@ main .text h3 {
 .new img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Заполняет квадрат, сохраняя пропорции */
+  object-fit: cover;
 }
 
 .new .info {
@@ -1149,7 +1313,7 @@ main .text h3 {
 
 .new:active .vertical {
   display: block;
-}
+} */
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 /* POSTS */
@@ -1167,7 +1331,6 @@ main .text h3 {
 
 .post-text h1 {
   position: absolute;
-  left: 3.3%;
   top: 0;
   font-size: clamp(20px, 4vw, 120px);
 }

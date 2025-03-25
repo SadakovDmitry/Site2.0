@@ -26,7 +26,11 @@ const sectionData = {
     thesis_4: "Размещаем «под ключ» эксклюзивные публикации с кейсами компании и лица бренда",
     thesis_5: "Пресс-поддержка мероприятий",
     thesis_6: "Участие в крупнейших международных и отечественных форумах, включая ПМЭФ и «Россия Зовет»",
-    photo_sequence: []
+    photo_sequence:[
+      { path: "../images/pr_article1.jpg", customer: "Вирусные статьи для PR-продвижения строительной компании", year: "" },
+      { path: "../images/pr_article2.jpg", customer: "Личный бренд как локомотив корпоративного PR", year: "" },
+      { path: "../images/pr_article3.jpg", customer: "PR как альтернатива SEO-продвижению: до +450% прироста к трафику за один день", year: "" }
+    ]
   },
   prod: {
     main_image: "../images/production.png",
@@ -48,8 +52,14 @@ const sectionData = {
     thesis_4: "",
     thesis_5: "",
     thesis_6: "",
-    photo_sequence: []
-  },
+    photo_sequence:[
+      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "" },
+      { path: "../images/prod_article2.jpg", customer: "Рекламный видеоролик банной печи для Европейского рынка", year: "" },
+      { path: "../images/prod_article3.jpg", customer: "Создание контента для Лакокрасочных изделий", year: "" },
+      { path: "../images/prod_article4.png", customer: "УМНЫЙ ДОМ ИЗ БРУСА: как технологии превращают его в идеальное место для жизни", year: "" },
+      { path: "../images/prod_article5.png", customer: "Одноэтажные каркасные дома в лесной экозоне", year: "" }
+    ]
+},
   web: {
     main_image: "../images/web.png",
     main_text: "Создание сайтов и приложений",
@@ -68,7 +78,10 @@ const sectionData = {
     thesis_4: "Утверждаем дизайн-макет и проводим прототипирование",
     thesis_5: "Разрабатываем и имплементируем решение под ключ",
     thesis_6: "Организуем пост-поддержку и доработку продукта в рамках последующих итераций",
-    photo_sequence: []
+    photo_sequence:[
+      { path: "../images/web_article1.png", customer: "MRC-club: Сервис журналистских запросов", year: "" },
+      { path: "../images/web_article2.jpg", customer: "HalleHouse: Строительство домов под ключ", year: "" }
+    ]
   },
   smm: {
     main_image: "../images/smm.png",
@@ -88,7 +101,11 @@ const sectionData = {
     thesis_4: "ПОСТИНГ И ЕГО АНАЛИТИКА ",
     thesis_5: "ПРИВЛЕЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ ИСТОЧНИКОВ ТРАФИКА ",
     thesis_6: "",
-    photo_sequence: []
+    photo_sequence:[
+      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "" },
+      { path: "../images/smm_article2.jpg", customer: "SMM-продвижение строительного бренда через Instagram", year: "" },
+      { path: "../images/smm_article3.jpg", customer: "Срочное повышение продаж регионального магазина детской обуви", year: "" }
+    ]
   },
 };
 
@@ -119,6 +136,8 @@ const thesis_3 = document.querySelector(".fifth .third_str .text");
 const thesis_4 = document.querySelector(".fifth .fourth_str .text");
 const thesis_5 = document.querySelector(".fifth .fifth_str .text");
 const thesis_6 = document.querySelector(".fifth .sixth_str .text");
+const photo_gallery = document.querySelector(".photo-gallery");
+
 
 // Обновляем содержимое в зависимости от секции
 if (section && sectionData[section]) {
@@ -146,6 +165,21 @@ if (section && sectionData[section]) {
       photographContainer.appendChild(imgElement);
     });
   }
+
+  // photo_gallery.innerHTML = "";
+  photo_gallery.innerHTML = generatePhotoGallery(sectionData[section].photo_sequence);
+
+//   article_photo = sectionData[section].photo_sequence;
+//   if (photographContainer) {
+//     photographContainer.innerHTML = ""; // Очищаем текущие изображения
+//
+//     // Перебираем массив фотографий и добавляем изображения в контейнер
+//     article_photo.forEach(imageSrc => {
+//       const imgElement = document.createElement("img");
+//       imgElement.src = imageSrc;
+//       photographContainer.appendChild(imgElement);
+//     });
+//   }
 } else {
   mainPhoto.src = "../images/smm.png";
   mainText.textContent = "Error";
@@ -184,5 +218,5 @@ function hideEmptyBlocks() {
 }
 
 hideEmptyBlocks();
-history.pushState(null, '', 'https://plus7group.pro/pr');
+// history.pushState(null, '', 'https://plus7group.pro/pr');
 

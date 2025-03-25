@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Перенаправление index.html на корень сайта
+RewriteRule ^(dest_html/)?index\.html$ / [L,R=301]
+
+# Перенаправление about_us.html
+RewriteRule ^dest_html/about_us\.html$ /about_us [L,R=301]
+
+# Перенаправление second.html с разными section параметрами
+RewriteCond %{QUERY_STRING} ^section=(pr|web|smm|prod)$
+RewriteRule ^dest_html/second\.html$ /%1? [L,R=301]

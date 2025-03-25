@@ -4,8 +4,8 @@
     @@include('partials/head.html')
     <link rel="stylesheet" href="../css/menu.css" />
     <link rel="stylesheet" href="../css/about_us.css" />
-    <link rel="stylesheet" href="../css/one_video.css" />
-    <link rel="stylesheet" href="../css/video_sequence.css" />
+    <!-- <link rel="stylesheet" href="../css/one_video.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/video_sequence.css" /> -->
   </head>
   <body>
     @@include('partials/menu.html')
@@ -60,19 +60,35 @@
       <div class="experience">
         <h3 class="text">Опыт</h3>
         <div class="information">
-          <button class="bubble b3" onmouseover="changeText(this, '20 лет')" onmouseout="changeText(this, 'Работа')">
+          <button
+            class="bubble b3"
+            onmouseover="changeText(this, '20 лет')"
+            onmouseout="changeText(this, 'Работа')"
+          >
             <p class="invisible">Работа</p>
             <p class="visible">на федеральных ТВ-каналах</p>
           </button>
-          <button class="bubble b5" onmouseover="changeText(this, '1000+')" onmouseout="changeText(this, 'Генерация')">
+          <button
+            class="bubble b5"
+            onmouseover="changeText(this, '1000+')"
+            onmouseout="changeText(this, 'Генерация')"
+          >
             <p class="invisible">Генерация</p>
             <p class="visible">имиджевых публикаций</p>
           </button>
-          <button class="bubble b4" onmouseover="changeText(this, '100+')" onmouseout="changeText(this, 'Создание')">
+          <button
+            class="bubble b4"
+            onmouseover="changeText(this, '100+')"
+            onmouseout="changeText(this, 'Создание')"
+          >
             <p class="invisible">Создание</p>
             <p class="visible">продающих роликов</p>
           </button>
-          <button class="bubble b1" onmouseover="changeText(this, '8 лет')" onmouseout="changeText(this, 'Работа')">
+          <button
+            class="bubble b1"
+            onmouseover="changeText(this, '8 лет')"
+            onmouseout="changeText(this, 'Работа')"
+          >
             <p class="invisible">Работа</p>
             <p class="visible">на зарубежных рынках</p>
           </button>
@@ -80,7 +96,11 @@
             <p class="invisible"></p>
             <p class="visible">Лауреаты кинофестивалей и литературных премий</p>
           </button>
-          <button class="bubble b2" onmouseover="changeText(this, 'Годы')" onmouseout="changeText(this, 'Работа')">
+          <button
+            class="bubble b2"
+            onmouseover="changeText(this, 'Годы')"
+            onmouseout="changeText(this, 'Работа')"
+          >
             <p class="invisible">Работа</p>
             <p class="visible">в ведущих СМИ</p>
           </button>
@@ -88,7 +108,11 @@
             <p class="invisible"></p>
             <p class="visible">Гранд Минкульта</p>
           </button>
-          <button class="bubble b6" onmouseover="changeText(this, '10+')" onmouseout="changeText(this, 'Создание')">
+          <button
+            class="bubble b6"
+            onmouseover="changeText(this, '10+')"
+            onmouseout="changeText(this, 'Создание')"
+          >
             <p class="invisible">Создание</p>
             <p class="visible">документальных и игровых проектов</p>
           </button>
@@ -113,19 +137,18 @@
       //   element.querySelector('.invisible').textContent = newText;
       // }
       function changeText(element, newText) {
-          const visibleText = element.querySelector('.invisible');
-          const invisibleText = element.querySelector('.visible');
+        const visibleText = element.querySelector(".invisible");
+        const invisibleText = element.querySelector(".visible");
 
-          // Плавное скрытие старого текста
-          visibleText.style.opacity = "0";
+        // Плавное скрытие старого текста
+        visibleText.style.opacity = "0";
 
-          setTimeout(() => {
-              // Меняем текст после исчезновения
-              visibleText.textContent = newText;
-              visibleText.style.opacity = "1"; // Плавно показываем новый текст
-          }, 300);
+        setTimeout(() => {
+          // Меняем текст после исчезновения
+          visibleText.textContent = newText;
+          visibleText.style.opacity = "1"; // Плавно показываем новый текст
+        }, 300);
       }
-
 
       const buttons = document.querySelectorAll(".bubble");
       let isMouseOverAnyButton = false;
@@ -137,16 +160,16 @@
           const randomIndex = Math.floor(Math.random() * buttons.length);
           const randomButton = buttons[randomIndex];
 
-          const mouseOverEvent = new MouseEvent('mouseover', {
+          const mouseOverEvent = new MouseEvent("mouseover", {
             bubbles: true,
             cancelable: true,
-            view: window
+            view: window,
           });
 
-          const mouseOutEvent = new MouseEvent('mouseout', {
+          const mouseOutEvent = new MouseEvent("mouseout", {
             bubbles: true,
             cancelable: true,
-            view: window
+            view: window,
           });
 
           // Симулируем событие mouseover на случайно выбранной кнопке
@@ -188,10 +211,97 @@
         <p>Александрина Адамович</p>
       </div>
     </section>
-
     <section class="news">
       <h1>Публикации</h1>
-      <a href="https://ria.ru/20250208/makeevka-1998150461.html" class="new" data-logo="smm">
+      <div class="photo-gallery">
+        <a
+          href="https://www.mk.ru/economics/2025/03/11/ceny-na-ogurcy-i-pomidory-byut-rekordy-eksperty-preduprezhdayut-chto-eto-ne-predel.html?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch"
+          class="photo-item photo1"
+          draggable="true"
+        >
+          <img class="photo" src="../images/mk-logo.svg" alt="Фото 1" />
+          <div class="text">
+            <div class="author">Людмила Александрова</div>
+            <div class="date">11.03.2025</div>
+          </div>
+          <p class="title">Цены на огурцы и помидоры бьют рекорды</p>
+          <!-- <p class="year">11.03.2025</p> -->
+        </a>
+        <a
+          href="https://iz.ru/1842102/lubov-lezneva/kupi-slona-pocemu-vyros-obem-zakupok-goskompanii-u-samozanatyh?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch"
+          class="photo-item photo2"
+          draggable="true"
+        >
+          <img class="photo" src="../images/izvestia-logo.svg" alt="Фото 2" />
+          <div class="text">
+            <div class="author">Павел Волков</div>
+            <div class="date">21.02.2025</div>
+          </div>
+          <p class="title">
+            Купи слона: почему вырос объем закупок госкомпаний у самозанятых
+          </p>
+          <!-- <p class="year">21.02.2025</p> -->
+        </a>
+        <a
+          href="https://runet.news/column/61541?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch"
+          class="photo-item photo3"
+          draggable="true"
+        >
+          <img class="photo" src="../images/runet_new.svg" alt="Фото 3" />
+          <div class="text">
+            <div class="author">Владимир Красников</div>
+            <div class="date">19.02.2025</div>
+          </div>
+          <p class="title">
+            Аналитик +7 Group рассказал о наиболее популярных цифровых схемах
+            мошенничества
+          </p>
+          <!-- <p class="year">19.02.2025</p> -->
+        </a>
+        <a
+          href="https://incrussia.ru/share/pischevie-privichki-rossiyan-chem-opasna-dostavka/"
+          class="photo-item photo4"
+          draggable="true"
+        >
+          <img
+            class="photo"
+            src="../images/ink_logo_space_white.svg"
+            alt="Фото 4"
+          />
+          <div class="text">
+            <div class="author">Илона Лехмус</div>
+            <div class="date">19.12.2024</div>
+          </div>
+          <p class="title">
+            Самые опасные пищевые привычки россиян и чем вредна доставка
+          </p>
+          <!-- <p class="year">19.12.2024</p> -->
+        </a>
+        <a
+          href="https://aif.ru/money/mymoney/vidimosti-radi-shopingomany-prosazhivayut-na-marketpleysah-po-300-tys-rub?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch"
+          class="photo-item photo5"
+          draggable="true"
+        >
+          <img
+            class="photo"
+            src="../images/args_and_facts_logo.svg"
+            alt="Фото 5"
+          />
+          <div class="text">
+            <div class="author">Маргарита Разгуляева</div>
+            <div class="date">17.01.2025</div>
+          </div>
+          <p class="title">
+            Видимости ради. Шопингоманы просаживают на маркетплейсах по 300 тыс.
+            руб.
+          </p>
+          <!-- <p class="year">17.01.2025</p> -->
+        </a>
+      </div>
+
+      <!-- <script src="../script.js"></script> -->
+
+      <!-- <a href="https://ria.ru/20250208/makeevka-1998150461.html" class="new" data-logo="smm">
         <img src="../images/first_project_media_2.png" alt="Проект smm" />
         <div class="info">
           <span class="year">2023</span>
@@ -233,7 +343,7 @@
         </div>
         <div class="vertical"></div>
         <div class="horizontal"></div>
-      </a>
+      </a> -->
     </section>
     <div class="post-text">
       <h1>Наши посты</h1>
@@ -242,16 +352,20 @@
       <!-- <h1>Наши посты</h1> -->
     </div>
     <script>
-    let lastUpdateId = 0;
-    let posts = JSON.parse(localStorage.getItem('posts')) || [];  // Загружаем посты из localStorage (если есть)
-document.addEventListener("DOMContentLoaded", async function () {
-    const botToken = '7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo';
-    const chatId = 'plus7production';
-    const container = document.getElementById('tg-posts');
+      let lastUpdateId = 0;
+      let posts = JSON.parse(localStorage.getItem("posts")) || []; // Загружаем посты из localStorage (если есть)
+      document.addEventListener("DOMContentLoaded", async function () {
+        const botToken = "7955951098:AAFi5zFyRmyjUxuTRqsaij5UsF8dVsPaTQo";
+        const chatId = "plus7production";
+        const container = document.getElementById("tg-posts");
 
-    async function fetchPosts() {
-        try {
-            const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates?offset=${lastUpdateId + 1}`);
+        async function fetchPosts() {
+          try {
+            const response = await fetch(
+              `https://api.telegram.org/bot${botToken}/getUpdates?offset=${
+                lastUpdateId + 1
+              }`
+            );
             if (!response.ok) throw new Error("Ошибка API Telegram");
 
             const data = await response.json();
@@ -265,10 +379,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Фильтруем только channel_post и берем их содержимое
             let messages = data.result
-                .filter(msg => msg.channel_post)
-                .map(msg => msg.channel_post)
-                .slice(-4)
-                .reverse();
+              .filter((msg) => msg.channel_post)
+              .map((msg) => msg.channel_post)
+              .slice(-4)
+              .reverse();
 
             lastUpdateId = data.result[data.result.length - 1].update_id;
             console.log("Фильтрованные посты:", messages);
@@ -280,58 +394,72 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             console.log("Опубликованные посты:", posts);
 
-            await Promise.all(messages.map(async (post) => {
+            await Promise.all(
+              messages.map(async (post) => {
                 try {
-                    const isPostExist = posts.some(existingPost => existingPost.message_id === post.message_id);
-                    if (!isPostExist) {
-                        posts.push(post);
-                        if (posts.length > 4) {
-                            posts.shift();
-                        }
+                  const isPostExist = posts.some(
+                    (existingPost) =>
+                      existingPost.message_id === post.message_id
+                  );
+                  if (!isPostExist) {
+                    posts.push(post);
+                    if (posts.length > 4) {
+                      posts.shift();
                     }
+                  }
                 } catch (error) {
-                    console.error("Ошибка загрузки поста:", error);
+                  console.error("Ошибка загрузки поста:", error);
                 }
-            }));
+              })
+            );
 
             // posts = posts.concat(messages);
             // if (posts.length > 4) {
             //     posts = posts.slice(-4);
             // }
 
-            localStorage.setItem('posts', JSON.stringify(posts));
+            localStorage.setItem("posts", JSON.stringify(posts));
 
-            let postsHtml = await Promise.all(posts.map(async (post) => {
+            let postsHtml = await Promise.all(
+              posts.map(async (post) => {
                 try {
-                    let text = post.text || post.caption || 'Медиа-контент';
-                    let mediaHtml = '';
+                  let text = post.text || post.caption || "Медиа-контент";
+                  let mediaHtml = "";
 
-                    if (post.photo) {
-                        text = post.caption || 'Медиа-контент';
-                        let lastPhoto = post.photo[post.photo.length - 1];
-                        let photoUrl = await getFileUrl(lastPhoto.file_id);
-                        mediaHtml += photoUrl ? `<img src="${photoUrl}" alt="Фото">` : '';
-                    }
+                  if (post.photo) {
+                    text = post.caption || "Медиа-контент";
+                    let lastPhoto = post.photo[post.photo.length - 1];
+                    let photoUrl = await getFileUrl(lastPhoto.file_id);
+                    mediaHtml += photoUrl
+                      ? `<img src="${photoUrl}" alt="Фото">`
+                      : "";
+                  }
 
-                    if (post.video) {
-                        text = post.caption || 'Медиа-контент';
-                        let videoUrl = await getFileUrl(post.video.file_id);
-                        mediaHtml += videoUrl ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>` : '';
-                    }
+                  if (post.video) {
+                    text = post.caption || "Медиа-контент";
+                    let videoUrl = await getFileUrl(post.video.file_id);
+                    mediaHtml += videoUrl
+                      ? `<video controls><source src="${videoUrl}" type="video/mp4"></video>`
+                      : "";
+                  }
 
-                    if (post.animation) {
-                        text = post.caption || 'Медиа-контент';
-                        let gifUrl = await getFileUrl(post.animation.file_id);
-                        mediaHtml += gifUrl ? `<img src="${gifUrl}" alt="GIF">` : '';
-                    }
+                  if (post.animation) {
+                    text = post.caption || "Медиа-контент";
+                    let gifUrl = await getFileUrl(post.animation.file_id);
+                    mediaHtml += gifUrl
+                      ? `<img src="${gifUrl}" alt="GIF">`
+                      : "";
+                  }
 
-                    if (post.document) {
-                        text = post.caption || 'Медиа-контент';
-                        let docUrl = await getFileUrl(post.document.file_id);
-                        mediaHtml += docUrl ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>` : '';
-                    }
+                  if (post.document) {
+                    text = post.caption || "Медиа-контент";
+                    let docUrl = await getFileUrl(post.document.file_id);
+                    mediaHtml += docUrl
+                      ? `<p><a href="${docUrl}" target="_blank">📄 Скачать документ</a></p>`
+                      : "";
+                  }
 
-                    return `
+                  return `
                         <div class="post">
                             ${mediaHtml}
                             <p>${text}</p>
@@ -339,48 +467,52 @@ document.addEventListener("DOMContentLoaded", async function () {
                         </div>
                     `;
                 } catch (error) {
-                    console.error("Ошибка загрузки поста:", error);
-                    return getErrorBlock();
+                  console.error("Ошибка загрузки поста:", error);
+                  return getErrorBlock();
                 }
-            }));
+              })
+            );
 
             while (postsHtml.length < 4) {
-                postsHtml.push(getErrorBlock());
+              postsHtml.push(getErrorBlock());
             }
 
-            container.innerHTML = postsHtml.join('');
-        } catch (error) {
+            container.innerHTML = postsHtml.join("");
+          } catch (error) {
             console.error("Ошибка загрузки постов:", error);
-            container.innerHTML = Array(4).fill(getErrorBlock()).join('');
+            container.innerHTML = Array(4).fill(getErrorBlock()).join("");
+          }
         }
-    }
 
-    async function getFileUrl(fileId) {
-        try {
-            let res = await fetch(`https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`);
+        async function getFileUrl(fileId) {
+          try {
+            let res = await fetch(
+              `https://api.telegram.org/bot${botToken}/getFile?file_id=${fileId}`
+            );
             if (!res.ok) throw new Error("Ошибка API файлов");
 
             let data = await res.json();
-            if (!data.result || !data.result.file_path) throw new Error("Файл не найден");
+            if (!data.result || !data.result.file_path)
+              throw new Error("Файл не найден");
 
             return `https://api.telegram.org/file/bot${botToken}/${data.result.file_path}`;
-        } catch (error) {
+          } catch (error) {
             console.error("Ошибка загрузки файла:", error);
-            return '';
+            return "";
+          }
         }
-    }
 
-    function getErrorBlock() {
-        return `
+        function getErrorBlock() {
+          return `
             <div class="post error">
                 <p>Не удалось загрузить пост 😔</p>
             </div>
         `;
-    }
+        }
 
-    console.log("Запуск fetchPosts...");
-    fetchPosts();
-});
+        console.log("Запуск fetchPosts...");
+        fetchPosts();
+      });
     </script>
     @@include('partials/footer.html')
   </body>

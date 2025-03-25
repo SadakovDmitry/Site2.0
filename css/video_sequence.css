@@ -1,9 +1,11 @@
-.video-gallery {
+/* Стили для галереи */
+.photo-gallery {
   display: flex;
   overflow-x: scroll;
   background-color: #202120;
   gap: 60px;
   padding: 60px;
+  padding-bottom: 30px;
   padding-top: 0;
   height: auto;
 
@@ -11,49 +13,56 @@
   scroll-snap-type: x mandatory;
 }
 
-.video-gallery::-webkit-scrollbar {
+.photo-gallery::-webkit-scrollbar {
   display: none;
 }
 
-/* Элементы видео */
-.video-item {
+/* Элементы изображения */
+.photo-item {
   position: relative;
-  width: 396px;
-  height: 260px;
+  /* width: 396px; */
+  /* height: 260px; */
+  width: 40%;
+  height: 30vw;
   overflow: hidden;
   background-color: #202120;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
   flex-shrink: 0; /* Запрещает сжатие элементов */
-  /* bottom: 50px; */
 }
 
-.video-item .text {
+.photo-item img {
+  filter: grayscale(100%); /* Делаем изображение черно-белым */
+  transition: filter 0.3s ease-in-out; /* Плавное изменение цвета */
+}
+
+.photo-item img:hover {
+  filter: grayscale(0%); /* При наведении убираем черно-белый фильтр */
+}
+
+.photo-item .text {
   padding: 0;
   width: calc(100% - 5px);
-  height: 30px;
+  height: auto;
   left: 5px;
   top: calc(100% - 30px);
 }
 
-.video-item .text .customer {
-  position: absolute;
+.photo-item .text .customer {
+  position: relative;
   left: 0px;
   width: 100%;
-  height: 15px;
-  /* top: calc(100% - 30px); */
+  height: auto;
   bottom: 0;
   text-align: left;
   font-weight: 400;
-  font-size: clamp(10px, 2vw, 12px);
+  font-size: clamp(10px, 1.8vw, 60px);
   line-height: 1.2;
 }
 
-.video-item .text .year {
+.photo-item .text .year {
   position: absolute;
   left: 0px;
   width: 100%;
-  height: 15px;
-  /* top: calc(100% - 30px); */
+  height: auto;
   bottom: 0;
   text-align: right;
   font-weight: 400;
@@ -61,54 +70,31 @@
   line-height: 1.2;
 }
 
-.video1 {
-  height: 500px;
-}
-
-.video2 {
-  height: 400px;
-}
-
-.video3 {
-  height: 500px;
-}
-
-.video4 {
-  height: 300px;
-}
-
-.video5 {
-  height: 200px;
-}
-
-/* Видео */
-.video {
+/* Изображения */
+.photo {
   width: 100%;
-  height: calc(100% - 30px);
+  height: 20vw;
   background-color: #202120;
   filter: grayscale(100%);
   object-fit: cover;
 }
 
-/* Иконка для открытия видео */
-.video-overlay {
+/* Иконка для открытия фото */
+.photo-overlay {
   position: absolute;
   width: 16px;
   height: 16px;
   bottom: 0;
   right: 0;
-  padding-bottom: calc(30px + 35px);
-  padding-right: 35px;
+  padding-bottom: 12vw;
+  padding-right: 2vw;
   text-align: center;
-  font-size: 24px;
+  font-size: clamp(6px, 2vw, 60px);
   cursor: pointer;
   color: #fff;
-  /* opacity: 0;
-  transition: opacity 0.3s ease; */
-  opacity: 1;
 }
 
-.video-play {
+/* .photo-play {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -120,13 +106,6 @@
   font-size: 14px;
   cursor: pointer;
   color: #fff;
-  /* opacity: 0;
-  transition: opacity 0.3s ease; */
-  opacity: 1;
-}
-
-/* Показать иконку при наведении */
-/* .video-item:hover .video-overlay {
   opacity: 1;
 } */
 
@@ -156,20 +135,11 @@
   object-fit: contain;
 }
 
-.modal-content video {
+.modal-content img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
-/* .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 36px;
-  color: #000;
-  cursor: pointer;
-} */
 
 .close {
   position: absolute;
@@ -200,37 +170,35 @@
 
 /* Поддержка для мобильных устройств */
 @media (max-width: 768px) {
-  .video-gallery {
-    /* flex-direction: column; */
+  .photo-gallery {
     padding: 20px;
     gap: 20px;
   }
 
-  .video1 {
+  /* .photo1 {
     height: 250px;
   }
 
-  .video2 {
+  .photo2 {
     height: 200px;
   }
 
-  .video3 {
+  .photo3 {
     height: 250px;
   }
 
-  .video4 {
+  .photo4 {
     height: 150px;
   }
 
-  .video5 {
+  .photo5 {
     height: 100px;
-  }
+  } */
 
-  .video-item {
-    /* width: 100%; */
-    width: 198px;
+  /* .photo-item {
+    width: auto;
     object-fit: contain;
-  }
+  } */
 
   .close {
     width: 40px;
@@ -239,35 +207,28 @@
     padding: 8px 8px;
   }
 
-  .video {
+  /* .photo {
     height: calc(100% - 20px);
+  } */
+
+  .photo-overlay {
+    padding-right: 1vw;
+    padding-bottom: 10vw;
   }
 
-  .video-overlay {
-    padding-bottom: calc(20px + 17.5px);
-    padding-right: 15px;
-    font-size: 20px;
-  }
-
-  .video-play {
-    padding-bottom: calc(20px + 12px);
-    padding-left: 15px;
-    font-size: 12px;
-  }
-
-  .video-item .text {
+  /* .photo-item .text {
     height: 20px;
     left: 5px;
     top: calc(100% - 20px);
   }
 
-  .video-item .text .customer {
+  .photo-item .text .customer {
     font-size: clamp(6px, 2vw, 8px);
     line-height: 1.2;
   }
 
-  .video-item .text .year {
+  .photo-item .text .year {
     font-size: clamp(6px, 2vw, 8px);
     line-height: 1.2;
-  }
+  } */
 }
