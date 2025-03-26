@@ -261,7 +261,7 @@
     <div class="popup-content">
       <span id="closeFormBtn" class="close-btn">&times;</span>
       <h2>Записаться на консультацию</h2>
-      <form id="contactForm" action="your-server-endpoint" method="POST">
+      <form id="contactForm" action="send_mail.php" method="POST">
         <!-- <label for="name">Имя:</label> -->
         <input
           type="text"
@@ -358,7 +358,7 @@
   </div>
   <div class="images">
     <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
-    <svg width="200" height="200" viewBox="0 0 200 200">
+    <!-- <svg width="200" height="200" viewBox="0 0 200 200">
       <circle
         id="timeline"
         cx="6.55"
@@ -368,7 +368,7 @@
         stroke-width="2"
         fill="none"
       />
-    </svg>
+    </svg> -->
   </div>
 </section>
 
@@ -388,7 +388,7 @@
 
     const sliderImage = document.getElementById("sliderImage");
     const dots = document.querySelectorAll(".dot");
-    const timeline = document.getElementById("timeline");
+    // const timeline = document.getElementById("timeline");
 
     // Функция для обновления изображения слайдера
     function updateSlider() {
@@ -396,21 +396,21 @@
     }
 
     // Функция для начала анимации таймлайна
-    function startTimelineAnimation() {
-      timeline.style.animation = "fillTimeline 5s linear forwards";
-      resetTimeline();
-    }
+    // function startTimelineAnimation() {
+    //   timeline.style.animation = "fillTimeline 5s linear forwards";
+    //   resetTimeline();
+    // }
 
     // Функция для сброса анимации таймлайна с задержкой
-    function resetTimeline() {
-      timeline.style.animation = "none"; // Останавливаем анимацию
-      // Принудительно пересчитываем DOM
-      timeline.offsetHeight;
-      // Ждем пару миллисекунд перед перезапуском анимации
-      setTimeout(() => {
-        timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
-      }, 10);
-    }
+    // function resetTimeline() {
+    //   timeline.style.animation = "none"; // Останавливаем анимацию
+    //   // Принудительно пересчитываем DOM
+    //   timeline.offsetHeight;
+    //   // Ждем пару миллисекунд перед перезапуском анимации
+    //   setTimeout(() => {
+    //     timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
+    //   }, 10);
+    // }
 
     function updateActiveDot() {
       dots.forEach((dot, photo_index) => {
@@ -426,7 +426,7 @@
       nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
       updateSlider(); // Обновляем изображение
       updateActiveDot();
-      resetTimeline(); // Сбрасываем таймлайн
+      // resetTimeline(); // Сбрасываем таймлайн
     }
 
     // Функция для обновления активной точки (dot)
@@ -438,27 +438,27 @@
       nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
       updateSlider();
       updateActiveDot();
-      resetTimeline();
+      // resetTimeline();
     });
 
     document.getElementById("nextBtn").addEventListener("click", () => {
       nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
       updateSlider();
       updateActiveDot();
-      resetTimeline();
+      // resetTimeline();
     });
 
     // Инициализация: устанавливаем первое изображение и начинаем анимацию
-    resetTimeline();
+    // resetTimeline();
     updateSlider();
-    resetTimeline();
+    // resetTimeline();
     updateActiveDot();
-    resetTimeline();
-    startTimelineAnimation();
-    resetTimeline();
+    // resetTimeline();
+    // startTimelineAnimation();
+    // resetTimeline();
 
     // Автоматическая смена слайдов каждые 5 секунд
-    setInterval(nextSlide, 5000);
+    // setInterval(nextSlide, 5000);
   });
 </script>
 

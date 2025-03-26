@@ -27,9 +27,9 @@ const sectionData = {
     thesis_5: "Пресс-поддержка мероприятий",
     thesis_6: "Участие в крупнейших международных и отечественных форумах, включая ПМЭФ и «Россия Зовет»",
     photo_sequence:[
-      { path: "../images/pr_article1.jpg", customer: "Вирусные статьи для PR-продвижения строительной компании", year: "" },
-      { path: "../images/pr_article2.jpg", customer: "Личный бренд как локомотив корпоративного PR", year: "" },
-      { path: "../images/pr_article3.jpg", customer: "PR как альтернатива SEO-продвижению: до +450% прироста к трафику за один день", year: "" }
+      { path: "../images/pr_article1.jpg", customer: "Вирусные статьи для PR-продвижения строительной компании", year: "", href: "https://workspace.ru/cases/virusnye-stati-dlya-pr-prodvizheniya-stroitelnoy-kompanii/" },
+      { path: "../images/pr_article2.jpg", customer: "Личный бренд как локомотив корпоративного PR", year: "", href: "https://workspace.ru/cases/lichnyy-brend-kak-lokomotiv-korporativnogo-pr/" },
+      { path: "../images/pr_article3.jpg", customer: "PR как альтернатива SEO-продвижению: до +450% прироста к трафику за один день", year: "", href: "https://workspace.ru/cases/pr-i-brend-bidding-kak-alternativa-seo-prodvizheniyu-do-450-prirosta-k-trafiku-za-odin-den/" }
     ]
   },
   prod: {
@@ -53,11 +53,11 @@ const sectionData = {
     thesis_5: "",
     thesis_6: "",
     photo_sequence:[
-      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "" },
-      { path: "../images/prod_article2.jpg", customer: "Рекламный видеоролик банной печи для Европейского рынка", year: "" },
-      { path: "../images/prod_article3.jpg", customer: "Создание контента для Лакокрасочных изделий", year: "" },
-      { path: "../images/prod_article4.png", customer: "УМНЫЙ ДОМ ИЗ БРУСА: как технологии превращают его в идеальное место для жизни", year: "" },
-      { path: "../images/prod_article5.png", customer: "Одноэтажные каркасные дома в лесной экозоне", year: "" }
+      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "", href: "https://workspace.ru/cases/youtube-kak-lidgen-dlya-produkta-s-chekom-ot-10-000-000/" },
+      { path: "../images/prod_article2.jpg", customer: "Рекламный видеоролик банной печи для Европейского рынка", year: "", href: "https://workspace.ru/cases/reklamnyy-videorolik-bannoy-pechi-dlya-evropeyskogo-rynka/" },
+      { path: "../images/prod_article3.jpg", customer: "Создание контента для Лакокрасочных изделий", year: "", href: "https://workspace.ru/cases/sozdanie-kontenta-dlya-lakokrasochnyh-izdeliy/" },
+      { path: "../images/prod_article4.png", customer: "УМНЫЙ ДОМ ИЗ БРУСА: как технологии превращают его в идеальное место для жизни", year: "",href: "https://www.youtube.com/watch?v=03T0egxLPWY" },
+      { path: "../images/prod_article5.png", customer: "Одноэтажные каркасные дома в лесной экозоне", year: "", href: "https://www.youtube.com/watch?v=jfJbV8c5muE" }
     ]
 },
   web: {
@@ -79,8 +79,8 @@ const sectionData = {
     thesis_5: "Разрабатываем и имплементируем решение под ключ",
     thesis_6: "Организуем пост-поддержку и доработку продукта в рамках последующих итераций",
     photo_sequence:[
-      { path: "../images/web_article1.png", customer: "MRC-club: Сервис журналистских запросов", year: "" },
-      { path: "../images/web_article2.jpg", customer: "HalleHouse: Строительство домов под ключ", year: "" }
+      { path: "../images/web_article1.png", customer: "MRC-club: Сервис журналистских запросов", year: "", href: "https://mrc-club.ru/" },
+      { path: "../images/web_article2.jpg", customer: "HalleHouse: Строительство домов под ключ", year: "", href: "https://halle-house.ru/" }
     ]
   },
   smm: {
@@ -102,9 +102,9 @@ const sectionData = {
     thesis_5: "ПРИВЛЕЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ ИСТОЧНИКОВ ТРАФИКА ",
     thesis_6: "",
     photo_sequence:[
-      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "" },
-      { path: "../images/smm_article2.jpg", customer: "SMM-продвижение строительного бренда через Instagram", year: "" },
-      { path: "../images/smm_article3.jpg", customer: "Срочное повышение продаж регионального магазина детской обуви", year: "" }
+      { path: "../images/prod_article1.jpg", customer: "YouTube как лидген для продукта с чеком от 10 000 000 ₽", year: "", href: "https://workspace.ru/cases/youtube-kak-lidgen-dlya-produkta-s-chekom-ot-10-000-000/" },
+      { path: "../images/smm_article2.jpg", customer: "SMM-продвижение строительного бренда через Instagram", year: "", href: "https://workspace.ru/cases/seo-prodvizhenie-stroitelnogo-brenda-cherez-instagram/" },
+      { path: "../images/smm_article3.jpg", customer: "Срочное повышение продаж регионального магазина детской обуви", year: "", href: "https://workspace.ru/cases/srochnoe-povyshenie-prodazh-regionalnogo-magazina-detskoy-obuvi/" }
     ]
   },
 };

@@ -314,11 +314,11 @@ textarea:focus {
   height: 51%;
 }
 
-#timeline {
-  stroke-dasharray: 700; /* Длина окружности */
-  stroke-dashoffset: 700; /* Начальная точка */
-  transition: stroke-dashoffset 5s linear; /* Плавное заполнение */
-  position: absolute; /* Чтобы разместить его внутри родительского контейнера */
+/* #timeline {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  transition: stroke-dashoffset 5s linear;
+  position: absolute;
   top: 0;
   left: 0;
   transform-origin: center;
@@ -333,7 +333,7 @@ textarea:focus {
   100% {
     stroke-dashoffset: 0;
   }
-}
+} */
 
 footer {
   position: relative;

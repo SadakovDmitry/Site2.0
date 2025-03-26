@@ -7,15 +7,14 @@ const photos = [
 ];
 
 
-function generatePhotoHTML(photoPath, customerName, year, index) {
-  return `<div class="photo-item photo${index + 1}" draggable="true">
+function generatePhotoHTML(photoPath, customerName, year, index, href) {
+  return `<a class="photo-item photo${index + 1}" draggable="true" href="${href}">
             <img class="photo" src="${photoPath}" alt="Фото ${index + 1}" />
-            <div class="photo-overlay" onclick="openPhoto('${photoPath}')">&#x26F6;</div>
             <div class="text">
               <p class="customer">${customerName}</p>
               <p class="year">${year}</p>
             </div>
-          </div>`;
+          </a>`;
 }
 
 function generatePhotoGallery(photos) {
@@ -25,7 +24,7 @@ function generatePhotoGallery(photos) {
   }
   const galleryHTML = photos
     .map((photo, index) =>
-      generatePhotoHTML(photo.path, photo.customer, photo.year, index)
+      generatePhotoHTML(photo.path, photo.customer, photo.year, index, photo.href)
     )
     .join("");
 

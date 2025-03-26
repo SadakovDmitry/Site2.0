@@ -187,6 +187,15 @@
       </div>
     </section>
     <script>
+      let images = [
+        "../images/IMG_4653.png",
+        "../images/11zon_cropped (2).png",
+        "../images/7L8A4657.png",
+        "../images/11zon_cropped (5).png",
+        "../images/11zon_cropped (14).png",
+        "../images/IMG_4656.png",
+        // "../images/image7.png",
+      ];
       // function changeText(element, newText) {
       //   element.querySelector('.invisible').textContent = newText;
       // }
@@ -275,7 +284,7 @@
         >
           <img class="photo" src="../images/mk-logo.svg" alt="Фото 1" />
           <div class="text">
-            <div class="author">Людмила Александрова</div>
+            <div class="author">Александр Кривошеев</div>
             <div class="date">11.03.2025</div>
           </div>
           <p class="title">Цены на огурцы и помидоры бьют рекорды</p>
@@ -286,9 +295,9 @@
           class="photo-item photo2"
           draggable="true"
         >
-          <img class="photo" src="../images/izvestia-logo.svg" alt="Фото 2" />
+          <img class="photo" src="../images/Izvestia_logo.svg" alt="Фото 2" />
           <div class="text">
-            <div class="author">Павел Волков</div>
+            <div class="author">Александр Кривошеев</div>
             <div class="date">21.02.2025</div>
           </div>
           <p class="title">
@@ -342,7 +351,7 @@
             alt="Фото 5"
           />
           <div class="text">
-            <div class="author">Маргарита Разгуляева</div>
+            <div class="author">Александрина Адамович</div>
             <div class="date">17.01.2025</div>
           </div>
           <p class="title">
@@ -717,7 +726,7 @@
     <div class="popup-content">
       <span id="closeFormBtn" class="close-btn">&times;</span>
       <h2>Записаться на консультацию</h2>
-      <form id="contactForm" action="your-server-endpoint" method="POST">
+      <form id="contactForm" action="send_mail.php" method="POST">
         <!-- <label for="name">Имя:</label> -->
         <input
           type="text"
@@ -814,7 +823,7 @@
   </div>
   <div class="images">
     <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
-    <svg width="200" height="200" viewBox="0 0 200 200">
+    <!-- <svg width="200" height="200" viewBox="0 0 200 200">
       <circle
         id="timeline"
         cx="6.55"
@@ -824,7 +833,7 @@
         stroke-width="2"
         fill="none"
       />
-    </svg>
+    </svg> -->
   </div>
 </section>
 
@@ -844,7 +853,7 @@
 
     const sliderImage = document.getElementById("sliderImage");
     const dots = document.querySelectorAll(".dot");
-    const timeline = document.getElementById("timeline");
+    // const timeline = document.getElementById("timeline");
 
     // Функция для обновления изображения слайдера
     function updateSlider() {
@@ -852,21 +861,21 @@
     }
 
     // Функция для начала анимации таймлайна
-    function startTimelineAnimation() {
-      timeline.style.animation = "fillTimeline 5s linear forwards";
-      resetTimeline();
-    }
+    // function startTimelineAnimation() {
+    //   timeline.style.animation = "fillTimeline 5s linear forwards";
+    //   resetTimeline();
+    // }
 
     // Функция для сброса анимации таймлайна с задержкой
-    function resetTimeline() {
-      timeline.style.animation = "none"; // Останавливаем анимацию
-      // Принудительно пересчитываем DOM
-      timeline.offsetHeight;
-      // Ждем пару миллисекунд перед перезапуском анимации
-      setTimeout(() => {
-        timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
-      }, 10);
-    }
+    // function resetTimeline() {
+    //   timeline.style.animation = "none"; // Останавливаем анимацию
+    //   // Принудительно пересчитываем DOM
+    //   timeline.offsetHeight;
+    //   // Ждем пару миллисекунд перед перезапуском анимации
+    //   setTimeout(() => {
+    //     timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
+    //   }, 10);
+    // }
 
     function updateActiveDot() {
       dots.forEach((dot, photo_index) => {
@@ -882,7 +891,7 @@
       nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
       updateSlider(); // Обновляем изображение
       updateActiveDot();
-      resetTimeline(); // Сбрасываем таймлайн
+      // resetTimeline(); // Сбрасываем таймлайн
     }
 
     // Функция для обновления активной точки (dot)
@@ -894,27 +903,27 @@
       nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
       updateSlider();
       updateActiveDot();
-      resetTimeline();
+      // resetTimeline();
     });
 
     document.getElementById("nextBtn").addEventListener("click", () => {
       nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
       updateSlider();
       updateActiveDot();
-      resetTimeline();
+      // resetTimeline();
     });
 
     // Инициализация: устанавливаем первое изображение и начинаем анимацию
-    resetTimeline();
+    // resetTimeline();
     updateSlider();
-    resetTimeline();
+    // resetTimeline();
     updateActiveDot();
-    resetTimeline();
-    startTimelineAnimation();
-    resetTimeline();
+    // resetTimeline();
+    // startTimelineAnimation();
+    // resetTimeline();
 
     // Автоматическая смена слайдов каждые 5 секунд
-    setInterval(nextSlide, 5000);
+    // setInterval(nextSlide, 5000);
   });
 </script>
 
