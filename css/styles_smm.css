@@ -129,7 +129,7 @@ h3 {
 }
 
 div {
-  font-size: clamp(7px, 1.2vw, 15px);
+  font-size: clamp(7px, 1.2vw, 30px);
   line-height: 1.1;
   text-align: justify;
 }
@@ -145,11 +145,11 @@ div {
 
 .describe .top {
   margin-bottom: 1.25vw;
-  font-family: "Arian", sans-serif;
+  /* font-family: "Arian", sans-serif; */
 }
 
 .describe .bottom {
-  font-family: "Arian", sans-serif;
+  /* font-family: "Arian", sans-serif; */
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
