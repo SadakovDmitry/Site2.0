@@ -375,90 +375,77 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     // const images = [
-    //   "../images/IMG_4653.png",
-    //   "../images/1I8A9580.png",
-    //   "../images/7L8A4657.png",
-    //   "../images/7L8A4661.png",
-    //   "../images/IMG_4447.png",
-    //   "../images/IMG_4656.png",
-    //   "../images/image7.png",
+    //   "../images/IMG_4653.webp",
+    //   "../images/1I8A9580.webp",
+    //   "../images/7L8A4657.webp",
+    //   "../images/7L8A4661.webp",
+    //   "../images/IMG_4447.webp",
+    //   "../images/IMG_4656.webp",
+    //   "../images/image7.webp",
     // ];
 
-    let nowPhotoIndex = 0;
+    const pointsContainer = document.querySelector(".points");
 
+    function createDots() {
+      pointsContainer.innerHTML = ""; // Очищаем старые точки
+      images.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active"); // Делаем первую точку активной
+        pointsContainer.appendChild(dot);
+      });
+    }
+
+    createDots();
+
+    let nowPhotoIndex = 0;
     const sliderImage = document.getElementById("sliderImage");
     const dots = document.querySelectorAll(".dot");
-    // const timeline = document.getElementById("timeline");
 
-    // Функция для обновления изображения слайдера
+    const preloadedImages = images.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
     function updateSlider() {
       sliderImage.src = images[nowPhotoIndex];
     }
 
-    // Функция для начала анимации таймлайна
-    // function startTimelineAnimation() {
-    //   timeline.style.animation = "fillTimeline 5s linear forwards";
-    //   resetTimeline();
-    // }
-
-    // Функция для сброса анимации таймлайна с задержкой
-    // function resetTimeline() {
-    //   timeline.style.animation = "none"; // Останавливаем анимацию
-    //   // Принудительно пересчитываем DOM
-    //   timeline.offsetHeight;
-    //   // Ждем пару миллисекунд перед перезапуском анимации
-    //   setTimeout(() => {
-    //     timeline.style.animation = "fillTimeline 5s linear forwards"; // Перезапускаем анимацию
-    //   }, 10);
-    // }
-
     function updateActiveDot() {
       dots.forEach((dot, photo_index) => {
-        if ((photo_index - 1) % /* images.length */ 7 === nowPhotoIndex) {
-          dot.classList.add("active");
-        } else {
-          dot.classList.remove("active");
-        }
+        dot.classList.toggle(
+          "active",
+          (photo_index - 1) % images.length === nowPhotoIndex
+        );
       });
     }
-    // Функция для перехода к следующему слайду
-    function nextSlide() {
-      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
-      updateSlider(); // Обновляем изображение
-      updateActiveDot();
-      // resetTimeline(); // Сбрасываем таймлайн
+
+    function preloadNextImage() {
+      const nextIndex = (nowPhotoIndex + 1) % images.length;
+      preloadedImages[nextIndex].src = images[nextIndex]; // Предзагрузка следующего изображения
     }
 
-    // Функция для обновления активной точки (dot)
+    function nextSlide() {
+      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+      updateSlider();
+      updateActiveDot();
+      preloadNextImage();
+    }
 
-    updateActiveDot();
-
-    // Добавляем обработчики для кнопок "prev" и "next"
-    document.getElementById("prevBtn").addEventListener("click", () => {
+    function prevSlide() {
       nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
       updateSlider();
       updateActiveDot();
-      // resetTimeline();
-    });
+      preloadNextImage();
+    }
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
-      updateSlider();
-      updateActiveDot();
-      // resetTimeline();
-    });
+    document.getElementById("prevBtn").addEventListener("click", prevSlide);
+    document.getElementById("nextBtn").addEventListener("click", nextSlide);
 
-    // Инициализация: устанавливаем первое изображение и начинаем анимацию
-    // resetTimeline();
     updateSlider();
-    // resetTimeline();
     updateActiveDot();
-    // resetTimeline();
-    // startTimelineAnimation();
-    // resetTimeline();
-
-    // Автоматическая смена слайдов каждые 5 секунд
-    // setInterval(nextSlide, 5000);
+    preloadNextImage();
   });
 </script>
 
