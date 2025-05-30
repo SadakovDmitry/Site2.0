@@ -1,0 +1,324 @@
+* {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #202120;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MAIN */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+main {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+main img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  filter: blur(6px);
+  margin-top: 13.5vw;
+  z-index: -1;
+}
+
+h1 {
+  display: block;
+  font-size: clamp(14px, 4vw, 72px);
+  height: 58px;
+}
+
+h3 {
+  display: block;
+  text-align: left;
+  font-size: clamp(15px, 2vw, 30px);
+  line-height: 1.1;
+}
+
+main .text {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 5.2vw;
+  margin-left: 3.25%;
+  margin-right: 3.3%;
+  height: auto;
+  margin-bottom: 12.8vw;
+}
+
+div {
+  font-size: 15px;
+  font-family: "Arian", sans-serif;
+}
+
+div {
+  font-size: clamp(7px, 1.2vw, 15px);
+  line-height: 1.1;
+  text-align: justify;
+}
+
+main h1 {
+  margin-top: 26.5vw;
+  margin-left: 3.3%;
+}
+
+main .text h3 {
+  width: 38%;
+  margin: 0;
+}
+
+.text .describe {
+  width: 46.15%;
+  margin: 0;
+}
+
+.describe .top {
+  margin-bottom: 1.25vw;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* MAIN MOBILE*/
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 800px) {
+  main .text {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  main .text h3 {
+    width: 65%;
+  }
+
+  .text .describe {
+    width: 65%;
+  }
+
+  h1 {
+    font-size: clamp(14px, 5vw, 72px);
+    height: auto;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .describe div {
+    margin-top: 10vw;
+  }
+
+  div {
+    font-size: 15px;
+    font-family: "Arian", sans-serif;
+  }
+
+  .describe .bottom {
+    margin-bottom: 12.5vw;
+  }
+}
+
+@media (max-width: 500px) {
+  main .text h3 {
+    width: 80%;
+  }
+
+  .text .describe {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: clamp(14px, 6vw, 72px);
+    height: auto;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .describe div {
+    margin-top: 10vw;
+  }
+
+  div {
+    font-size: 12px;
+  }
+
+  .describe .bottom {
+    margin-bottom: 12.5vw;
+  }
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* BORDER */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.border {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 74.08px;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.part1 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(45deg);
+}
+
+.part2 {
+  position: absolute;
+  top: 37.4px;
+  width: 104.77px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(-45deg);
+}
+
+.border .dot {
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  background-color: #202120;
+  border-radius: 50%;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* LEADERS */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.leaders h1 {
+  position: absolute;
+  left: 3.3%;
+  top: 0;
+  font-size: clamp(20px, 4vw, 120px);
+}
+
+.leaders {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  padding: 20px;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  margin-top: 40px;
+}
+.leader {
+  text-align: center;
+}
+.leader img {
+  width: 30vw;
+  height: 50vw;
+  object-fit: cover;
+  border-radius: 10%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+}
+.leader p {
+  margin-top: 10px;
+  font-size: clamp(6px, 2.5vw, 60px);
+  font-weight: bold;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* COMMAND */
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.command {
+  text-align: center;
+  padding: 50px 5%;
+}
+
+.command h1 {
+  left: 3.3%;
+  text-align: left;
+  font-size: clamp(20px, 4vw, 48px);
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.employee {
+  background: #333;
+  /* padding: 20px; */
+  padding: 4%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  aspect-ratio: 9/14;
+}
+
+.name {
+  /* font-size: 20px; */
+  font-size: clamp(7px, 2vw, 60px);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.quote {
+  /* font-size: 16px; */
+  font-size: clamp(7px, 1.6vw, 60px);
+  font-style: italic;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+@media (max-width: 1400px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .name {
+    font-size: clamp(4px, 3vw, 60px);
+  }
+
+  .quote {
+    font-size: clamp(4px, 2.6vw, 60px);
+  }
+}
+
+/* @media (max-width: 700px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */

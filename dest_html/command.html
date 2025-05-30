@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/fonts.css" />
+<link rel="stylesheet" href="../css/footer.css" />
+<title>+7 GROUP</title>
+
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/command.css" />
+    <!-- <link rel="stylesheet" href="../css/one_video.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/video_sequence.css" /> -->
+  </head>
+  <body>
+    <section class="logo-section">
+  <a class="icon1" href="index.html">
+    <img src="../images/logo.png" alt="Logo" />
+  </a>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="about_us.html">О нас</a></li>
+      <li><a href="index.html#services">Услуги</a></li>
+      <!-- <li><a href="projects.html">Проекты</a></li> -->
+      <li><a href="#footer">Контакты</a></li>
+      <li><a href="command.html">Команда</a></li>
+    </ul>
+    <svg
+      class="menu_cross"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="5" y1="5" x2="20" y2="20" stroke="white" stroke-width="1" />
+      <line x1="5" y1="20" x2="20" y2="5" stroke="white" stroke-width="1" />
+    </svg>
+    <div class="title">
+      <span>Меню</span>
+      <svg
+        class="menu_dot"
+        width="4"
+        height="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="2" cy="2" r="2" fill="white" />
+      </svg>
+    </div>
+  </nav>
+</section>
+
+<script>
+  let menuElem = document.getElementById("menu");
+  let titleElem = menuElem.querySelector(".title");
+  let circleElem = menuElem.querySelector(".menu_cross");
+
+  titleElem.onclick = function () {
+    menuElem.classList.toggle("open");
+  };
+
+  circleElem.onclick = function () {
+    menuElem.classList.remove("open");
+  };
+</script>
+
+    <main>
+      <img src="../images/about.png" alt="Команда" class="about_us" />
+      <h1>команда</h1>
+    </main>
+    <div class="border">
+      <div class="horizontal"></div>
+      <div class="part1"></div>
+      <div class="part2"></div>
+      <div class="dot"></div>
+    </div>
+    <script>
+      let images = [
+        "../images/IMG_4653.png",
+        "../images/11zon_cropped (2).png",
+        "../images/7L8A4657.png",
+        "../images/11zon_cropped (5).png",
+        "../images/11zon_cropped (14).png",
+        "../images/IMG_4656.png",
+        // "../images/image7.png",
+      ];
+    </script>
+    <section class="leaders">
+      <h1>Руководители</h1>
+      <div class="leader">
+        <img src="../images/IMG_4627.JPG" alt="Руководитель 1" />
+        <p>Александр Кривошеев</p>
+      </div>
+      <div class="leader">
+        <img src="../images/IMG_3643.PNG" alt="Руководитель 2" />
+        <p>Александрина Адамович</p>
+      </div>
+    </section>
+    <section class="command">
+      <h1>Наша команда</h1>
+      <div class="team-grid">
+        <div class="employee">
+          <img src="../command/я.jpg" alt="Сотрудник 1" />
+          <p class="name">Садаков Дмитрий</p>
+          <p class="quote">Разработчик</p>
+        </div>
+        <div class="employee">
+          <img src="../command/Владимир Красников.jpg" alt="Сотрудник 2" />
+          <p class="name">Владимир Красников</p>
+          <p class="quote">Руководитель IT отдела</p>
+        </div>
+        <div class="employee">
+          <img src="../command/Евгения Садовская.JPG" alt="Сотрудник 3" />
+          <p class="name">Евгения Садовская</p>
+          <p class="quote">SMM Специалист</p>
+        </div>
+        <div class="employee">
+          <img src="../command/Ирина Блинникова.jpg" alt="Сотрудник 4" />
+          <p class="name">Ирина Блинникова</p>
+          <p class="quote">Специалист по связям с общественностью</p>
+        </div>
+        <div class="employee">
+          <img src="../command/Мартиросов Георгий.jpg" alt="Сотрудник 5" />
+          <p class="name">Мартиросов Георгий</p>
+          <p class="quote">Специалист по PR в сфере GR</p>
+        </div>
+        <div class="employee">
+          <img src="../command/Раскин Денис.jpg" alt="Сотрудник 6" />
+          <p class="name">Раскин Денис</p>
+          <p class="quote">PR Специалист</p>
+        </div>
+      </div>
+    </section>
+    <section class="form">
+  <script
+    type="module"
+    src="https://unpkg.com/@splinetool/viewer@1.9.42/build/spline-viewer.js"
+  ></script>
+  <button id="openFormBtn">
+    <div class="href">
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@1.9.58/build/spline-viewer.js"
+      ></script>
+      <spline-viewer
+        hint
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/mlR0qejGlDrEsL8t/scene.splinecode"
+      ></spline-viewer>
+      <div class="sign">
+        <p>записаться</p>
+        <img src="../images/Frame 40.svg" alt="" />
+      </div>
+    </div>
+  </button>
+  <div id="popupForm" class="popup-form">
+    <div class="popup-content">
+      <span id="closeFormBtn" class="close-btn">&times;</span>
+      <h2>Записаться на консультацию</h2>
+      <form id="contactForm" action="send_mail.php" method="POST">
+        <!-- <label for="name">Имя:</label> -->
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="имя"
+          required
+        /><br /><br />
+
+        <!-- <label for="email">Email:</label> -->
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email"
+          required
+        /><br /><br />
+
+        <!-- <label for="phone">Телефон:</label> -->
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+7"
+          required
+        /><br /><br />
+
+        <!-- <label for="message">Описание задачи:</label> -->
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Опишите вашу задачу"
+          rows="1"
+          required
+        ></textarea
+        ><br /><br />
+
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const openFormBtn = document.getElementById("openFormBtn");
+  const popupForm = document.getElementById("popupForm");
+  const closeFormBtn = document.getElementById("closeFormBtn");
+
+  // Открыть форму при нажатии на кнопку
+  openFormBtn.addEventListener("click", function () {
+    popupForm.style.display = "block";
+  });
+
+  // Закрытие pop-up формы
+  closeFormBtn.addEventListener("click", function () {
+    popupForm.style.display = "none";
+  });
+
+  // Закрытие при клике вне формы
+  window.addEventListener("click", function (event) {
+    if (event.target === popupForm) {
+      popupForm.style.display = "none";
+    }
+  });
+
+  // Предотвращение стандартного действия формы
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Останавливаем стандартную отправку
+    alert("Форма отправлена успешно!");
+    popupForm.style.display = "none"; // Закрываем форму
+  });
+</script>
+
+<section class="camera" data-proportion-h="1">
+  <picture>
+    <img id="png_1920" src="../images/1920.png" alt="" />
+  </picture>
+  <script src="../camera.js"></script>
+  <div class="blik">
+    <img src="../images/blik.svg" alt="" />
+  </div>
+  <div class="image-slider">
+    <button id="prevBtn" class="arrow"></button>
+    <div class="points">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <button id="nextBtn" class="arrow"></button>
+  </div>
+  <div class="images">
+    <img id="sliderImage" src="../images/Ellipse 6.svg" alt="Slide 1" />
+    <!-- <svg width="200" height="200" viewBox="0 0 200 200">
+      <circle
+        id="timeline"
+        cx="6.55"
+        cy="197"
+        r="96"
+        stroke="#930909"
+        stroke-width="2"
+        fill="none"
+      />
+    </svg> -->
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // const images = [
+    //   "../images/IMG_4653.webp",
+    //   "../images/1I8A9580.webp",
+    //   "../images/7L8A4657.webp",
+    //   "../images/7L8A4661.webp",
+    //   "../images/IMG_4447.webp",
+    //   "../images/IMG_4656.webp",
+    //   "../images/image7.webp",
+    // ];
+
+    const pointsContainer = document.querySelector(".points");
+
+    function createDots() {
+      pointsContainer.innerHTML = ""; // Очищаем старые точки
+      images.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active"); // Делаем первую точку активной
+        pointsContainer.appendChild(dot);
+      });
+    }
+
+    createDots();
+
+    let nowPhotoIndex = 0;
+    const sliderImage = document.getElementById("sliderImage");
+    const dots = document.querySelectorAll(".dot");
+
+    const preloadedImages = images.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    function updateSlider() {
+      sliderImage.src = images[nowPhotoIndex];
+    }
+
+    function updateActiveDot() {
+      dots.forEach((dot, photo_index) => {
+        dot.classList.toggle(
+          "active",
+          (photo_index - 1) % images.length === nowPhotoIndex
+        );
+      });
+    }
+
+    function preloadNextImage() {
+      const nextIndex = (nowPhotoIndex + 1) % images.length;
+      preloadedImages[nextIndex].src = images[nextIndex]; // Предзагрузка следующего изображения
+    }
+
+    function nextSlide() {
+      nowPhotoIndex = (nowPhotoIndex + 1) % images.length;
+      updateSlider();
+      updateActiveDot();
+      preloadNextImage();
+    }
+
+    function prevSlide() {
+      nowPhotoIndex = (nowPhotoIndex - 1 + images.length) % images.length;
+      updateSlider();
+      updateActiveDot();
+      preloadNextImage();
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", prevSlide);
+    document.getElementById("nextBtn").addEventListener("click", nextSlide);
+
+    updateSlider();
+    updateActiveDot();
+    preloadNextImage();
+  });
+</script>
+
+<footer id="footer">
+  <div class="line"></div>
+  <a class="icon" href="index.html">
+    <img src="../images/logo.svg" alt="" />
+  </a>
+  <nav>
+    <ul class="information">
+      <li>help@plus7group.pro</li>
+      <li>+7 (800) 775-70-47</li>
+      <li>
+        Самокатная ул., 4, стр. 1, Москва, Креативный кластер Кристалл, этаж 1
+      </li>
+    </ul>
+    <ul class="menu">
+      <li><a href="about_us.html" class="left">О нас</a></li>
+      <li><a href="index.html#services" class="right">Услуги</a></li>
+      <!-- <li><a href="projects.html" class="right">Проекты</a></li> -->
+      <!-- <li><a href="#footer" class="right">Контакты</a></li> -->
+    </ul>
+    <ul class="media">
+      <li><a href="https://vk.com/plus7pr?from=groups">VK</a></li>
+      <li><a href="https://t.me/plus7production">Teleqram</a></li>
+      <!-- <li>
+        <a href="https://youtube.com/@plus_7productions837?si=MKJZR1agsTVpcOOF"
+          >YouTube</a
+        >
+      </li> -->
+    </ul>
+  </nav>
+  <p>© Все права защищены, 2024</p>
+</footer>
+
+  </body>
+</html>

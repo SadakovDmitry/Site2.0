@@ -1017,7 +1017,7 @@ main .text h3 {
 }
 
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-/* WORK_METHODS */
+/* GALLERY */
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
 /* Стили для галереи */
@@ -1277,76 +1277,54 @@ main .text h3 {
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 /* POSTS */
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.post-title {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 110px;
+}
+
+.post-title h1 {
+  position: absolute;
+  width: 96.7%;
+  height: auto;
+  top: 0;
+  left: 3.3%;
+  font-size: clamp(10px, 4vw, 120px);
+}
 
 .post-text {
   position: relative;
   width: 100%;
   top: 0;
-  margin-bottom: 10vw;
-  margin-top: 5vw;
+  /* margin-bottom: 10vw; */
+  /* margin-top: 5vw; */
   margin-left: 0;
   font-size: clamp(10px, 5vw, 120px);
 }
 
-.post-text h1 {
-  position: absolute;
-  top: 0;
-  left: 3.3%;
-  font-size: clamp(10px, 5vw, 120px);
+.full-text.hidden {
+  display: none;
 }
 
-.post {
-  display: flex;
-  flex-direction: column; /* Контент располагается вертикально */
-  /* justify-content: space-between; */
-  justify-content: start;
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  /* text-align: left; */
-  min-height: 300px; /* Минимальная высота */
+.post-text.hidden {
+  display: none;
 }
 
-.post img,
-.post video {
-  width: 100%;
-  height: auto;
-  max-height: 400px; /* Ограничение высоты */
-  object-fit: contain; /* Оставляем исходные пропорции */
-  border-radius: 10px;
+.expand-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  font-size: clamp(16px, 1.7vw, 24px);
+  cursor: pointer;
+  /* margin-top: 5px; */
+  margin-top: auto;
   margin-bottom: 10px;
 }
 
-.post a {
-  display: block;
-  margin-top: auto; /* Линки всегда внизу */
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.post p {
-  font-size: 14px;
-  color: #333;
-}
-
-.post.error p {
-  font-size: 14px;
-  color: #ffffff;
-}
-
-.post.error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #151615;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-  min-height: 300px;
-  border: 2px dashed #ffffff;
-  border-radius: 10px;
+.expand-btn:hover {
+  text-decoration: underline;
 }
 
 .posts-grid {
@@ -1358,6 +1336,7 @@ main .text h3 {
   max-width: 100%;
   width: 95%;
   margin: auto;
+  /* margin-top: 20px; */
 }
 
 @media (max-width: 1500px) {
@@ -1365,6 +1344,10 @@ main .text h3 {
     grid-template-columns: repeat(2, 1fr);
     width: 80%;
     grid-gap: 50px;
+  }
+
+  .post-title h1 {
+    margin-bottom: 90px;
   }
 }
 
@@ -1379,15 +1362,18 @@ main .text h3 {
     font-size: clamp(10px, 4vw, 120px);
   }
 
-  .post-text h1 {
-    font-size: clamp(10px, 4vw, 120px);
+  .post-title h1 {
+    margin-bottom: 60px;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   .posts-grid {
     grid-template-columns: repeat(1, 1fr);
     width: 70%;
+  }
+  .post-title h1 {
+    margin-bottom: 50px;
   }
 }
 
@@ -1395,11 +1381,17 @@ main .text h3 {
   .posts-grid {
     width: 80%;
   }
+  .post-title h1 {
+    margin-bottom: 40px;
+  }
 }
 
 @media (max-width: 450px) {
   .posts-grid {
     width: 95%;
+  }
+  .post-title h1 {
+    margin-bottom: 30px;
   }
 }
 
@@ -1413,7 +1405,7 @@ main .text h3 {
   border: 1px solid #ffffff;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   /* text-align: center; */
-  min-height: 300px; /* Минимальная высота */
+  /* min-height: 300px; */
 }
 
 .post img,
@@ -1452,7 +1444,6 @@ main .text h3 {
   color: #ffffff;
   font-weight: bold;
   text-align: center;
-  min-height: 300px;
   border: 2px dashed #ffffff;
   border-radius: 10px;
 }

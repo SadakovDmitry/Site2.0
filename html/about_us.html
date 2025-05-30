@@ -12,30 +12,6 @@
     <main>
       <img src="../images/about.png" alt="О нас" class="about_us" />
       <h1>О нас</h1>
-      <!-- <div class="text">
-        <h3>
-          +7 GROUP — ЭТО СОЗДАНИЕ МЕДИАКОНТЕНТА ПОЛНОГО ЦИКЛА И ЛЮБОЙ СЛОЖНОСТИ:
-          ОТ РАЗРАБОТКИ ИДЕИ ДО ПОСТПРОДАКШЕНА
-        </h3>
-        <div class="describe">
-          <div class="top">
-            МЫ — НЕБОЛЬШАЯ КРЕАТИВНАЯ КОМАНДА. ВМЕСТЕ МЫ ПРОШЛИ «ОГОНЬ»
-            ФЕДЕРАЛЬНЫХ ТЕЛЕКАНАЛОВ, «ВОДУ» ХУДОЖЕСТВЕННЫХ ПОСТАНОВОЧНЫХ И
-            РЕКЛАМНЫХ СЪЁМОК И «МЕДНЫЕ ТРУБЫ» ОНЛАЙН-ПРОЕКТОВ. ЕСЛИ СЛОЖИТЬ ОПЫТ
-            НАШЕЙ КОМАНДЫ, ПОЛУЧИТСЯ ОКОЛО 100 ЛЕТ. МЫ АБСОЛЮТНО ЧЕСТНО МОЖЕМ
-            СКАЗАТЬ, ЧТО ЗНАЕМ О ВИДЕОПРОИЗВОДСТВЕ ВСЕ, НЕ ПЫТАЕМСЯ ГНАТЬСЯ ЗА
-            ТРЕНДАМИ, КРЕАТИВИМ И СОЗДАЁМ СВОИ. ПОМИМО ПЕРЕЧИСЛЕННЫХ ПОДВИГОВ ЗА
-            ПЛЕЧАМИ НАШИХ ГЕРОЕВ ГРАНТ МИНКУЛЬТА, ЛАУРЕАТСТВА НА ПИТЧИНГАХ И
-            ФЕСТИВАЛЯХ, РАЗРАБОТКА И ИСПОЛНЕНИЕ БРЕНДМЕНЕДЖМЕНТА В
-            АУДИОВИЗУАЛЬНЫХ ФОРМАТАХ И, КОНЕЧНО, РЕЙТИНГОВЫЕ ВИДЕО В СЕТИ.
-          </div>
-          <div class="bottom">
-            В НАШЕЙ КОМАНДЕ ЕСТЬ И ХУДОЖНИКИ, КОТОРЫЕ СОЗДАЮТ ГРАФИЧЕСКОЕ
-            ОБРАМЛЕНИЕ ДЛЯ ВИДЕО, А ТАКЖЕ РИСУЮТ ЛОГОТИПЫ И ДЕЛАЮТ КРЕАТИВНЫЕ
-            LOOK-BOOKS.
-          </div>
-        </div>
-      </div> -->
     </main>
     <div class="border">
       <div class="horizontal"></div>
@@ -224,6 +200,42 @@
       <h1>Публикации</h1>
       <div class="photo-gallery">
         <a
+          href="https://riamo.ru/news/ekonomika/novaja-programma-lgotnogo-kreditovanija-msp-osobennosti-i-preimuschestva/"
+          class="photo-item photo6"
+          draggable="true"
+        >
+          <img class="photo" src="../images/reamo.webp" alt="Фото 6" />
+          <div class="text">
+            <div class="author">Александр Кривошеев</div>
+            <div class="date">04.04.2025</div>
+          </div>
+          <p class="title">
+            Новая программа льготного кредитования МСП: особенности и
+            преимущества
+          </p>
+          <!-- <p class="year">17.01.2025</p> -->
+        </a>
+        <a
+          href="https://riamo.ru/news/ekonomika/novaja-programma-lgotnogo-kreditovanija-msp-osobennosti-i-preimuschestva/"
+          class="photo-item photo7"
+          draggable="true"
+        >
+          <img
+            class="photo"
+            src="../images/Russia-today-logo.png"
+            alt="Фото 7"
+          />
+          <div class="text">
+            <div class="author">Владимир Красников</div>
+            <div class="date">04.04.2025</div>
+          </div>
+          <p class="title">
+            Аналитик: за схемой мошенников без смс-кодов стоят целые
+            организованные группы
+          </p>
+          <!-- <p class="year">17.01.2025</p> -->
+        </a>
+        <a
           href="https://www.mk.ru/economics/2025/03/11/ceny-na-ogurcy-i-pomidory-byut-rekordy-eksperty-preduprezhdayut-chto-eto-ne-predel.html?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch"
           class="photo-item photo1"
           draggable="true"
@@ -354,7 +366,7 @@
         <div class="horizontal"></div>
       </a> -->
     </section>
-    <div class="post-text">
+    <div class="post-title">
       <h1>Наши посты</h1>
     </div>
     <div id="tg-posts" class="posts-grid"></div>
@@ -439,17 +451,45 @@
                     : "";
                 }
 
+                let fullText = text.replace(/\n/g, "<br>"); // Меняем \n на <br> для переноса строк
+                let shortText = fullText.split("<br>").slice(0, 4).join("<br>"); // Оставляем 4 строки
+
                 return `
-            <div class="post">
-              ${mediaHtml}
-              <p>${text}</p>
-              <p><a href="https://t.me/${chatId}/${post.message_id}" target="_blank">🔗 Перейти к посту</a></p>
-            </div>
-          `;
+                    <div class="post">
+                      ${mediaHtml}
+                      <p class="post-text">${shortText}</p>
+                      <p class="full-text hidden">${fullText}</p>
+                      ${
+                        fullText.length > shortText.length
+                          ? '<button class="expand-btn">Показать больше</button>'
+                          : ""
+                      }
+                      <p><a href="https://t.me/${chatId}/${
+                  post.message_id
+                }" target="_blank">🔗 Перейти к посту</a></p>
+                    </div>
+                  `;
               })
             );
 
             container.innerHTML = postsHtml.join("");
+
+            document.querySelectorAll(".expand-btn").forEach((button) => {
+              button.addEventListener("click", function () {
+                const post = this.closest(".post");
+                const shortText = post.querySelector(".post-text");
+                const fullText = post.querySelector(".full-text");
+
+                shortText.classList.toggle("hidden");
+                fullText.classList.toggle("hidden");
+                // this.remove();
+                if (fullText.classList.contains("hidden")) {
+                  this.textContent = "Показать больше";
+                } else {
+                  this.textContent = "Скрыть";
+                }
+              });
+            });
           } catch (error) {
             console.error("Ошибка загрузки постов:", error);
             container.innerHTML = getErrorBlock();
